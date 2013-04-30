@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="Snippet" ignoreRequestParams="true">
+			<xp:this.documentId><![CDATA[#{javascript:getSnippetUNID(compositeData.snippetId)}]]></xp:this.documentId>
+			<xp:this.action><![CDATA[#{javascript:getSnippetUNID(compositeData.snippetId)!=""?"editDocument":"newdocument"}]]></xp:this.action>
+			<xp:this.querySaveDocument><![CDATA[#{javascript:if(!isContributor()) return false;
+if(document1.isNewNote()) {
+	document1.replaceItemValue("Author", @Name("[CN]", @UserName()));
+	document1.replaceItemValue("DateCreated", @Now());
+	document1.replaceItemValue("ID", generateUniqueId(document1.getItemValueString("Name")));
+	return true;
+}
+if(document1.getItemValueString("Author")!=@Name("[CN]", @UserName())) {
+	return false;
+}
+if(document1.getItemValueString("Name")!=viewScope.get("NameCache")){
+	document1.replaceItemValue("oldID", document1.getItemValueString("ID"));
+	document1.replaceItemValue("ID", generateUniqueId(document1.getItemValueString("Name")));
+	return true;
+}}]]></xp:this.querySaveDocument>
+			<xp:this.postSaveDocument><![CDATA[#{javascript:context.redirectToPage("snippet.xsp?id="+document1.getItemValueString("id"))}]]></xp:this.postSaveDocument>
+			<xp:this.queryNewDocument><![CDATA[#{javascript:if(isContributor()) return true; context.redirectToPage("errorCreationNotAllowed");}]]></xp:this.queryNewDocument>
+			<xp:this.postOpenDocument><![CDATA[#{javascript:if(! document1.isNewNote()) {
+	if(document1.getItemValueString("Author")!=@Name("[CN]", @UserName())) 
+		context.redirectToPage("home.xsp");
+	viewScope.put("NameCache", document1.getItemValueString("Name"));
+}}]]></xp:this.postOpenDocument>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:linkResource href="syntaxhighlighter/css/shCore.css" rel="stylesheet" type="text/css"></xp:linkResource>
+		<xp:linkResource href="syntaxhighlighter/css/shThemeXSnippets.css" rel="stylesheet" type="text/css"></xp:linkResource>
+		<xp:script src="syntaxhighlighter/js/shCore.js" clientSide="true"></xp:script>
+		<xp:script src="syntaxhighlighter/js/shAutoloader.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	<xp:panel id="formpanel" styleClass="formSnippet">
+		<xc:ccCode rendered="#{javascript:compositeData.mode!='edit'}"></xc:ccCode>
+		<xe:formTable id="formTable1" xp:key="form" formDescription="" labelWidth="85px" labelPosition="left" fieldHelp="false"
+			disableRequiredMarks="#{javascript:compositeData.mode!='edit'}" disableErrorSummary="true">
+			<xp:this.facets>
+				<xp:panel xp:key="footer" id="panel1">
+					<xp:callback facetName="buttons" id="buttonCallback"></xp:callback>
+				</xp:panel>
+			</xp:this.facets>
+			<xe:formRow id="formRow4" label="Code" for="code" rendered="#{javascript:compositeData.mode=='edit'}">
+				<xp:inputTextarea id="code" style="width:100%; height:240px;" value="#{document1.Body}" required="true"
+					disableClientSideValidation="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Please paste your code."></xp:validateRequired>
+						<xp:validateLength maximum="32000" message="Code should be less than 32K."></xp:validateLength>
+					</xp:this.validators>
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputTextarea>
+			</xe:formRow>
+			<xe:formRow id="formRow1" label="Name" for="name">
+				<xp:inputText id="name" value="#{document1.Name}" required="true" style="width:100%;"
+					readonly="#{javascript:compositeData.mode=='preview'}" disableClientSideValidation="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Please enter the name of your snippet."></xp:validateRequired>
+						<xp:validateLength maximum="100" message="The name should not be more than 100 characters."></xp:validateLength>
+					</xp:this.validators>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow3" label="Language">
+				<xp:text value="#{document1.Language}" rendered="#{javascript:compositeData.mode!='edit'}"></xp:text>
+				<xp:comboBox id="comboBox1" value="#{document1.Language}" rendered="#{javascript:compositeData.mode=='edit'}"
+					disableClientSideValidation="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Please select a language for your snippet."></xp:validateRequired>
+					</xp:this.validators>
+					<xp:selectItem itemLabel="Select a Language" itemValue=""></xp:selectItem>
+					<xp:selectItems>
+						<xp:this.value><![CDATA[${javascript:getCodeLanguages()}]]></xp:this.value>
+					</xp:selectItems>
+				</xp:comboBox>
+			</xe:formRow>
+			<xe:formRow id="formRow2" label="Notes" for="notes">
+				<xp:inputTextarea id="notes" style="width:100%;" value="#{document1.Notes}"
+					readonly="#{javascript:compositeData.mode=='preview'}">
+				</xp:inputTextarea>
+			</xe:formRow>
+			<xe:formRow id="formRow5" label="">
+				<xc:openNTFLicensingDetails></xc:openNTFLicensingDetails>
+			</xe:formRow>			
+		</xe:formTable>
+	</xp:panel>
+</xp:view>

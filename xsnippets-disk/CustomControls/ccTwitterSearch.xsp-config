@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>ccTwitterSearch</component-type>
+    <composite-name>ccTwitterSearch</composite-name>
+    <composite-file>/ccTwitterSearch.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>query</property-name>
+      <property-class>string</property-class>
+    </property>
+    <property>
+      <property-name>widgetID</property-name>
+      <property-class>string</property-class>
+    </property>
+    <property>
+      <property-name>count</property-name>
+      <property-class>string</property-class>
+    </property>
+    <property>
+      <property-name>include_entities</property-name>
+      <property-class>boolean</property-class>
+      <property-extension>
+        <designer-extension>
+          <editor>com.ibm.std.Password</editor>
+          <default-value>true</default-value>
+        </designer-extension>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>result_type</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <editor>com.ibm.workplace.designer.property.editors.comboParameterEditor</editor>
+          <editor-parameter>mixed&#xd;
+recent&#xd;
+popular</editor-parameter>
+          <default-value>mixed</default-value>
+        </designer-extension>
+      </property-extension>
+    </property>
+  </composite-component>
+</faces-config>

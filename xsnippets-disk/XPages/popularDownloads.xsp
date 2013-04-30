@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xc:ccCodeResources></xc:ccCodeResources>
+	<xp:this.data>
+		<xp:dominoView var="view3" viewName="SnippetsAll"></xp:dominoView>
+	</xp:this.data>
+	<xc:ccOneUILayout id="cconeuilayout"
+		title="#{javascript:database.getTitle()}"
+		defaultNavigationPath="/Home" navigationPath="/View/Popularity">
+		<xp:this.facets>
+			<xp:panel xp:key="LeftColumn" id="panel4">
+				<xc:ccOneUILeft></xc:ccOneUILeft>
+			</xp:panel>	
+		</xp:this.facets>
+		<xp:viewPanel rows="30" id="viewPanel1" var="viewItem">
+			
+			<xp:this.data>
+				<xp:dominoView var="view1" viewName="DownloadsLastThreeMonthsSnapshot"></xp:dominoView>
+			</xp:this.data>
+			<xp:viewColumn columnName="Name" id="viewColumn2" displayAs="link" styleClass="xspColumnViewStart200">
+				<xp:this.pageUrl><![CDATA[#{javascript:var shortURL = getConfig(config, 'shortWidgetUrl');
+if(shortURL==null){
+	return "snippet.xsp?id=" + viewItem.getColumnValue("Id");
+}else{
+	return shortURL + viewItem.getColumnValue("Id");
+}}]]></xp:this.pageUrl>
+				<xp:viewColumnHeader value="Name" id="viewColumnHeader2"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn value="" id="viewColumn7" styleClass="xspColumnView150">
+				<xp:this.facets>
+					<xp:viewColumnHeader xp:key="header" id="viewColumnHeader7" value="Language"></xp:viewColumnHeader>
+				</xp:this.facets>
+				<xp:text escape="true" id="computedField1" disableTheme="true">
+					<xp:this.value><![CDATA[#{javascript:var key = viewItem.getColumnValue("Id");
+var ve = view3.getEntryByKey(key);
+return (ve!=null)?ve.getColumnValues().elementAt(3):"";
+}]]></xp:this.value>
+				</xp:text>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="Downloads" id="viewColumn1" styleClass="xspColumnView100">
+				<xp:this.converter>
+					<xp:convertNumber type="number" integerOnly="true"></xp:convertNumber>
+				</xp:this.converter>
+				<xp:viewColumnHeader value="Downloads" id="viewColumnHeader1"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="Authors" id="viewColumn3">
+				<xp:viewColumnHeader value="Author" id="viewColumnHeader3"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:this.facets>
+				<xp:pager partialRefresh="true" layout="Previous Group Next" xp:key="footerPager" id="pager1"></xp:pager>
+			</xp:this.facets></xp:viewPanel>
+	</xc:ccOneUILayout>
+
+</xp:view>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	 disableTheme="true">
+	<style>
+	.lotusForm {
+    background-color: white;
+    }	
+	</style>
+	<xp:panel style="padding-left:10.0px;">
+	<xp:br></xp:br>
+	My HTML page with embedded XSnippets widget
+	<xp:br></xp:br>
+	<xp:br></xp:br>
+	<iframe frameborder='0' width='640' height='480' src='http://openntf.org/XSnippets.nsf/widget.xsp?id=xagent' scrolling='no'></iframe>
+	</xp:panel>
+</xp:view>

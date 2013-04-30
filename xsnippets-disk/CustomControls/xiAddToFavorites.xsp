@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+// xInvolve Project - xiAddToFavorites Custom Control
+// Version: 2.00 - 2012.05.05
+// Developer: Serdar Basegmez, Developi Information Systems, http://lotusnotus.com/en
+ -->
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" dojoParseOnLoad="true" dojoTheme="true" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.resources>
+		<xp:script src="/xInvolve.jss" clientSide="false"></xp:script>
+		<xp:script src="/xInvolveClient.js" clientSide="true"></xp:script>
+		<xp:styleSheet href="/xInvolve.css"></xp:styleSheet>
+		<xp:dojoModule name="dijit.Tooltip"></xp:dojoModule>
+	</xp:this.resources>
+	
+	<xp:div id="favPanel">
+		<xp:div id="noshow" styleClass="involveErrorPanel">
+			<xp:this.rendered><![CDATA[#{javascript:(!invTools.checkConfig(compositeData)) && (!compositeData.hideError)}]]></xp:this.rendered>
+			<xp:image id="image1" url="/.ibmxspres/global/theme/oneui/images/iconError.gif"></xp:image>
+		</xp:div>
+		<xp:panel id="main" rendered="#{javascript:invTools.checkConfig(compositeData)}" styleClass="favoritesMain">
+			<xp:link escape="true" id="favoriteLink">
+				<xp:image id="image4" url="#{javascript:invTools.getFavImage(compositeData)}"></xp:image>
+				<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="favPanel">
+					<xp:this.action><![CDATA[#{javascript:invTools.toggleFavorite(compositeData)}]]></xp:this.action>
+					<xp:this.onComplete><![CDATA[containerId="#{compositeData.listContainerId}";
+if(containerId!="" && dojo.byId(containerId)) {
+	XSP.partialRefreshGet(containerId, {});
+}]]></xp:this.onComplete>
+					<xp:this.script><![CDATA[if("#{javascript:session.getEffectiveUserName()}"=="Anonymous") {
+	alert("#{javascript:compositeData.text_AuthorizeFirst || invTools.defaults.text_AuthorizeFirst}");
+	return false;
+}]]></xp:this.script>
+				</xp:eventHandler></xp:link>
+		</xp:panel><!-- end-mainPanel -->
+		<xp:div dojoType="dijit.Tooltip" style="display:none">
+			<xp:this.dojoAttributes>
+				<xp:dojoAttribute name="connectId" value="#{id:favoriteLink}"></xp:dojoAttribute>
+				<xp:dojoAttribute name="showDelay" value="500"></xp:dojoAttribute>
+			</xp:this.dojoAttributes>
+			<xp:text escape="false" id="computedField1">
+				<xp:this.value><![CDATA[#{javascript:invTools.getFavoriteDetail(compositeData)}]]></xp:this.value>
+			</xp:text>
+		</xp:div>
+	</xp:div>
+</xp:view>

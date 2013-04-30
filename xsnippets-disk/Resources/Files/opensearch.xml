@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>XSnippets</ShortName>
+  <Description>OpenNTF XSnippets Search</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+   <Image height="16" width="16" type="image/x-icon">http://openntf.org/XSnippets.nsf/favicon.ico</Image>
+  <Url type="text/html" method="get" template="http://openntf.org/XSnippets.nsf/search.xsp?search={searchTerms}"></Url>
+  <Url type="application/x-suggestions+json" rel="suggestions" template="http://openntf.org/XSnippets.nsf/suggest.xsp?q={searchTerms}"/>
+</OpenSearchDescription>

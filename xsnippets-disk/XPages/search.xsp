@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.beforePageLoad><![CDATA[#{javascript:var vw:NotesView=database.getView("SnippetsLookup");
+var key=param.search || "";
+var entries:NotesViewEntryCollection=vw.getAllEntriesByKey(key, true);
+if(entries.getCount()==1) {
+	var entry:NotesViewEntry=entries.getFirstEntry();
+	context.redirectToPage("snippet.xsp?id="+entry.getColumnValues()[1]);
+}}]]></xp:this.beforePageLoad>
+	<xc:ccCodeResources></xc:ccCodeResources>
+	<xc:ccOneUILayout id="cconeuilayout"
+		navigationPath="/Home"
+		defaultNavigationPath="/Home">
+		<xp:this.facets>
+			<xp:panel xp:key="LeftColumn" id="panel4">
+				<xc:ccOneUILeft></xc:ccOneUILeft>
+			</xp:panel>
+			
+		</xp:this.facets>
+		<xp:panel>
+			<xp:label value="Search String: " id="label1"></xp:label>
+			<xp:inputText id="inputText1" value="#{param.search}"></xp:inputText>
+			<xp:panel styleClass="lotusRight">
+				<xp:link escape="true" text="Add search engine" id="link1">
+					<xp:eventHandler event="onclick" submit="false">
+						<xp:this.script><![CDATA[installSearch("#{javascript:context.getUrl().toString().split(view.getPageName())[0]+'/opensearch.xml'}");]]></xp:this.script>
+					</xp:eventHandler></xp:link></xp:panel>
+			<br />
+		</xp:panel>
+
+		<xp:viewPanel rows="30" id="viewPanel1" var="viewItem">
+			<xp:this.data>
+				<xp:dominoView var="view1" viewName="SnippetsByDate" expandLevel="1"></xp:dominoView>
+			</xp:this.data>
+			<xp:viewColumn columnName="Name" id="viewColumn2" displayAs="link">
+				<xp:this.pageUrl><![CDATA[#{javascript:"snippet.xsp?id=" + viewItem.getColumnValue("Id")}]]></xp:this.pageUrl>
+				<xp:viewColumnHeader value="Name"
+					id="viewColumnHeader2">
+				</xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="Language" id="viewColumn3">
+				<xp:viewColumnHeader value="Language"
+					id="viewColumnHeader3">
+				</xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="dispNotes" id="viewColumn6">
+				<xp:viewColumnHeader value="Notes" id="viewColumnHeader6"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="Author" id="viewColumn4">
+				<xp:viewColumnHeader value="Author" id="viewColumnHeader4"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="DateCreated" id="viewColumn5">
+				<xp:viewColumnHeader value="Date created" id="viewColumnHeader5"></xp:viewColumnHeader>
+			</xp:viewColumn>
+		</xp:viewPanel>
+	</xc:ccOneUILayout>
+</xp:view>
+

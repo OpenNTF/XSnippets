@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+// xInvolve Project - xiMyFavorites Custom Control
+// Version: 2.00 - 2012.05.05
+// Developer: Serdar Basegmez, Developi Information Systems, http://lotusnotus.com/en
+ -->
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.resources>
+		<xp:script src="/xInvolve.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	<xp:this.beforePageLoad><![CDATA[#{javascript:invTools.prepareMyFavorites(compositeData)}]]></xp:this.beforePageLoad>
+	<xp:repeat id="repeat1" rows="30" var="favEntry" indexVar="favIndex" value="#{sessionScope.xInvolveMyFavorites}"
+		loaded="${javascript:!compositeData.hideRepeat}">
+		<xp:callback facetName="listItem" id="callback3"></xp:callback>
+	</xp:repeat>
+</xp:view>

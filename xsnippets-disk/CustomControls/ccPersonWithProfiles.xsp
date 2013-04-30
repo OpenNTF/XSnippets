@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	
+	<style>
+.tundra .dijitMenuItemIcon {
+width: 1px;
+height: 1px;
+}
+	</style>
+
+	<xp:this.resources>
+		<xp:bundle src="/snippets.properties" var="config"></xp:bundle>
+		<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+
+	<xe:popupMenu id="popupMenu1"></xe:popupMenu>
+
+	<xp:link text="#{javascript:compositeData.personName}"><xp:this.value><![CDATA[#{javascript:
+var profiles = profilesBean.getProfiles(compositeData.personName);
+
+if (profiles == null) {
+	var u = getConfig(config, 'profileUrl');
+	if (u == null) {
+		var newProfile = new org.openntf.profiles.UserProfile(compositeData.personName, "No Profile found", "http://openntf.org");
+		profiles = new java.util.ArrayList();
+		profiles.add(newProfile);
+	}
+	else {
+		var newProfile = new org.openntf.profiles.UserProfile(compositeData.personName, "OpenNTF Profile", u + compositeData.personName);
+		profiles = new java.util.ArrayList();
+		profiles.add(newProfile);
+	}
+}
+profiles.get(0).getUrl();
+}]]></xp:this.value></xp:link>
+	<xp:label value=" "></xp:label>
+	<xp:image url="/dropdown.gif" id="personDropDown"></xp:image>
+
+	<xp:scriptBlock type="text/javascript">
+		<xp:this.value>
+			<![CDATA[ 
+var menu;
+
+triggerUrl0 = #{javascript:"function triggerUrl0() {window.location = '" + profilesBean.getUrl(0) + "'}"};
+triggerUrl1 = #{javascript:"function triggerUrl1() {window.location = '" + profilesBean.getUrl(1) + "'}"};
+triggerUrl2 = #{javascript:"function triggerUrl2() {window.location = '" + profilesBean.getUrl(2) + "'}"};
+triggerUrl3 = #{javascript:"function triggerUrl3() {window.location = '" + profilesBean.getUrl(3) + "'}"};
+triggerUrl4 = #{javascript:"function triggerUrl4() {window.location = '" + profilesBean.getUrl(4) + "'}"};
+triggerUrl5 = #{javascript:"function triggerUrl5() {window.location = '" + profilesBean.getUrl(5) + "'}"};
+triggerUrl6 = #{javascript:"function triggerUrl6() {window.location = '" + profilesBean.getUrl(6) + "'}"};
+triggerUrl7 = #{javascript:"function triggerUrl7() {window.location = '" + profilesBean.getUrl(7) + "'}"};
+triggerUrl8 = #{javascript:"function triggerUrl8() {window.location = '" + profilesBean.getUrl(8) + "'}"};
+triggerUrl9 = #{javascript:"function triggerUrl9() {window.location = '" + profilesBean.getUrl(9) + "'}"};
+
+triggerUrl0 = #{javascript:"function triggerUrl() {window.location = '" + profiles.get(0).getUrl() + "'}"};
+
+editProfile = #{javascript:"function editProfile() {window.location = '" + compositeData.editProfilePage + "?user=" + compositeData.personName + "'}"};
+
+dojo.ready(function(){
+	menu = new dijit.Menu({
+		leftClickToOpen:true,
+		targetNodeIds:["#{javascript:getClientId("personDropDown")}"]
+	});
+    
+    var profileNamesString = "#{javascript:profilesBean.getLabels();}";
+    var noDocument = "false";    
+    if (profileNamesString == "") {
+    	profileNamesString = "#{javascript:profiles.get(0).getLabel();}";
+    	noDocument = "true";
+    }
+    var profileNames = profileNamesString.split(",");
+    for(i = 0; i < profileNames.length; i++){
+		if (i == 0) {
+			if (noDocument == "yes") {
+				menu.addChild(new dijit.MenuItem({
+					label:"#{javascript:profiles.get(0).getLabel();}",
+					onClick: triggerUrl
+				}));				
+			}
+			else {
+				menu.addChild(new dijit.MenuItem({
+					label:profileNames[i],
+					onClick: triggerUrl0
+				}));	
+			}	
+		}
+		if (i == 1) {
+			menu.addChild(new dijit.MenuItem({
+				label:profileNames[i],
+				onClick: triggerUrl1
+			}));		
+		}
+		if (i == 2) {
+			menu.addChild(new dijit.MenuItem({
+				label:profileNames[i],
+				onClick: triggerUrl2
+			}));		
+		}
+		if (i == 3) {
+			menu.addChild(new dijit.MenuItem({
+				label:profileNames[i],
+				onClick: triggerUrl3
+			}));		
+		}
+		if (i == 4) {
+			menu.addChild(new dijit.MenuItem({
+				label:profileNames[i],
+				onClick: triggerUrl4
+			}));		
+		}
+		if (i == 5) {
+			menu.addChild(new dijit.MenuItem({
+				label:profileNames[i],
+				onClick: triggerUrl5
+			}));		
+		}
+		if (i == 6) {
+			menu.addChild(new dijit.MenuItem({
+				label:profileNames[i],
+				onClick: triggerUrl6
+			}));		
+		}
+		if (i == 7) {
+			menu.addChild(new dijit.MenuItem({
+				label:profileNames[i],
+				onClick: triggerUrl7
+			}));		
+		}
+		if (i == 8) {
+			menu.addChild(new dijit.MenuItem({
+				label:profileNames[i],
+				onClick: triggerUrl8
+			}));		
+		}
+		if (i == 9) {
+			menu.addChild(new dijit.MenuItem({
+				label:profileNames[i],
+				onClick: triggerUrl9
+			}));		
+		}
+	}
+	var userName = "#{javascript: 
+	@Name("[CN]",context.getUser().getDistinguishedName()) 
+}";
+	if (userName != "anonymous") {
+		if (userName == "#{javascript:compositeData.personName}") {
+			menu.addChild(new dijit.MenuSeparator());
+			menu.addChild(new dijit.MenuItem({
+				label: "Edit",
+				onClick: editProfile
+			}));
+		}
+	}        
+
+	menu.startup();
+});
+      ]]>
+		</xp:this.value>
+	</xp:scriptBlock>
+</xp:view>

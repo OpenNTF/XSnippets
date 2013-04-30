@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>xiMyFavorites</component-type>
+    <composite-name>xiMyFavorites</composite-name>
+    <composite-file>/xiMyFavorites.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+        <render-markup>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xd;
+&lt;xp:view xmlns:xp="http://www.ibm.com/xsp/core"&gt;&#xd;
+&lt;xp:div&gt;&#xd;
+------ xInvolve: My Favorites Custom Control ------&lt;br/&gt;&#xd;
+This control contains a repeat element for iteration.&lt;br/&gt;&lt;br/&gt;&#xd;
+Insert your controls here. You can use "favEntry" and "favIndex" for iteration:&lt;br/&gt;&#xd;
+favEntry is an object and has "id" and "hint" properties.&lt;br/&gt;&#xd;
+&lt;xp:callback facetName="listItem" id="callback3"&gt;&lt;/xp:callback&gt;&lt;br/&gt;&#xd;
+&lt;/xp:div&gt;&#xd;
+&lt;/xp:view&gt;</render-markup>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>interactionDB</property-name>
+      <property-class>string</property-class>
+      <display-name>Interaction Database File Path</display-name>
+      <property-extension>
+        <required>false</required>
+      </property-extension>
+      <description>The file path string for the interaction database.</description>
+    </property>
+    <property>
+      <property-name>hideRepeat</property-name>
+      <property-class>boolean</property-class>
+      <display-name>Hide Repeat Element</display-name>
+      <property-extension>
+        <designer-extension>
+          <editor>com.ibm.std.Boolean</editor>
+        </designer-extension>
+      </property-extension>
+      <description>If you specify true, the control will not render anything. You can still use sessionScope.xInvolveMyFavorites variable to iterate your favorite list.</description>
+    </property>
+  </composite-component>
+</faces-config>

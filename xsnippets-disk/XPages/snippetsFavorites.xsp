@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xc:ccCodeResources></xc:ccCodeResources>
+	<xc:ccOneUILayout id="cconeuilayout" defaultNavigationPath="/Home" navigationPath="/View/Favorites">
+		<xp:this.facets>
+			<xp:panel xp:key="LeftColumn" id="panel4">
+				<xc:ccOneUILeft></xc:ccOneUILeft>
+			</xp:panel>
+		</xp:this.facets>
+		<xp:dataTable id="dataTable1" rows="100" var="favItem" indexVar="favIndex">
+			<xp:this.facets>
+				<xp:pager partialRefresh="true" layout="Previous Group Next" xp:key="footerPager" id="pager1"></xp:pager>
+			</xp:this.facets>
+			<xp:this.value><![CDATA[#{javascript:sessionScope.get("xInvolveMyFavorites")||[]}]]></xp:this.value>
+			<xp:column id="column1" styleClass="xspColumnView300">
+				<xp:link escape="true" text="#{javascript:favItem.hint}" id="link1">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:context.redirectToPage("snippet.xsp?id="+favItem.link)}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
+				<xp:this.facets>
+					<xp:label value="Snippet Name" id="label1" xp:key="header"></xp:label>
+				</xp:this.facets>
+			</xp:column>
+			<xp:column id="column2" styleClass="xspColumnView100">
+				<xp:this.facets>
+					<xp:label value="Rating" id="label2" xp:key="header"></xp:label>
+				</xp:this.facets>
+				<div style="float:left">
+					<xc:xiRating hideError="true" ratesDisplayOnly="true" anonymousRating="false" starCount="5" ccId="#{javascript:favIndex}"
+						iId="#{favItem.id}">
+					</xc:xiRating>
+				</div>
+			</xp:column>
+			<xp:column id="column3" styleClass="xspColumnView100" style="text-align:center;">
+				<xp:this.facets>
+					<xp:label value="Favorite" id="label3" xp:key="header"></xp:label>
+				</xp:this.facets>
+				<xc:xiAddToFavorites hideError="false" ccId="#{javascript:favIndex}" hintValue="#{favItem.hint}" iId="#{favItem.id}"
+					img_AddToFavorites="/graystar16.png" img_RemoveFromFavorites="/yellowstar16.png" listContainerId="#{id:myFavorites}">
+				</xc:xiAddToFavorites>
+			</xp:column>
+		</xp:dataTable>
+	</xc:ccOneUILayout>
+</xp:view>

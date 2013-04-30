@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.resources>
+		<xp:styleSheet href="/twitter.css"></xp:styleSheet>
+		<xp:script src="/twitter.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	<br></br><br></br><br></br>
+	<div id="widget#{compositeData.widgetID}" class="" style="width:340px;">
+		<xp:text escape="true" id="twitterTitle"
+			value="Related Twitter Tweets" tagName="h3"
+			disableTheme="true" style="display:none;">
+		</xp:text>
+		<br></br>
+		<xp:scriptBlock id="scriptBlock1">
+			<xp:this.value><![CDATA[		function twitterCallback#{javascript:compositeData.widgetID}(twitters) {
+ 			var statusHTML = [];
+ 			var tweets = twitters.results;
+ 			if(tweets.length>0){
+ 				document.getElementById("#{id:twitterTitle}").style.display = 'block';
+ 			}
+  			for (var i=0; i<tweets.length; i++){
+  				console.log(tweets[i])
+    			var username = tweets[i].from_user_name;
+    			var status = tweets[i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
+      			return '<a href="'+url+'">'+url+'</a>';
+    			}).replace(/\B@([_a-z0-9]+)/ig, function(reply) {
+      			return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
+    			});
+    			statusHTML.push('<div id="tweet'+i+'" class="tweet"><div id="tweet_avatar'+i+'" class="tweet_avatar"><img src="'+tweets[i].profile_image_url+'" alt="'+username+'" /></div><div id="tweet_status'+i+'" class="tweet_status">'+status+'</div><div id="tweet_meta'+i+'" class="tweet_meta"> <a style="font-size:85%" href="http://twitter.com/'+tweets[i].from_user+'" target="_new">'+username+'</a> '+tweets[i].created_at+'</div></div>');
+  			}
+  			document.getElementById('tweets#{javascript:compositeData.widgetID}').innerHTML = statusHTML.join('');
+		}]]></xp:this.value>
+		</xp:scriptBlock>
+		<div id="tweets#{javascript:compositeData.widgetID}" class="tweets"></div>
+		<script src="http://search.twitter.com/search.json?q=#{javascript:compositeData.query}&amp;callback=twitterCallback#{javascript:compositeData.widgetID}&amp;rpp=#{javascript:compositeData.count}&amp;include_entities=#{javascript:compositeData.include_entities}&amp;result_type=#{javascript:compositeData.result_type}" type="text/javascript"></script>
+	</div>
+</xp:view>

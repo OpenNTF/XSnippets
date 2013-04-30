@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C2257B5D004C1B27'>
+<noteinfo noteid='2ce' unid='DAAC98ADEE63A806C22579F1005B55E8' sequence='34'>
+<created><datetime dst='true'>20120501T193737,68+03</datetime></created>
+<modified><datetime dst='true'>20130430T165118,20+03</datetime></modified>
+<revised><datetime dst='true'>20120516T043920,78-05</datetime></revised>
+<lastaccessed><datetime dst='true'>20130430T165118,20+03</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130430T165118,20+03</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
+>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$HTMLCode' sign='true'>
+<rawitemdata type='1'>
+X/8QAAIADwAHAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$TITLE'><text>LogAggregation</text></item>
+<item name='$Info' sign='true'>
+<rawitemdata type='1'>
+hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
+</rawitemdata></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$Fonts'>
+<rawitemdata type='1'>
+i/8oAAEABTVDb3VyaWVyIE5ldwAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>SummaryEntry</text></item>
+<item name='ProjectName' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='AuthorList' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='DownloadsNumber' summary='false'><number>0</number></item>
+<item name='DOWNLOADTYPE' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='DownloadedInLastThreeMonths' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='$Fields'><textlist><text>DownloadedInLastThreeMonths</text><text
+>DOWNLOADTYPE</text><text>DownloadsNumber</text><text>AuthorList</text><text
+>ProjectName</text></textlist></item>
+<item name='$Body' sign='true'>
+<rawitemdata type='1'>
+gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8OAAEAAApOYW1lOiDdBgAA
+iv/+/1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AHgAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIr/MACKAAAFADACAAAAAAAAAgEAAAoAAAAAAAAAAAsA
+AAAAAFByb2plY3ROYW1lAGIOAQCEAAAAAAAAAAAA3gYAAIr/hf8IAAEAAAqBAoMEAQCF/wgAAQAA
+CoECgwQBAIX/EQABAAAKQXV0aG9yczogAN0GAACK//7/UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAHgAeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiv8u
+AIoAAAUAMAIAAAAAAAACAQAACgAAAAAAAAAACgAAAAAAQXV0aG9yTGlzdGIOAQCEAAAAAAAAAAAA
+3gYAAIr/hf8IAAEAAAqBAoMEAQCF/wgAAQAACoECgwQBAIX/GQABAAAKRG93bmxvYWRzTnVtYmVy
+OiAA3QYAAIr//v9UAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAeAB4AAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuLCQAiv80AIoAAAMAMAIACAAAAAACAQAA
+CgAAAAAAAAAADwAAAAAARG93bmxvYWRzTnVtYmVyAN4GAACK/4X/CAABAAAKgQKDBAEAhf8IAAEA
+AAqBAoMEAQCF/w4AAQAAClR5cGU6IN0GAACK//7/UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAHgAeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiv8wAIoA
+AAUAMAIAAAAAAAACAQAACgAAAAAAAAAADAAAAAAARE9XTkxPQURUWVBFYg4BAIQAAAAAAAAAAADe
+BgAAiv+F/wgAAQAACoECgwQBAIX/CAABAAAKgQKC/1oAAgAAAAAAAAAAAKAFAACgBQAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAJSAoAUAAKAFEADIKGQAAQAA
+AAQAAACDBAIAhf8jAAUAAApEb3dubG9hZGVkSW5MYXN0VGhyZWVNb250aHMAhf8KAAEAAAo6IN0G
+AACK//7/UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgAeAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiv9AAIoAAAUAMAIAAAAAAAACAQAACgAAAAAAAAAA
+GwAAAAAARG93bmxvYWRlZEluTGFzdFRocmVlTW9udGhzAGIOAQCEAAAAAAAAAAAA3gYAAIr/hf8I
+AAEAAAo=
+</rawitemdata></item>
+<item name='$Flags'><text>w</text></item></note>
+

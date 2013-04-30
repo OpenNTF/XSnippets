@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:
+  
+var externalContext = facesContext.getExternalContext();
+var writer = facesContext.getResponseWriter();
+var response = externalContext.getResponse();
+
+response.setContentType("application/json"); 
+
+var searchTerm=param.q || "";
+
+rTerms=[];
+lastTerm="";
+count=0;
+maxOutput=5; 
+
+if(searchTerm!="") {
+	var vw:NotesView=database.getView("SnippetsSuggestions");
+	var entry:NotesViewEntry=vw.getEntryByKey(searchTerm, false);
+	
+	if(entry!=null) {
+		var vn:NotesViewNavigator=vw.createViewNavFrom(entry, maxOutput);
+
+		entry=vn.getCurrent();
+
+		do{
+			value=entry.getColumnValues()[0];
+			if(typeof value === 'java.util.Vector') {value=value[0];}
+
+			if(!value.equalsIgnoreCase(lastTerm) && value.startsWithIgnoreCase(searchTerm)) {
+				count++;
+				rTerms.push(value);
+				lastTerm=value;
+			}
+
+			entry=vn.getNext();
+		} while(count<maxOutput && entry!=null && value.startsWithIgnoreCase(searchTerm))
+	}
+}
+
+writer.write(toJson([searchTerm, rTerms]));
+writer.endDocument();
+
+}]]>
+	</xp:this.afterRenderResponse>
+</xp:view>

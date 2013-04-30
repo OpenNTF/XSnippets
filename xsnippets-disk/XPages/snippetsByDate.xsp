@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xc:ccCodeResources></xc:ccCodeResources>
+	<xc:ccOneUILayout id="cconeuilayout"
+		defaultNavigationPath="/Home" navigationPath="/View/Date">
+		<xp:this.facets>
+			<xp:panel xp:key="LeftColumn" id="panel4">
+				<xc:ccOneUILeft></xc:ccOneUILeft>
+			</xp:panel>
+			
+		</xp:this.facets>
+		<xe:pagerSaveState id="pagerSaveState1" for="viewPanel1"
+				globalRows="true">
+			</xe:pagerSaveState>
+		<xp:viewPanel rows="100" id="viewPanel1" var="viewItem">
+			<xp:this.facets>
+				<xp:pager partialRefresh="true" layout="Previous Group Next" xp:key="footerPager" id="pager1"></xp:pager>
+			</xp:this.facets>
+			<xp:this.data>
+				<xp:dominoView var="view1" viewName="SnippetsByDate"></xp:dominoView>
+			</xp:this.data>
+			<xp:viewColumn columnName="DateCreated" id="viewColumn1" styleClass="xspColumnViewStartDate">
+				<xp:this.converter>
+					<xp:convertDateTime type="date"></xp:convertDateTime>
+				</xp:this.converter>
+				<xp:viewColumnHeader value="Date" id="viewColumnHeader1"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="Name" id="viewColumn2" displayAs="link">
+				<xp:this.pageUrl><![CDATA[#{javascript:var shortURL = getConfig(config, 'shortWidgetUrl');
+if(shortURL==null){
+	return "snippet.xsp?id=" + viewItem.getColumnValue("Id");
+}else{
+	return shortURL + viewItem.getColumnValue("Id");
+}}]]></xp:this.pageUrl>
+				<xp:viewColumnHeader value="Name" id="viewColumnHeader2"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="Language" id="viewColumn3" styleClass="xspColumnView150">
+				<xp:viewColumnHeader value="Language" id="viewColumnHeader3"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="dispNotes" id="viewColumn6">
+				<xp:viewColumnHeader value="Notes" id="viewColumnHeader6"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="Author" id="viewColumn4">
+				<xp:viewColumnHeader value="Author" id="viewColumnHeader4"></xp:viewColumnHeader>
+			</xp:viewColumn>
+		</xp:viewPanel>
+	</xc:ccOneUILayout>
+
+</xp:view>

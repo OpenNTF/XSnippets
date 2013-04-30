@@ -1,0 +1,15 @@
+.dojoxRatingStar{  }
+.dojoxRatingStarChecked {  }
+.dojoxRatingStarHover {  }
+
+.involveErrorPanel {text-align:center;}
+
+.ratingPanel {display:inline-block; text-align:center; }
+.ratingShowWrapper {vertical-align:top; }
+.ratingStarWrapper {display:inline; }
+.loadingImgPanel { 
+	background: url(/xsp/.ibmxspres/global/theme/oneui/images/loading.gif) no-repeat center white;
+	height:16px;
+	opacity:0.5;
+}
+

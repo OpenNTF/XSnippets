@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+		<style>
+html, body, form {
+    background: white;
+}	
+	</style>
+	<xp:this.resources>
+		<xp:linkResource href="syntaxhighlighter/css/shCore.css" rel="stylesheet" type="text/css"></xp:linkResource>
+		<xp:linkResource href="syntaxhighlighter/css/shThemeXSnippets.css" rel="stylesheet" type="text/css"></xp:linkResource>
+		<xp:script src="syntaxhighlighter/js/shCore.js" clientSide="true"></xp:script>
+		<xp:script src="syntaxhighlighter/js/shAutoloader.js" clientSide="true"></xp:script>		
+	</xp:this.resources>
+	<style>.syntaxhighlighter .toolbar { z-index: 0 !important; }</style>
+	<xc:ccCodeResources></xc:ccCodeResources>
+	
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="Snippet" action="openDocument">
+			<xp:this.documentId><![CDATA[#{javascript:id=param.id;
+if(id!=null && id!=""){
+	var view = database.getView("SnippetsAll");
+	var entry = view.getEntryByKey(id, true);
+	return (entry != null)?entry.getUniversalID():"";
+} else {
+	return "";
+}}]]></xp:this.documentId>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xc:ccCode></xc:ccCode>
+</xp:view>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
+ replicaid='C2257B5D004C1B27'>
+<noteinfo noteid='11a' unid='72A6D298B0A8C02386257948004AF974' sequence='1'>
+<created><datetime>20111114T073855,24-06</datetime></created>
+<modified><datetime dst='true'>20130430T165119,16+03</datetime></modified>
+<revised><datetime dst='true'>20130430T165119,15+03</datetime></revised>
+<lastaccessed><datetime dst='true'>20130430T165119,16+03</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130430T165117,13+03</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=NotesOSS2/O=NotesOSS</name><name
+>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
+<item name='IconBitmap' summary='true' sign='true'>
+<rawitemdata type='6'>
+AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
+AYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAHAAAADwAAAA8AAAAPgAAAH4AAAB/AAAA/4AAAf
+/AAAP/4AAH//gAH///AP//////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIiIiAAAAAAAAAAAAAAI
+jPZmZm/IgAAAAAAAAAAIjGZmZmZmZsiAAAAAAAAAjGZmZmZmZmZmyAAAAAAACMZmZmZmZmZmZmyA
+AAAAAIxmZmZmZmZmZmZmyAAAAAjGZmZmZmZmZmZmZmyAAAAIZmbyL2byL2byL2ZmgAAAjGZmIiJm
+IiJmIiJmZsgAAIZmZiIiZiIiZiIiZmZoAADGZmYiImYiImYiImZmbAAI9mZmIiJmIiJmIiJmZm+A
+CGZmZiIiZiIiZiIiZmZmgAhmZmYiImYiImYiImZmZoAIZmZmIiJmIiJmIiJmZmaACGZvIiIiZiIi
+ZiIiIvZmgAhmYiIiImYiImYiIiImZoAIZm8iIi9m8i9m8iIi9maACPZmZmZmZmZmZmZmZmZvgADG
+ZmbyL2byL2byL2ZmbAAAj2ZmIiJmIiJmIiJmZvgAAIxmZiIiZiIiZiIiZmbIAAAI9mbyL2byL2by
+L2ZvgAAACMZmZmZmZmZmZmZmbIAAAACMZmZmZmZmZmZmZsgAAAAACMZmZmZmZmZmZmyAAAAAAACM
+9mZmZmZmZm/IAAAAAAAACIz2ZmZmZm/IgAAAAAAAAAAIiMZmZmyIgAAAAAAAAAAAAACIiIiIAAAA
+AAAAUEECICABAAD/////+A4DgA==
+</rawitemdata></item>
+<item name='$DBTheme' sign='true'><text>layout.theme</text></item>
+<item name='$DefaultXPage' sign='true'><text>home.xsp</text></item>
+<item name='$Flags'><text>J7!</text></item>
+<item name='$PIRCRefreshModTime'><datetime dst='true'>20120511T105015,70+03</datetime></item>
+<item name='$TemplateModTime'><datetime dst='true'>20120511T104947,46+03</datetime></item>
+<item name='$TemplateServerName'><text>CN=Serdar Basegmez/O=developi</text></item>
+<item name='$TemplateFileName'><text>C:\Lotus\Notes\Data\xsnippets_design.ntf</text></item>
+<item name='$Daos'><text>0</text></item>
+<item name='$TITLE'><text>XSnippets Development</text></item></note>
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>xiCustomName</component-type>
+    <composite-name>xiCustomName</composite-name>
+    <composite-file>/xiCustomName.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>userName</property-name>
+      <property-class>string</property-class>
+      <display-name>User Name</display-name>
+      <property-extension>
+        <designer-extension>
+          <editor>com.ibm.std.String</editor>
+        </designer-extension>
+      </property-extension>
+      <description>You can use this property to pass the name of the user to be displayed. It may be canonical or common name.</description>
+    </property>
+  </composite-component>
+</faces-config>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C2257B5D004C1B27'>
+<noteinfo noteid='136' unid='CFE18EE2370B2A59852579490035081B' sequence='22'>
+<created><datetime>20111115T043914,83-05</datetime></created>
+<modified><datetime dst='true'>20130430T165117,19+03</datetime></modified>
+<revised><datetime dst='true'>20120516T043935,67-05</datetime></revised>
+<lastaccessed><datetime dst='true'>20130430T165117,19+03</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130430T165117,19+03</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
+>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>SnippetsCategories</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+XgAFACwAJwAEAAgABgAJAAQATGFuZ3VhZ2VBdXRob3IkQ29uZmxpY3QkUkVGAAQABAAAAB4ABQAE
+AEZvcm0BAAcAU25pcHBldAAKAgQAAwAHAA4ACAAJTDFTM1M0Uw==
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+IgACAABEAGYAAAAIAIBmAAgABgBMYW5ndWFnZUF1dGhvcg==
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQACAAcACAAAAFZDAQAIAAgAAAAAAJ4AAQAACgAAAAAAAAAAAAICAAAAVkMBAAYABgAAAAAArgAB
+AAAKAAAAAAAAAAAAAgIAAABMYW5ndWFnZUxhbmd1YWdlQXV0aG9yQXV0aG9yJgABAAAAAQEACQEA
+AAoBAQ4KAAABAK0rAQABAAEAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/
+/wAAAAAAAAAAAAAAAAAAV0MBAQAJAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA//8AAAAAAAAAAAAA
+AAAAAEIAAAAAAAEA////AAUA////AAEAAAAAAAAAAAAAAAAAAQD///8AAQD///8AAAABAAAAAAAB
+AAAAAAABAAAAAAAAAAgAAAAAAAEA
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$Flags'><text>Yw</text></item></note>
+

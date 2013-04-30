@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.resources>
+		<xp:linkResource href="syntaxhighlighter/css/shCore.css" rel="stylesheet" type="text/css"></xp:linkResource>
+		<xp:linkResource href="syntaxhighlighter/css/shThemeXSnippets.css" rel="stylesheet" type="text/css"></xp:linkResource>
+		<xp:script src="syntaxhighlighter/js/shCore.js" clientSide="true"></xp:script>
+		<xp:script src="syntaxhighlighter/js/shAutoloader.js" clientSide="true"></xp:script>
+		<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+		<style>
+html, body, form {
+    background: white !important;
+}	
+.syntaxhighlighter .toolbar { z-index: 0 !important; }
+	</style>
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="Snippet" action="openDocument" documentId="#{javascript:getSnippetUNID(param.id)}"></xp:dominoDocument>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:script src="/SnippetCSJS.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	<xc:ccCodeResources></xc:ccCodeResources>
+	
+		<xp:div id="content" styleClass="contentContainer">
+			<xp:panel id="formpanel" styleClass="formSnippet">
+				<xp:form id="snippet">
+					
+										<xp:table>
+						<xp:tr >
+							<xp:td colspan="2">
+								<xp:label value="#{document1.Name}" id="label6" for="notes"></xp:label>
+								<xp:br></xp:br>
+								<xp:br></xp:br>
+								<xp:inputTextarea id="notes" value="#{document1.Notes}"></xp:inputTextarea>
+							</xp:td>
+						</xp:tr>
+					</xp:table>
+					<xp:br></xp:br>
+					<xp:table>
+						<xp:tr>
+							<xp:td style="width:90px">
+								<xp:label value="Language" id="label2" for="language"></xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:text escape="true" id="computedField2" value="#{document1.Language}"></xp:text>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Author" id="label1" for="author"></xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:text escape="false" id="computedField1">
+									<xp:this.value><![CDATA[#{javascript:getPersonDisplay(document1.getItemValueString("Author"))}]]></xp:this.value>
+								</xp:text>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Rating" id="label7"></xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:span style="float:left;">
+									<xc:xiRating hideError="false" ratesDisplayOnly="false" anonymousRating="true" starCount="5"
+										iId="#{document1.Id}" ccId="sr" interactionDB="#{javascript:database.getFilePath()}"
+										ratingTargetDocumentId="#{javascript:document1.getDocument().getUniversalID()}" ratingTargetFieldName="Rating"
+										ratingResultTarget="#{id:ratingInfoContainer}">
+									</xc:xiRating>
+								</xp:span>
+								<xp:span id="ratingInfoContainer" style="float:right;" styleClass="ratingInfo"></xp:span>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Downloads" id="label4" for="description"></xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:label id="label5" style="font:normal;" value="#{javascript:getDownloadsById(param.id)}">
+									<xp:this.converter>
+										<xp:convertNumber maxFractionDigits="0"></xp:convertNumber>
+									</xp:this.converter>
+								</xp:label>
+							</xp:td>
+						</xp:tr>
+					</xp:table>
+					<br></br><br></br>
+					<xp:panel>
+					<xp:button value="Open XSnippet" id="button1" themeId="">
+							<xp:eventHandler event="onclick" submit="false">
+								<xp:this.script><![CDATA[window.open("http://openntf.org/s/#{javascript:param.id}");
+]]></xp:this.script>
+							</xp:eventHandler>
+						</xp:button>	
+						<xp:button value="Select XSnippet to copy to Clipboard" id="button4" themeId="">
+							<xp:eventHandler event="onclick" submit="false">
+								<xp:this.script><![CDATA[var code=dojo.query('.syntaxhighlighter .container');
+if(code[0]) selectText(code[0]);
+]]></xp:this.script>
+							</xp:eventHandler>
+						</xp:button>										
+					</xp:panel>
+					<xc:ccCode></xc:ccCode>
+					
+				</xp:form>
+			
+			</xp:panel>
+		
+		</xp:div>
+	
+</xp:view>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xc:ccCodeResources></xc:ccCodeResources>
+
+	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
+	<xc:ccOneUILayout title="#{javascript:database.getTitle()}">
+		<xp:this.facets>
+			<xp:panel xp:key="LeftColumn" id="panel4">
+				<xc:ccOneUILeft></xc:ccOneUILeft>
+			</xp:panel>
+		</xp:this.facets>
+
+		<xp:div id="content" styleClass="contentContainer">
+			<xc:ccSnippetForm mode="#{javascript:viewScope.get('previewMode')?'preview':'edit'}">
+				<xp:this.facets>
+					<xp:div xp:key="buttons">
+						<xp:button value="Preview" id="button1">
+							<xp:this.rendered><![CDATA[#{javascript:mode=viewScope.get("previewMode") || false;
+return !mode;}]]></xp:this.rendered>
+							<xp:eventHandler event="onclick" submit="true" refreshMode="partial" immediate="false" save="false"
+								refreshId="content">
+								<xp:this.action><![CDATA[#{javascript:viewScope.put('previewMode', true)}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:button value="Edit" id="button4">
+							<xp:this.rendered><![CDATA[#{javascript:mode=viewScope.get("previewMode") || false;
+return mode;}]]></xp:this.rendered>
+							<xp:eventHandler event="onclick" submit="true" refreshMode="partial" immediate="false" save="false"
+								refreshId="content">
+								<xp:this.action><![CDATA[#{javascript:viewScope.put('previewMode', false)}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:button value="Save" id="button3">
+							<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="false" save="true">
+							</xp:eventHandler>
+						</xp:button>
+						<xp:button value="Cancel" id="button2">
+							<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true" save="false">
+							<xp:this.action>
+								<xp:openPage name="$$PreviousPage"></xp:openPage>
+							</xp:this.action></xp:eventHandler>
+						</xp:button>
+					</xp:div>
+				</xp:this.facets>
+			</xc:ccSnippetForm>
+		</xp:div>
+
+	</xc:ccOneUILayout>
+</xp:view>

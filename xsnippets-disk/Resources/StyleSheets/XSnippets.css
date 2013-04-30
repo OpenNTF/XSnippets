@@ -1,0 +1,29 @@
+.innerDiv {
+	overflow-y:hidden;
+	margin-top:5px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:5px;
+}
+
+.outerDiv {
+	overflow-y:hidden;
+}
+
+.xSnippetsEntries {
+}
+
+.xSnippetEntry {
+	margin-bottom:10px;
+}
+
+.xSnippetEntry a, .xSnippetEntry a:visited {
+    color: #105CB6;
+    font: 0.75em Arial,Helvetica,sans-serif;
+    text-decoration: none;
+}
+
+.developer {
+	margin-top:1px;
+	font: 0.75em Arial,Helvetica,sans-serif;
+}

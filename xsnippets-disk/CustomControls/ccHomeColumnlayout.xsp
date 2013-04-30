@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="SnippetsRecentlyAdded"></xp:dominoView>
+		<xp:dominoView var="view2" viewName="DownloadsLastThreeMonthsSnapshot"></xp:dominoView>
+		<xp:dominoView var="view3" viewName="SnippetsAll"></xp:dominoView>
+	</xp:this.data>
+	
+	<xp:this.beforePageLoad><![CDATA[#{javascript:viewScope.baseUrl=context.getUrl().getPath().split(view.getPageName())[0]+"/";
+}]]></xp:this.beforePageLoad>
+	<br></br>
+	<xp:div id="content" styleClass="contentContainer">
+		<xp:panel id="leftColumn" styleClass="column">
+			<xp:link escape="true" text="" id="link5" value="#{viewScope.baseUrl}snippetsByDate.xsp">
+				<xp:text escape="true" id="computedField6" tagName="h1"
+					disableTheme="true" value="Recently Added">
+				</xp:text>
+			</xp:link>
+
+			<xp:repeat id="repeat1" rows="100" styleClass="entryList"
+				value="#{view1}" var="dataList" indexVar="dataIndex">
+				<xp:div id="div5" styleClass="entry">
+					<xp:link escape="true" text="" id="link2"
+						styleClass="entryLink">
+						<xp:this.value><![CDATA[#{javascript:var shortURL = getConfig(config, 'shortWidgetUrl');
+if(shortURL==null){
+	return viewScope.baseUrl+"snippet.xsp?id=" + dataList.getDocument().getItemValueString("Id");
+}else{
+	return shortURL + dataList.getDocument().getItemValueString("Id");
+}}]]></xp:this.value><xp:text escape="true" id="computedField1"
+							tagName="h3" disableTheme="true" value="#{dataList.Name}">
+						</xp:text>
+					</xp:link>
+					<xp:div id="div6" styleClass="entryBody">
+						<xp:link escape="true" text="" id="link3"
+							styleClass="entryLanguage">
+							<xp:this.value><![CDATA[#{javascript:viewScope.baseUrl+"snippetsByLanguage.xsp?cat="+dataList.getDocument().getItemValueString("Language")}]]></xp:this.value>
+							<xp:text escape="true" id="computedField4"
+								tagName="h3" disableTheme="true">
+								<xp:this.value><![CDATA[#{javascript:var lang = dataList.getDocument().getItemValueString("Language"); return getShowAs(lang);}]]></xp:this.value>
+							</xp:text>
+						</xp:link>
+						
+						<xp:div id="div8" styleClass="entryText">
+							<!-- 
+							<xp:text escape="true" id="computedField4"
+								disableTheme="true">
+								<xp:this.value><![CDATA[#{javascript:"Added:" + dataList.getDocument().getCreated();}]]></xp:this.value>
+							</xp:text>
+							<br /> -->
+							<xp:text escape="true" id="computedField9"
+								disableTheme="true">
+								<xp:this.value><![CDATA[#{javascript:dataList.getDocument().getItemValueString("Author");}]]></xp:this.value>
+							</xp:text>
+						</xp:div>
+						<xp:div id="div9" styleClass="entryAuthor"
+							rendered="false">
+							<xp:text escape="true" id="computedField3"
+								disableTheme="true" value="#{dataList.Author}">
+							</xp:text>
+						</xp:div>
+					</xp:div>
+				</xp:div>
+			</xp:repeat>
+		</xp:panel>
+
+		
+		<xp:panel id="middleColumn" styleClass="column">
+			<xp:link escape="true" text="" id="link6" value="#{viewScope.baseUrl}popularDownloads.xsp">
+				<xp:text escape="true" id="computedField7" tagName="h1"
+					disableTheme="true" value="Popular">
+				</xp:text>
+			</xp:link>
+			<xp:repeat id="repeat2" rows="100" styleClass="entryList"
+				value="#{view2}" var="dataList" indexVar="dataIndex">
+				<xp:div id="div1" styleClass="entry">
+					<xp:link escape="true" text="" id="link1"
+						styleClass="entryLink">
+						<xp:this.value><![CDATA[#{javascript:var shortURL = getConfig(config, 'shortWidgetUrl');
+if(shortURL==null){
+	return viewScope.baseUrl+"snippet.xsp?id=" + dataList.getDocument().getItemValueString("Id");
+}else{
+	return shortURL + dataList.getDocument().getItemValueString("Id");
+}
+}]]></xp:this.value><xp:text escape="true" id="computedField5"
+							tagName="h3" disableTheme="true" value="#{dataList.Name}">
+						</xp:text>
+					</xp:link>
+					<xp:div id="div2" styleClass="entryBody">
+						<xp:link escape="true" text="" id="link4"
+							styleClass="entryLanguage">
+
+
+							<xp:this.value><![CDATA[#{javascript:var key = dataList.getDocument().getItemValueString("Id");
+if(view3.getEntryByKey(key)!=null){							
+viewScope.baseUrl+"snippetsByLanguage.xsp?cat="+view3.getEntryByKey(key).getColumnValues().elementAt(3);
+}else{
+return "geen key"
+}}]]></xp:this.value><xp:text escape="true" id="computedField2"
+								tagName="h3" disableTheme="true">
+								<xp:this.value><![CDATA[#{javascript:var key = dataList.getDocument().getItemValueString("Id");
+var ve = view3.getEntryByKey(key);
+if(ve!=null){	
+var lang = ve.getColumnValues().elementAt(3);
+return getShowAs(lang);
+}}]]></xp:this.value>
+							</xp:text>
+						</xp:link>
+
+						<xp:div id="div4" styleClass="entryText">
+							<!-- 
+							<xp:text escape="true" id="computedField7"
+								disableTheme="true">
+								<xp:this.value><![CDATA[#{javascript:"Added:" + dataList.getDocument().getCreated();}]]></xp:this.value>
+							</xp:text>
+							<br /> -->
+							<xp:text escape="true" id="computedField10"
+								disableTheme="true">
+								<xp:this.value><![CDATA[#{javascript:dataList.getColumnValue("Author");}]]></xp:this.value>
+							</xp:text>
+						</xp:div>
+						<xp:div id="div10" styleClass="entryAuthor"
+							rendered="false">
+							<xp:text escape="true" id="computedField8"
+								disableTheme="true" value="#{dataList.Author}">
+							</xp:text>
+						</xp:div>
+					</xp:div>
+				</xp:div>
+			</xp:repeat>
+		</xp:panel>
+	</xp:div>
+</xp:view>

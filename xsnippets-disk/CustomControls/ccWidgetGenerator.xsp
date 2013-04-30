@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.resources>
+		<xp:bundle src="/snippets.properties" var="config"></xp:bundle>
+		<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	<br></br>
+	<xp:label
+		value="Embed XSnippet">
+	</xp:label>
+	<br></br>
+	<br></br>
+	<xp:label
+		value="You can change the width and the height of the widget below and then copy the HTML code."
+		style="font-weight:normal">
+	</xp:label>
+	<br></br>
+	<br></br>
+
+
+		<xp:inputText id="htmlSnippet" style="height:30px;width:100%"
+			showReadonlyAsDisabled="true" readonly="true">
+			<xp:this.defaultValue><![CDATA[#{javascript:
+var snippetIdDefault = compositeData.snippetId;
+if (!compositeData.snippetId) snippetIdDefault = "snippetId";
+else if (compositeData.snippetId.equals("")) snippetIdDefault = "snippetId";
+ 
+var baseUrl = context.getUrl().toString();
+baseUrl = baseUrl.substring(0, baseUrl.indexOf(".nsf") + 4) + "/widget.xsp?id=";
+
+"<iframe frameborder='0' width='640' height='480' src='" + baseUrl + snippetIdDefault + "' scrolling='no'></iframe>"}]]></xp:this.defaultValue>
+			<xp:eventHandler event="onfocus" submit="false">
+				<xp:this.script><![CDATA[document.getElementById("#{id:htmlSnippet}").select()]]></xp:this.script>
+			</xp:eventHandler>
+			<xp:eventHandler event="onclick" submit="false">
+				<xp:this.script><![CDATA[document.getElementById("#{id:htmlSnippet}").select()]]></xp:this.script>
+			</xp:eventHandler>
+			<xp:eventHandler event="onchange" submit="false">
+				<xp:this.script><![CDATA[document.getElementById("#{id:htmlSnippet}").select()]]></xp:this.script>
+			</xp:eventHandler>
+			<xp:eventHandler event="onselect" submit="false">
+				<xp:this.script><![CDATA[document.getElementById("#{id:htmlSnippet}").select()]]></xp:this.script>
+			</xp:eventHandler>
+		</xp:inputText>
+
+	<br></br>
+	<br></br>
+	<xp:table style="width:400.0px">
+		<xp:tr>
+			<xp:this.rendered><![CDATA[#{javascript:if (!compositeData.snippetId) return true;
+if (compositeData.snippetId.equals("")) return true;
+return false;}]]></xp:this.rendered>
+			<xp:td style="width:100px">
+				<xp:label value="Snippet ID:" id="label1"></xp:label>
+			</xp:td>
+			<xp:td style="width:100px">
+				<xp:inputText id="snippetId" defaultValue="snippetId">
+					<xp:eventHandler event="onblur" submit="false">
+						<xp:this.script><![CDATA[updateHtmlSnippet();]]></xp:this.script>
+					</xp:eventHandler>
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td style="width:100px">
+				<xp:label value="Width:"></xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText id="width" defaultValue="640" style="width:50px;">
+					<xp:eventHandler event="onblur" submit="false">
+						<xp:this.script><![CDATA[updateHtmlSnippet();]]></xp:this.script>
+					</xp:eventHandler>
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Height:"></xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText id="height" defaultValue="480" style="width:50px;">
+					<xp:eventHandler event="onblur" submit="false">
+						<xp:this.script><![CDATA[updateHtmlSnippet();]]></xp:this.script>
+					</xp:eventHandler>
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+	</xp:table>
+
+	<xp:scriptBlock type="text/javascript">
+		<xp:this.value>
+			<![CDATA[	
+	
+	function updateHtmlSnippet() {
+		var snippetId = document.getElementById("#{id:snippetId}");
+		if (snippetId) snippetId = snippetId.value;
+		else {
+			snippetId = "#{javascript:compositeData.snippetId}";
+		}
+		var width = document.getElementById("#{id:width}").value;
+		var height = document.getElementById("#{id:height}").value;
+		var htmlSnippet = document.getElementById("#{id:htmlSnippet}").value;
+		
+		if (snippetId == "") {
+			snippetId = "snippetId";
+			document.getElementById("#{id:snippetId}").value = snippetId;
+		}
+		if (width == "") {
+			width = "640";
+			document.getElementById("#{id:width}").value = width;
+		}
+		if (height == "") {
+			height = "840";
+			document.getElementById("#{id:height}").value = height;
+		}
+		
+		htmlSnippet = htmlSnippet.substring(0, htmlSnippet.indexOf("id=") + 3) + snippetId + htmlSnippet.substring(htmlSnippet.lastIndexOf("iframe") - 19, htmlSnippet.length);
+		htmlSnippet = htmlSnippet.substring(0, htmlSnippet.indexOf("width") + 7) + width + htmlSnippet.substring(htmlSnippet.indexOf("height") - 2, htmlSnippet.length);
+		htmlSnippet = htmlSnippet.substring(0, htmlSnippet.indexOf("height") + 8) + height + htmlSnippet.substring(htmlSnippet.indexOf("src") - 2, htmlSnippet.length);
+	
+		document.getElementById("#{id:htmlSnippet}").value = htmlSnippet;
+	}
+	
+			]]>
+		</xp:this.value>
+	</xp:scriptBlock>
+</xp:view>

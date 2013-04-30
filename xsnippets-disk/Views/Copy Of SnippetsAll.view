@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C2257B5D004C1B27'>
+<noteinfo noteid='416' unid='DB937A22C96BFCE0C22579F3002FDCB7' sequence='7'>
+<created><datetime dst='true'>20120503T114246,95+03</datetime></created>
+<modified><datetime dst='true'>20130430T165119,02+03</datetime></modified>
+<revised><datetime dst='true'>20120516T043907,61-05</datetime></revised>
+<lastaccessed><datetime dst='true'>20130430T165119,02+03</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130430T165119,02+03</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
+>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+bgAFADwANwAHAAIABAAGAAgABAAJAAQASWROYW1lQXV0aG9yTGFuZ3VhZ2VUYWdzJENvbmZsaWN0
+JFJFRgAEAAQAAAAeAAUABABGb3JtAQAHAFNuaXBwZXQACgIEAAMABwAOAAgACUwxUzNTNFM=
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+DwABAABEgGYAAAACAElk
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQAFAAMACAAAAFZDAQACAAIAAAAAAGcAAQAACgAAAAAAAAAAAAICAAAAVkMAAAQABAAAAAAAUAAB
+AAAKAAAAAAAAAAAAAgIAAABWQwAABgAGAAAAAACuAAEAAAoAAAAAAAAAAAACAgAAAFZDAAAIAAgA
+AAAAAK4AAQAACgAAAAAAAAAAAAICAAAAVkMAAAQABAAAAAAArgABAAAKAAAAAAAAAAAAAgIAAABJ
+ZElkTmFtZU5hbWVBdXRob3JBdXRob3JMYW5ndWFnZUxhbmd1YWdlVGFnc1RhZ3MmAAEAAAABAQAJ
+AQAACgEBDgoAAAEArSsBAAEAAQAAAAAAAAAAAFdDAQEACQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA
+AP//AAAAAAAAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAA
+AAAAAAAAV0MBAQAJAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA//8AAAAAAAAAAAAAAAAAAFdDAQEA
+CQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAP//AAAAAAAAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAA
+AAAAAAAAAAAEAAAAAAD//wAAAAAAAAAAAAAAAAAAQgAQAAAAAQD///8ABQD///8AAQAAAAAAAAAA
+AAAAAAABAP///wABAP///wAAAAEAAAAAAAEAAAAAAAEAAAAAAAAACAAAAAAAAQA=
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$Flags'><text>Yw</text></item>
+<item name='$TITLE' sign='true'><text>Copy Of SnippetsAll</text></item></note>
+

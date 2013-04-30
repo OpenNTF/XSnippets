@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="426" sequence="15" unid="AE181E22B9089C65C22579F70034D588">
+<created><datetime dst="true">20120507T123705,36+03</datetime></created>
+<modified><datetime dst="true">20130430T165119,06+03</datetime></modified>
+<revised><datetime dst="true">20120516T044010,98-05</datetime></revised>
+<lastaccessed><datetime dst="true">20130430T165119,06+03</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130430T165119,06+03</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<item name="$Comment"><text>version 2.0Beta (20120505)</text></item>
+<item name="$TITLE"><text>xiComments.xsp</text></item>
+<item name="$Flags"><text>gC~4;</text></item>
+
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>xiComments.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+</note>

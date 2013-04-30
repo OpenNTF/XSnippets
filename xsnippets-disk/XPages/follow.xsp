@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xc:ccOneUILayout id="cconeuilayout"
+		navigationPath="/Follow" 
+		defaultNavigationPath="/Follow">
+		<xp:this.facets>
+			<xp:panel xp:key="LeftColumn" id="panel4">
+				<xc:ccOneUILeft id="ccLeftOneUI"></xc:ccOneUILeft>
+			</xp:panel>
+			
+		</xp:this.facets>
+		
+		<xp:label
+			value="You can follow XSnippets via feeds and the XSnippets widget.">
+		</xp:label>
+		<br></br><br></br>
+		<xp:link
+			value="http://openntf.org/XSnippets.nsf/feedRecentAll.xsp"
+			text="Atom Feed">
+		</xp:link>
+		<br></br><br></br>
+		<xp:link
+			value="http://openntf.org/XSnippets.nsf/feedRecentAll.xsp?format=rss"
+			text="RSS Feed">
+		</xp:link>
+		<br></br><br></br><br></br>
+		<xp:label
+			value="The widget can be embedded in blogs and other web sites to display the most recently added and most popular snippets and snippets by a certain author. ">
+		</xp:label>
+		<xp:link
+			value="http://openntf.org/XSnippets.nsf/snippet.xsp?id=xsnippets-widget"
+			text="Download the widget.">
+		</xp:link>
+		<br></br><br></br>
+		<xp:label
+			value="Live Widget:">
+		</xp:label>
+		<br></br><br></br>
+		<div id="xsnippets"></div>
+		<script src="http://openntf.org/XSnippets.nsf/XSnippets.js"
+			type="text/javascript"></script>
+		<style>		
+.innerDiv {
+	overflow-y:hidden;
+	margin-top:5px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:5px;
+}
+
+.outerDiv {
+	overflow-y:hidden;
+}
+
+.xSnippetsEntries {
+    font-size: medium;
+}
+
+.xSnippetEntry {
+	margin-bottom:10px;
+}
+
+.xSnippetEntry a, .xSnippetEntry a:visited {
+    color: #105CB6;
+    font: 0.75em Arial,Helvetica,sans-serif;
+    text-decoration: none;
+}
+
+.developer {
+	margin-top:1px;
+	font: 0.75em Arial,Helvetica,sans-serif;
+}		
+		</style>
+		<script type="text/javascript">
+			xSnippetsHeight = 500; // default: 400
+			xSnippetsWidth = 300; // default: 200
+			xSnippetsCount = 20; // default: 10
+			xSnippetsView = "recent"; // default: "recent";  
+		</script> 
+	</xc:ccOneUILayout>
+</xp:view>

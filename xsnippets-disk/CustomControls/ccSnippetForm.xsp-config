@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>ccSnippetForm</component-type>
+    <composite-name>ccSnippetForm</composite-name>
+    <composite-file>/ccSnippetForm.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>snippetId</property-name>
+      <property-class>string</property-class>
+      <display-name>Snippet ID</display-name>
+    </property>
+    <property>
+      <property-name>mode</property-name>
+      <property-class>string</property-class>
+      <display-name>View Mode (edit, preview)</display-name>
+      <property-extension>
+        <designer-extension>
+          <editor>com.ibm.workplace.designer.property.editors.comboParameterEditor</editor>
+          <editor-parameter>edit&#xd;
+preview</editor-parameter>
+          <default-value/>
+        </designer-extension>
+      </property-extension>
+    </property>
+  </composite-component>
+</faces-config>

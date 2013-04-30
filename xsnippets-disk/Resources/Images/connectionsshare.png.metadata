@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="362" sequence="7" unid="6E691D6E88B8E1E6C22579F1005B55C1">
+<created><datetime dst="true">20120501T193737,29+03</datetime></created>
+<modified><datetime dst="true">20130430T165118,57+03</datetime></modified>
+<revised><datetime dst="true">20120516T043907,28-05</datetime></revised>
+<lastaccessed><datetime dst="true">20130430T165118,57+03</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130430T165118,57+03</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<item name="$TITLE"><text>connectionsshare.png</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime>20111219T034646,06-05</datetime></item>
+<item name="$ImageNames" sign="true"><text>connectionsshare.png</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$EditFilePath"><text>C:\Users\SBASEG~1\AppData\Local\Temp\notesFFF692\~connectionsshare.png</text></item>
+<item name="$Flags"><text>34CiQ</text></item></note>

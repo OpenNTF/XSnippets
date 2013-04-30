@@ -1,0 +1,5 @@
+.commentListSubHeader {color:#105CB6 !important; }
+
+a.commentNewAction:visited, a.commentNewAction:link { color:#105CB6 !important;}
+.commentListSubHeader a:visited, .commentListSubHeader a:link {color:#105CB6 !important; text-decoration:none;}
+.commentListSubHeader a:hover {text-decoration:underline;}

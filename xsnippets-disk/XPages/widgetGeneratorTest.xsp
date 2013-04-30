@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	style="padding-left:10.0px;padding-top:10.0px">
+
+	<!--
+		<xc:ccWidgetGenerator snippetId="0677155B7D75602E8525792600256642"></xc:ccWidgetGenerator>
+	-->
+
+	<xc:ccWidgetGenerator></xc:ccWidgetGenerator>
+
+</xp:view>

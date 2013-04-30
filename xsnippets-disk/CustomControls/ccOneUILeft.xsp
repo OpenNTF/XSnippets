@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xe:navigator id="outline" style="margin-top:5px">
+		<xe:this.treeNodes>
+			<xe:pageTreeNode label="XSnippets Home" page="/home.xsp" selected="/Home"></xe:pageTreeNode>
+			<xe:pageTreeNode label="My Favorites" page="/snippetsFavorites.xsp" selected="/View/Favorites"></xe:pageTreeNode>
+			<xe:pageTreeNode label="XSnippets by Popularity" page="/popularDownloads.xsp" selected="/View/Popularity"></xe:pageTreeNode>
+			<xe:pageTreeNode label="Best rated XSnippets" page="/snippetsByRating.xsp" selected="/View/Rating"></xe:pageTreeNode>
+			<xe:pageTreeNode label="Most recent XSnippets" page="/snippetsByDate.xsp" selected="/View/Date"></xe:pageTreeNode>
+			<xe:pageTreeNode label="XSnippets by Language" page="/snippetsByLanguage.xsp" selected="/View/Language"></xe:pageTreeNode>
+			<xe:pageTreeNode label="XSnippets by Author" page="/snippetsByAuthor.xsp" selected="/View/Author"></xe:pageTreeNode>
+			<xe:separatorTreeNode></xe:separatorTreeNode>
+			<xe:pageTreeNode page="/newSnippet.xsp" selected="/NewSnippet" label="Create XSnippet"></xe:pageTreeNode>
+			<xe:separatorTreeNode></xe:separatorTreeNode>
+			<xe:pageTreeNode page="/follow.xsp" selected="/Follow" label="Follow XSnippets"></xe:pageTreeNode>
+		</xe:this.treeNodes>
+	</xe:navigator>
+	<xc:ccCustomLinks></xc:ccCustomLinks>
+	<xc:ccFavorites></xc:ccFavorites>
+</xp:view>

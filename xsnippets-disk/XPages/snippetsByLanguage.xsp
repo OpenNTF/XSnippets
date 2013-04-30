@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xc:ccCodeResources></xc:ccCodeResources>
+	<xp:this.beforePageLoad><![CDATA[#{javascript:if(sessionScope.languageCategories==null) {
+	v = @Unique(@DbColumn(@DbName(),"SnippetsCategories", 1)) || "";
+	if(typeof v == "string"){
+		v=[v];
+	}
+	
+	sessionScope.languageCategories=v;
+} 
+
+if(sessionScope.languageCategory!=null && @IsMember(sessionScope.languageCategory, sessionScope.languageCategories)) {
+	//We know he category, do nothing..
+} else {
+	sessionScope.languageCategory=sessionScope.languageCategories[0];
+}
+
+if(param.cat!=null && @IsMember(param.cat, sessionScope.languageCategories)){
+	sessionScope.languageCategory = param.cat;
+}
+}]]></xp:this.beforePageLoad>
+	<xc:ccOneUILayout id="cconeuilayout"
+		defaultNavigationPath="/Home" navigationPath="/View/Language">
+		<xp:this.facets>
+			<xp:panel xp:key="LeftColumn" id="panel4">
+				<xc:ccOneUILeft></xc:ccOneUILeft>
+			</xp:panel>
+		
+		</xp:this.facets>
+		
+		<xe:pagerSaveState id="pagerSaveState1" for="viewPanel1"
+				globalRows="true">
+			</xe:pagerSaveState>
+		
+		<xp:label value="Language: "></xp:label>
+		<xp:comboBox id="comboBox1" value="#{sessionScope.languageCategory}">
+			<xp:selectItems value="#{sessionScope.languageCategories}"></xp:selectItems>
+			<xp:eventHandler event="onchange" submit="true"
+				refreshMode="partial" refreshId="viewPanel1">
+			</xp:eventHandler>
+		</xp:comboBox>
+		<xp:viewPanel rows="30" id="viewPanel1" var="viewItem">
+			<xp:this.facets>
+				<xp:pager partialRefresh="true" layout="Previous Group Next" xp:key="footerPager" id="pager1"></xp:pager>
+			</xp:this.facets>
+			<xp:this.data>
+				<xp:dominoView var="view1" viewName="SnippetsByLanguage" categoryFilter="#{sessionScope.languageCategory}"></xp:dominoView>
+			</xp:this.data>
+			<xp:viewColumn columnName="Name" id="viewColumn2" displayAs="link">
+				<xp:this.pageUrl><![CDATA[#{javascript:var shortURL = getConfig(config, 'shortWidgetUrl');
+if(shortURL==null){
+	return "snippet.xsp?id=" + viewItem.getColumnValue("Id");
+}else{
+	return shortURL + viewItem.getColumnValue("Id");
+}}]]></xp:this.pageUrl>
+				<xp:viewColumnHeader value="Name" id="viewColumnHeader2"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="DisplayNotes" id="viewColumn6">
+				<xp:viewColumnHeader value="Notes" id="viewColumnHeader6"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="Author" id="viewColumn3">
+				<xp:viewColumnHeader value="Author" id="viewColumnHeader3"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="DateCreated" id="viewColumn4">
+				<xp:viewColumnHeader value="Date" id="viewColumnHeader4"></xp:viewColumnHeader>
+			</xp:viewColumn>
+		</xp:viewPanel>
+	</xc:ccOneUILayout>
+
+</xp:view>

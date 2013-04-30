@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	
+	<style>
+.formStyle {
+	border:none;
+}
+.lotusFormFieldRow {
+	margin-bottom:5px;
+}
+	</style>
+	<xp:this.resources>
+		<xp:bundle src="/snippets.properties" var="config"></xp:bundle>
+		<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="Profile"
+			ignoreRequestParams="true" action="editDocument">
+			<xp:this.documentId><![CDATA[#{javascript:
+var user = param.user;
+if(user != null && user != ""){
+	var view = database.getView("Profiles");
+	var entry = view.getEntryByKey(user, true);
+	return (entry != null)?entry.getUniversalID():"";
+} else {
+	return "";
+}			
+}]]></xp:this.documentId>
+
+			<xp:this.querySaveDocument><![CDATA[#{javascript:
+var currentUser = @Name("[CN]", @UserName());			
+if(!currentUser == param.user) return false;
+document1.replaceItemValue("Author", currentUser);
+document1.replaceItemValue("PersonName", currentUser);
+}]]></xp:this.querySaveDocument>
+			<xp:this.postSaveDocument><![CDATA[#{javascript:context.redirectToPage(compositeData.pageAfterSave)}]]></xp:this.postSaveDocument>
+			<xp:this.queryNewDocument><![CDATA[#{javascript:
+var currentUser = @Name("[CN]", @UserName());			
+if(currentUser == param.user) {			
+	return true;
+} else {
+	context.redirectToPage("home.xsp");
+}	
+}]]></xp:this.queryNewDocument>
+			<xp:this.queryOpenDocument><![CDATA[#{javascript:
+var currentUser = @Name("[CN]", @UserName());			
+if(currentUser == param.user) {			
+	return true;
+} else {
+	context.redirectToPage("home.xsp");
+}				
+			
+			}]]></xp:this.queryOpenDocument>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xp:panel id="formpanel">
+		<xe:formTable id="formTable1" xp:key="form" formDescription=""
+			labelWidth="120px" labelPosition="left" fieldHelp="false"
+			disableErrorSummary="true" styleClass="formStyle">
+			<xp:this.facets>
+				<xp:panel xp:key="footer" id="panel1">
+					<xp:callback facetName="buttons"
+						id="buttonCallback">
+					</xp:callback>
+				</xp:panel>
+			</xp:this.facets>
+			<xe:formRow id="formRow4" label="Default Profile Label"
+				for="defaultProfileLabel">
+				<xp:inputText id="defaultProfileLabel"
+					value="#{document1.DefaultProfileLabel}" required="true"
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.validators>
+						<xp:validateRequired
+							message="Please define your default profile label.">
+						</xp:validateRequired>
+						<xp:validateLength maximum="50"
+							message="The default profile lable should be less than 50 characters.">
+						</xp:validateLength>
+					</xp:this.validators>
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow1" label="Default Profile Url"
+				for="defaultProfileUrl">
+				<xp:inputText id="defaultProfileUrl"
+					value="#{document1.DefaultProfileUrl}" required="true"
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.validators>
+						<xp:validateRequired
+							message="Please define your default profile URL.">
+						</xp:validateRequired>
+						<xp:validateLength maximum="128"
+							message="The default profile URL should be less than 128 characters.">
+						</xp:validateLength>
+					</xp:this.validators>
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow2" label="Profile 2 Label"
+				for="inputText1">
+				<xp:inputText id="inputText1"
+					value="#{document1.ProfileLabel2}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow3" label="Profile 2 Url"
+				for="inputText2">
+				<xp:inputText id="inputText2"
+					value="#{document1.ProfileUrl2}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+
+			<xe:formRow id="formRow5" label="Profile 3 Label"
+				for="inputText1">
+				<xp:inputText id="inputText3"
+					value="#{document1.ProfileLabel3}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow6" label="Profile 3 Url"
+				for="inputText2">
+				<xp:inputText id="inputText4"
+					value="#{document1.ProfileUrl3}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+
+			<xe:formRow id="formRow7" label="Profile 4 Label"
+				for="inputText1">
+				<xp:inputText id="inputText5"
+					value="#{document1.ProfileLabel4}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow8" label="Profile 4 Url"
+				for="inputText2">
+				<xp:inputText id="inputText6"
+					value="#{document1.ProfileUrl4}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+
+			<xe:formRow id="formRow9" label="Profile 5 Label"
+				for="inputText1">
+				<xp:inputText id="inputText7"
+					value="#{document1.ProfileLabel5}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow10" label="Profile 5 Url"
+				for="inputText2">
+				<xp:inputText id="inputText8"
+					value="#{document1.ProfileUrl5}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+
+			<xe:formRow id="formRow11" label="Profile 6 Label"
+				for="inputText1">
+				<xp:inputText id="inputText9"
+					value="#{document1.ProfileLabel6}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow12" label="Profile 6 Url"
+				for="inputText2">
+				<xp:inputText id="inputText10"
+					value="#{document1.ProfileUrl6}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+
+			<xe:formRow id="formRow13" label="Profile 7 Label"
+				for="inputText1">
+				<xp:inputText id="inputText11"
+					value="#{document1.ProfileLabel7}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow14" label="Profile 7 Url"
+				for="inputText2">
+				<xp:inputText id="inputText12"
+					value="#{document1.ProfileUrl7}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+
+			<xe:formRow id="formRow15" label="Profile 8 Label"
+				for="inputText1">
+				<xp:inputText id="inputText13"
+					value="#{document1.ProfileLabel8}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow16" label="Profile 8 Url"
+				for="inputText2">
+				<xp:inputText id="inputText14"
+					value="#{document1.ProfileUrl8}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+
+			<xe:formRow id="formRow17" label="Profile 9 Label"
+				for="inputText1">
+				<xp:inputText id="inputText15"
+					value="#{document1.ProfileLabel9}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow18" label="Profile 9 Url"
+				for="inputText2">
+				<xp:inputText id="inputText16"
+					value="#{document1.ProfileUrl9}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+
+			<xe:formRow id="formRow19" label="Profile 10 Label"
+				for="inputText1">
+				<xp:inputText id="inputText17"
+					value="#{document1.ProfileLabel10}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow20" label="Profile 10 Url"
+				for="inputText2">
+				<xp:inputText id="inputText18"
+					value="#{document1.ProfileUrl10}" 
+					disableClientSideValidation="true" style="width:400px">
+					<xp:this.attrs>
+						<xp:attr name="spellcheck" value="false"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xe:formRow>
+
+		</xe:formTable>
+		<br></br>
+		<xp:button value="Save" id="button3">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete" immediate="false" save="true">
+			</xp:eventHandler>
+		</xp:button>
+		<xp:button value="Cancel" id="button2">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete" immediate="true" save="false">
+				<xp:this.action>
+					<xp:openPage name="$$PreviousPage"></xp:openPage>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+	</xp:panel>
+</xp:view>

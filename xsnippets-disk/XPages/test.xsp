@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xe:facebookClient id="facebookClient1" rendered="true"></xe:facebookClient>
+	<xe:facebookComments id="facebookComments1" width="600" rendered="true"
+		href="http://openntf.org/XSnippets.nsf/snippet.xsp?id=typeahead-onstartoncomplete-event">
+	</xe:facebookComments>
+</xp:view>

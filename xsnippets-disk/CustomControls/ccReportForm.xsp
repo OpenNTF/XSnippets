@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:button value="Report" id="reportButton">
+		<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="reportButton">
+			<xp:this.action><![CDATA[#{javascript:getComponent("reportDialog").show();}]]></xp:this.action>
+		</xp:eventHandler>
+	</xp:button>
+	<xe:dialog id="reportDialog" title="Report Snippet">
+		<xp:panel style="padding:20px;" id="reportPanel">
+<!--			<xp:form> -->
+				<xe:formTable id="formTable1" style="width:500px; height:350px;" labelWidth="150px" labelPosition="left"
+					disableErrorSummary="true">
+					<xp:this.facets>
+						<xp:panel xp:key="footer">
+							<xp:button value="Submit" id="button1">
+								<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="reportPanel"
+									immediate="false" save="true">
+									<xp:this.action><![CDATA[#{javascript:sendReport(compositeData.snippetNoteId, viewScope.reportReason, viewScope.reportDetail);
+getComponent("reportDialog").hide();}]]></xp:this.action>
+								</xp:eventHandler>
+							</xp:button>
+						</xp:panel>
+					</xp:this.facets>
+					<xe:formRow id="formRow1" label="Reason:" for="comboBox1">
+						<xp:comboBox id="comboBox1" value="#{viewScope.reportReason}" disableClientSideValidation="true">
+							<xp:this.validators>
+								<xp:validateRequired message="Please provide a reason..."></xp:validateRequired>
+							</xp:this.validators>
+							<xp:selectItems>
+								<xp:this.value><![CDATA[#{javascript:"Select a reason|"}]]></xp:this.value>
+							</xp:selectItems>
+							<xp:selectItems>
+								<xp:this.value><![CDATA[#{javascript:@Explode(getConfig(config, "reportReasons"), ";")}]]></xp:this.value>
+							</xp:selectItems>
+						</xp:comboBox>
+					</xe:formRow>
+					<xe:formRow id="formRow4" label="Detail:" for="inputTextarea1">
+						<xp:inputTextarea id="inputTextarea1" style="width:400.0px;height:200px" value="#{viewScope.reportDetail}" required="true"
+							disableClientSideValidation="true">
+							<xp:this.validators>
+								<xp:validateRequired message="Please provide some details..."></xp:validateRequired>
+								<xp:validateLength maximum="32000" message="Detail should be less than 32K..."></xp:validateLength>
+							</xp:this.validators>
+						</xp:inputTextarea>
+					</xe:formRow>
+				</xe:formTable>
+<!--			</xp:form>-->
+		</xp:panel>
+	</xe:dialog>	
+</xp:view>

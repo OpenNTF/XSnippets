@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<Module> 
+<ModulePrefs title="XPage">  	 
+</ModulePrefs> 
+<UserPref name="contextualData" display_name="contextualData" datatype="hidden" default_value="{}"> 
+</UserPref> 
+<Content type="html" view="default"> 
+	<![CDATA[ 
+	<script type="text/javascript">
+	  
+		function byId__MODULE_ID__(id) {
+			return dojo.byId(id + "__MODULE_ID__");
+		}
+		    
+		function onload__MODULE_ID__() {
+			var xPageUrl = getData__MODULE_ID__();
+			byId__MODULE_ID__("xPage").src = xPageUrl;
+	    }
+	    
+		function getData__MODULE_ID__() {
+			var prefs__MODULE_ID__ = new gadgets.Prefs(__MODULE_ID__);
+			var dataStr = prefs__MODULE_ID__.getString("contextualData");
+			dataStr = gadgets.util.unescapeString(dataStr);
+			var data = gadgets.json.parse(dataStr);
+			return data.xPageUrl;
+		}
+		    
+		onload__MODULE_ID__();
+
+	</script>
+
+	<iframe width="500px" height="700px" scrolling="no" frameborder="0" id="xPage__MODULE_ID__" src=""></iframe>
+	]]> 
+</Content> 
+</Module>
+
+

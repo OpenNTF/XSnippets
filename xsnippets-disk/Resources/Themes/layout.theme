@@ -1,0 +1,90 @@
+<!--
+	The default theme contents use theme inheritance.
+
+	Application themes can extend an existing global theme using the
+	extends attribute.  Existing themes include the following options:
+
+	1. webstandard 2. oneui 3. notes
+-->
+<theme extends="oneuiv2.1">
+	<!-- 
+		Use this pattern to include resources (such as style sheets
+		and JavaScript files that are used by this theme.
+	-->
+	<resource target="xsp">
+		<content-type>application/x-javascript</content-type>
+		<href>SnippetCSJS.js</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>theme.css</href>
+	</resource>
+
+	<!--
+		Use this pattern to define property name/value pairs for controls
+	-->
+	<!--
+	<control>
+		<name>[Control Name]</name>
+		<property>
+			<name>[property Name]</name>
+			<value>[property Value]</value>
+		</property>
+	</control>
+	-->
+	<control override="false">
+		<name>ViewRoot</name>
+		<property>
+			<name>pageTitle</name>
+			<value>OpenNTF XSnippets - Code Snippets for IBM XPages Development</value>
+		</property>
+	</control>
+	<control override="false">
+		<name>ViewRoot</name>
+		<property>
+			<name>pageIcon</name>
+			<value>favicon.ico</value>
+		</property>
+	</control>
+	<!-- Label -->
+	<control>
+		<name>Text.Label</name>
+		<property>
+			<name>style</name>
+			<value>font-weight:bold;</value>
+		</property>
+	</control>
+	
+	<control>
+		<name>InputField.EditBox</name>
+		<property>
+			<name>style</name>
+			<value>width:300px</value>
+		</property>
+	</control>
+	
+	<!-- Commented by Serdar - 20120213 -->
+<!--	<control>-->
+<!--		<name>InputField.TextArea</name>-->
+<!--		<property>-->
+<!--			<name>style</name>-->
+<!--			<value>width:960px;height:300px</value>-->
+<!--		</property>-->
+<!--	</control>-->
+
+	<control target="xsp" override="true">
+		<name>InputField.FileUpload</name>
+		<property mode='override'>
+			<name>styleClass</name>
+			<value>lotusBtn</value>
+		</property>
+	</control>
+	
+	<control target="xsp" override="true">
+ 		<name>Text.ComputedField</name>
+ 		<property mode='concat'> 
+  			<name>styleClass</name>
+  			<value>computed</value>
+ 		</property>
+	</control>
+</theme>

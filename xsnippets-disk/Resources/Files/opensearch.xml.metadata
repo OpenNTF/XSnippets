@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="3ce" sequence="13" unid="03D26AA30B73413CC22579F20047DB07">
+<created><datetime dst="true">20120502T160451,27+03</datetime></created>
+<modified><datetime dst="true">20130430T165118,84+03</datetime></modified>
+<revised><datetime dst="true">20120516T043925,48-05</datetime></revised>
+<lastaccessed><datetime dst="true">20130430T165118,84+03</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130430T165118,84+03</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<item name="$TITLE"><text>opensearch.xml</text></item>
+<item name="$MimeCharSet"><text>UTF-8</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>opensearch.xml</text></item>
+<item name="$Flags"><text>345CgQP</text></item></note>

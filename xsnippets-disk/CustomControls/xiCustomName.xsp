@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+// xInvolve Project - xiCustomName Custom Control
+// Version: 2.00 - 2012.02.13
+// Developer: Serdar Basegmez, Developi Information Systems, http://lotusnotus.com/en
+//
+// Note: This control will not be updated unless otherwise stated.
+//
+// xiCustomName can be used to User Name integration via Connections/Sametime/etc.
+ -->
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<!-- Following custom control has been added for OpenNTF XSnippets Profiles... -->
+	<xc:ccPersonWithProfiles editProfilePage="editProfile.xsp" personName="#{compositeData.userName}"></xc:ccPersonWithProfiles>
+<!--	<xp:text value="#{compositeData.userName}" escape="true" tagName="div" disableTheme="true"></xp:text>-->
+</xp:view>

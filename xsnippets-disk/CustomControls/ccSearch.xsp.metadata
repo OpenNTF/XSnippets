@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="226" sequence="304" unid="FC39336FA01EFE3AC22579F1007A4A40">
+<created><datetime dst="true">20120502T011544,00+03</datetime></created>
+<modified><datetime dst="true">20130430T165117,78+03</datetime></modified>
+<revised><datetime dst="true">20120516T043904,58-05</datetime></revised>
+<lastaccessed><datetime dst="true">20130430T165117,78+03</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130430T165117,78+03</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<item name="$Flags"><text>gC~4;</text></item>
+<item name="$TITLE"><text>ccSearch.xsp</text></item>
+
+
+
+<item name="$DesignerVersion"><text>8.5.1</text></item>
+
+
+
+
+<item name="$FileNames" sign="true"><text>ccSearch.xsp</text></item>
+
+</note>

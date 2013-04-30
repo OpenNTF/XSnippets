@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>xiAddToFavorites</component-type>
+    <composite-name>xiAddToFavorites</composite-name>
+    <composite-file>/xiAddToFavorites.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+        <render-markup>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xd;
+&lt;xp:view xmlns:xp="http://www.ibm.com/xsp/core"&gt;&#xd;
+------ xInvolve: Favorites Custom Control ------&#xd;
+&lt;/xp:view&gt;</render-markup>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>ccId</property-name>
+      <property-class>string</property-class>
+      <display-name>Unique ID for custom control</display-name>
+      <property-extension>
+        <required>true</required>
+        <designer-extension>
+          <validation-formula/>
+        </designer-extension>
+      </property-extension>
+      <description>Unique Identification for the custom control. Required!</description>
+    </property>
+    <property>
+      <property-name>interactionDB</property-name>
+      <property-class>string</property-class>
+      <display-name>Interaction Database File Path</display-name>
+      <property-extension>
+        <required>false</required>
+      </property-extension>
+      <description>The file path string for the interaction database.</description>
+    </property>
+    <property>
+      <property-name>iId</property-name>
+      <property-class>string</property-class>
+      <display-name>Identifier</display-name>
+      <description>Identifier for interaction documents. Required</description>
+      <property-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>hintValue</property-name>
+      <property-class>string</property-class>
+      <display-name>Hint Value for the item</display-name>
+      <description>Hint value will be saved inside favorite interaction document. Later, you may use it in my favorites custom control.</description>
+    </property>
+    <property>
+      <property-name>hideError</property-name>
+      <property-class>boolean</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>false</default-value>
+        </designer-extension>
+      </property-extension>
+      <description>If any error occured, you can hide entire control by setting this parameter true.</description>
+      <display-name>Hide UI Errors</display-name>
+    </property>
+    <property>
+      <property-name>text_AuthorizeFirst</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <localizable>true</localizable>
+        <collection-property>false</collection-property>
+      </property-extension>
+      <description>Anonymous users will be displayed this message when they try to click.</description>
+      <display-name>Text - Authorize First</display-name>
+    </property>
+    <property>
+      <property-name>text_AddDescription</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <localizable>true</localizable>
+        <collection-property>false</collection-property>
+      </property-extension>
+      <description>This will be the firstline for the tooltip of "Add To Favorites" link</description>
+      <display-name>Text - Add Description</display-name>
+    </property>
+    <property>
+      <property-name>text_RemoveDescription</property-name>
+      <property-class>string</property-class>
+      <display-name>Text - Remove Description</display-name>
+      <description>This will be the first line for the tooltip on "Remove From Favorites" link</description>
+    </property>
+    <property>
+      <property-name>img_AddToFavorites</property-name>
+      <property-class>string</property-class>
+      <display-name>Image - Add To Favorites</display-name>
+      <property-extension>
+        <designer-extension>
+          <editor>com.ibm.workplace.designer.property.editors.ImagePicker</editor>
+        </designer-extension>
+      </property-extension>
+      <description>This is the image to be displayed when the content is not in the favorites.</description>
+    </property>
+    <property>
+      <property-name>img_RemoveFromFavorites</property-name>
+      <property-class>string</property-class>
+      <display-name>Image - Remove From Favorites</display-name>
+      <property-extension>
+        <designer-extension>
+          <editor>com.ibm.workplace.designer.property.editors.ImagePicker</editor>
+        </designer-extension>
+      </property-extension>
+      <description>This is the image to be displayed when the content is in the favorites.</description>
+    </property>
+    <property>
+      <property-name>listContainerId</property-name>
+      <property-class>string</property-class>
+      <display-name>Client side id of the My Favorites container</display-name>
+      <description>If specified, favorite actions will refresh this container with given client-side id. Can be used if 'My favorites' control is on the same page.</description>
+    </property>
+    <property>
+      <property-name>text_NoFavorites</property-name>
+      <property-class>string</property-class>
+      <display-name>Text - No Favorites</display-name>
+      <description>If the content has not been marked by anyone, this string will be displayed in the tooltip.</description>
+    </property>
+    <property>
+      <property-name>text_Favorited</property-name>
+      <property-class>string</property-class>
+      <description>If the content has been marked by others, this string will be displayed in the tooltip. %1 for the number of users, %2 for the list of users splitted by "&lt;br/&gt;".</description>
+    </property>
+  </composite-component>
+</faces-config>

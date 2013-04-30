@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:panel>
+		<xp:this.rendered><![CDATA[#{javascript:@UserName()=="Anonymous"}]]></xp:this.rendered>
+		<xp:label value="Please log in first."></xp:label>
+	</xp:panel>
+
+	<xp:panel>
+		<xp:this.rendered><![CDATA[#{javascript:@UserName()!="Anonymous"}]]></xp:this.rendered>
+		<xp:label
+			value="Only users who have executed an ICLA or CCLA may create snippets.">
+		</xp:label>
+		<br></br>
+		<br></br>
+		<xp:link value="http://openntf.org/Internal/home.nsf/dx/Get_Involved"
+			text="Learn more about the OpenNTF contribution process.">
+		</xp:link>
+	</xp:panel>
+</xp:view>

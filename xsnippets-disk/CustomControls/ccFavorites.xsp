@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xc:xiMyFavorites hideRepeat="true"></xc:xiMyFavorites>
+	<xp:panel id="myFavorites">
+		<xe:navigator id="navigator1" expandable="true" expandEffect="wipe">
+			<xe:this.treeNodes>
+				<xe:basicContainerNode label="My Favorites">
+					<xe:this.children>
+						<xe:repeatTreeNode indexVar="favIndex" var="favEntry">
+							<xe:this.value><![CDATA[#{javascript:sessionScope.get("xInvolveMyFavorites")}]]></xe:this.value>
+							<xe:this.children>
+								<xe:basicLeafNode label="#{javascript:favEntry.hint}">
+									<xe:this.href><![CDATA[#{javascript:baseRef=context.getUrl().toString().split(view.getPageName())[0];
+		baseRef+"/snippet.xsp?id="+favEntry.id}]]></xe:this.href>
+								</xe:basicLeafNode>
+							</xe:this.children>
+						</xe:repeatTreeNode>
+					</xe:this.children>
+				</xe:basicContainerNode>
+			</xe:this.treeNodes>
+		</xe:navigator>
+	</xp:panel>
+</xp:view>
