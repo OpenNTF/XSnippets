@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 	<xp:this.resources>
-		<xp:bundle src="/snippets.properties" var="config"></xp:bundle>
 		<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
 	<br></br>

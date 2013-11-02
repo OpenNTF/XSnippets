@@ -3,7 +3,6 @@
 	xmlns:xe="http://www.ibm.com/xsp/coreex"
 	xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:this.resources>
-		<xp:bundle src="/snippets.properties" var="config"></xp:bundle>
 		<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
 		<xp:linkResource href="./feedRecentAll.xsp" type="application/atom+xml" title="Atom feed for all snippets" rel="alternate"></xp:linkResource>
 		<xp:linkResource href="./feedRecentAll.xsp?format=rss" type="application/rss+xml" title="RSS feed for all snippets" rel="alternate"></xp:linkResource>

@@ -19,7 +19,6 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
 	<xp:this.resources>
 		<xp:script src="/xpNewsFeedGenerator.jss" clientSide="false"></xp:script>
-		<xp:bundle src="/snippets.properties" var="config"></xp:bundle>
 		<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
 	<xp:this.afterRenderResponse><![CDATA[#{javascript:

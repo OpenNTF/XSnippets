@@ -10,7 +10,6 @@ height: 1px;
 	</style>
 
 	<xp:this.resources>
-		<xp:bundle src="/snippets.properties" var="config"></xp:bundle>
 		<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
 
