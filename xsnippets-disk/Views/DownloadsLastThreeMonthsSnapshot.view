@@ -1,16 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='13e' unid='35B51EEFBF9AE7AE85257927002F75D7' sequence='29'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C2257B5D004C1B27'>
+<noteinfo noteid='13e' unid='35B51EEFBF9AE7AE85257927002F75D7' sequence='30'>
 <created><datetime dst='true'>20111012T043823,59-04</datetime></created>
-<modified><datetime dst='true'>20130430T165117,21+03</datetime></modified>
-<revised><datetime dst='true'>20120516T043909,92-05</datetime></revised>
-<lastaccessed><datetime dst='true'>20130430T165117,21+03</datetime></lastaccessed>
+<modified><datetime dst='true'>20130430T195508,22+03</datetime></modified>
+<revised><datetime dst='true'>20130430T195508,21+03</datetime></revised>
+<lastaccessed><datetime>20131102T104635,58+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130430T165117,21+03</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=René Winkelmeyer/O=rwnotes</name><name
 >CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=NotesOSS2/O=NotesOSS</name><name
 >CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
+<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>DownloadsLastThreeMonthsSnapshot</text></item>
 <item name='$Index' sign='true'><text/></item>

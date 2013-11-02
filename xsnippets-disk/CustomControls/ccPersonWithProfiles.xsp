@@ -20,8 +20,8 @@ height: 1px;
 var profiles = profilesBean.getProfiles(compositeData.personName);
 
 if (profiles == null) {
-	var u = getConfig(config, 'profileUrl');
-	if (u == null) {
+	var u = configUtil['profileUrl'];
+	if ("".equals(u)) {
 		var newProfile = new org.openntf.profiles.UserProfile(compositeData.personName, "No Profile found", "http://openntf.org");
 		profiles = new java.util.ArrayList();
 		profiles.add(newProfile);

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4b6" sequence="7" unid="C655C2573AE91DB9C2257B5D005B439E">
+<created><datetime dst="true">20130430T193650,86+03</datetime></created>
+<modified><datetime dst="true">20130430T195512,13+03</datetime></modified>
+<revised><datetime dst="true">20130430T195512,12+03</datetime></revised>
+<lastaccessed><datetime dst="true">20130430T195512,13+03</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130430T193650,88+03</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
+<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>org/openntf/profiles/Profiles.java</text></item>
+
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>org/openntf/profiles/Profiles.java</text></item>
+
+</note>

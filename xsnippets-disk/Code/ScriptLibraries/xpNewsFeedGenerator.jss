@@ -380,14 +380,7 @@ function NotesDataService()
 //			feedEntry["Link"] = colValues.elementAt(5);
 
 		// Added for XSnippets
-			var shortURL = getConfig(config, 'shortWidgetUrl');
-			if(shortURL==null){
-				url=context.getUrl();
-				baseURL=url.toString().replace(url.getSiteRelativeAddress(context), "/");
-				feedEntry["Link"]=baseURL+"snippet.xsp?id=" + colValues.elementAt(5);
-			}else{
-				feedEntry["Link"]=shortURL + colValues.elementAt(5);
-			}
+			feedEntry["Link"]=configUtil.getSnippetUrl(colValues.elementAt(5));
 		// End of the addition...
 			
 			feedEntry["Abstract"] = colValues.elementAt(6);

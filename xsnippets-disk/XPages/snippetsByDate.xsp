@@ -27,13 +27,8 @@
 				</xp:this.converter>
 				<xp:viewColumnHeader value="Date" id="viewColumnHeader1"></xp:viewColumnHeader>
 			</xp:viewColumn>
-			<xp:viewColumn columnName="Name" id="viewColumn2" displayAs="link">
-				<xp:this.pageUrl><![CDATA[#{javascript:var shortURL = getConfig(config, 'shortWidgetUrl');
-if(shortURL==null){
-	return "snippet.xsp?id=" + viewItem.getColumnValue("Id");
-}else{
-	return shortURL + viewItem.getColumnValue("Id");
-}}]]></xp:this.pageUrl>
+			<xp:viewColumn columnName="Name" id="viewColumn2" displayAs="link"
+				pageUrl="#{javascript:configUtil.getSnippetUrl(viewItem.getColumnValue('Id'))}">
 				<xp:viewColumnHeader value="Name" id="viewColumnHeader2"></xp:viewColumnHeader>
 			</xp:viewColumn>
 			<xp:viewColumn columnName="Language" id="viewColumn3" styleClass="xspColumnView150">

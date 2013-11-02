@@ -19,13 +19,8 @@
 			<xp:this.data>
 				<xp:dominoView var="view1" viewName="DownloadsLastThreeMonthsSnapshot"></xp:dominoView>
 			</xp:this.data>
-			<xp:viewColumn columnName="Name" id="viewColumn2" displayAs="link" styleClass="xspColumnViewStart200">
-				<xp:this.pageUrl><![CDATA[#{javascript:var shortURL = getConfig(config, 'shortWidgetUrl');
-if(shortURL==null){
-	return "snippet.xsp?id=" + viewItem.getColumnValue("Id");
-}else{
-	return shortURL + viewItem.getColumnValue("Id");
-}}]]></xp:this.pageUrl>
+			<xp:viewColumn columnName="Name" id="viewColumn2" displayAs="link" styleClass="xspColumnViewStart200"
+				pageUrl="#{javascript:configUtil.getSnippetUrl(viewItem.getColumnValue('Id'))}">
 				<xp:viewColumnHeader value="Name" id="viewColumnHeader2"></xp:viewColumnHeader>
 			</xp:viewColumn>
 			<xp:viewColumn value="" id="viewColumn7" styleClass="xspColumnView150">

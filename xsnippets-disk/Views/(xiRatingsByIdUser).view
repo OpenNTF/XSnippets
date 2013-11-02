@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='17a' unid='50C5BE3B5EB4F9D38525795300308120' sequence='15'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C2257B5D004C1B27'>
+<noteinfo noteid='17a' unid='50C5BE3B5EB4F9D38525795300308120' sequence='16'>
 <created><datetime>20111125T034947,84-05</datetime></created>
-<modified><datetime dst='true'>20130430T165117,35+03</datetime></modified>
-<revised><datetime dst='true'>20120516T044024,91-05</datetime></revised>
-<lastaccessed><datetime dst='true'>20130430T165117,35+03</datetime></lastaccessed>
+<modified><datetime dst='true'>20130430T195503,98+03</datetime></modified>
+<revised><datetime dst='true'>20130430T195503,97+03</datetime></revised>
+<lastaccessed><datetime>20131102T104641,57+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130430T165117,35+03</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
+>CN=Serdar Basegmez/O=developi</name></updatedby>
+<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$Index' sign='true'><text/></item>
 <item name='$Formula' summary='true' sign='true'><formula compiled='true'>

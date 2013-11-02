@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
-	<xp:this.resources>
-		<xp:styleSheet href="/twitter.css"></xp:styleSheet>
-		<xp:script src="/twitter.js" clientSide="true"></xp:script>
-	</xp:this.resources>
-	<br></br><br></br><br></br>
+	<!-- Dead for now... -->
 	<div id="widget#{compositeData.widgetID}" class="" style="width:340px;">
 		<xp:text escape="true" id="twitterTitle"
 			value="Related Twitter Tweets" tagName="h3"
@@ -19,7 +15,6 @@
  				document.getElementById("#{id:twitterTitle}").style.display = 'block';
  			}
   			for (var i=0; i<tweets.length; i++){
-  				console.log(tweets[i])
     			var username = tweets[i].from_user_name;
     			var status = tweets[i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
       			return '<a href="'+url+'">'+url+'</a>';

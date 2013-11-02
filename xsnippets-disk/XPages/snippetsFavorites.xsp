@@ -13,10 +13,14 @@
 			</xp:this.facets>
 			<xp:this.value><![CDATA[#{javascript:sessionScope.get("xInvolveMyFavorites")||[]}]]></xp:this.value>
 			<xp:column id="column1" styleClass="xspColumnView300">
-				<xp:link escape="true" text="#{javascript:favItem.hint}" id="link1">
-					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
-						<xp:this.action><![CDATA[#{javascript:context.redirectToPage("snippet.xsp?id="+favItem.link)}]]></xp:this.action>
-					</xp:eventHandler>
+				<xp:link escape="true" text="#{javascript:favItem.hint}"
+					id="link1" value="snippet.xsp">
+					<xp:this.parameters>
+						<xp:parameter name="id"
+							value="#{favItem.id}">
+						</xp:parameter>
+					</xp:this.parameters>
+					
 				</xp:link>
 				<xp:this.facets>
 					<xp:label value="Snippet Name" id="label1" xp:key="header"></xp:label>

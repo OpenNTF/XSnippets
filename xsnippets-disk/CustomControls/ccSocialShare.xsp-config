@@ -5,9 +5,9 @@
     <default-prefix>xc</default-prefix>
   </faces-config-extension>
   <composite-component>
-    <component-type>openNTFNoApprovedContributor</component-type>
-    <composite-name>openNTFNoApprovedContributor</composite-name>
-    <composite-file>/openNTFNoApprovedContributor.xsp</composite-file>
+    <component-type>ccSocialShare</component-type>
+    <composite-name>ccSocialShare</composite-name>
+    <composite-file>/ccSocialShare.xsp</composite-file>
     <composite-extension>
       <designer-extension>
         <in-palette>true</in-palette>

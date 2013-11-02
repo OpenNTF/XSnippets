@@ -13,10 +13,10 @@
 		<xp:this.value>
 			<![CDATA[	
 	  function onCopySnippet () {
-			var enableDownloadCounter = "#{javascript:getConfig(config, 'enableDownloadCounter');}";
+			var enableDownloadCounter = "${configUtil['enableDownloadCounter'] eq '1'}";
 			if (enableDownloadCounter) {
 				if (enableDownloadCounter == "true") {
-					var downloadCounterUrl = "#{javascript:getConfig(config, 'downloadCounterUrl');}";
+					var downloadCounterUrl = "${configUtil['downloadCounterUrl']}";
 					var now = "#{javascript:var now = java.util.Date();var d = now.toString();d}";
 					var projectName = "#{javascript:var projectName = 'Snippet: ' + param.id;projectName}";					
 					

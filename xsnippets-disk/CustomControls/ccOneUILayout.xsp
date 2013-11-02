@@ -58,19 +58,30 @@
 			</xp:callback>
 		</xe:this.facets>
 		<xe:this.configuration>
-			<xe:applicationConfiguration productLogo="OpenNTFLogo.png" navigationPath="${javascript:compositeData.navigationPath}"
-				defaultNavigationPath="${javascript:compositeData.defaultNavigationPath}" productLogoHeight="20px" productLogoWidth="140px" legalText=""
-				placeBar="false" productLogoStyle="float: left; vertical-align: middle; margin-right: 5px;margin-top:5px;" titleBar="true"
-				titleBarName="Share your Code with others">
+			<xe:applicationConfiguration productLogo="OpenNTFLogo.png"
+				navigationPath="${javascript:compositeData.navigationPath}"
+				defaultNavigationPath="${javascript:compositeData.defaultNavigationPath}"
+				productLogoHeight="20px" productLogoWidth="140px" legalText=""
+				placeBar="false"
+				productLogoStyle="float: left; vertical-align: middle; margin-right: 5px;margin-top:5px;"
+				titleBar="true" titleBarName="Share your Code with others">
 				<xe:this.bannerApplicationLinks>
-					<xe:basicLeafNode label="XSnippets" href="http://xsnippets.openntf.org"></xe:basicLeafNode>
-					<xe:basicLeafNode label="OpenNTF" href="http://openntf.org"></xe:basicLeafNode>
-					<xe:basicLeafNode label="XPages.info" href="http://xpages.info"></xe:basicLeafNode>
-					<xe:basicLeafNode label="Development Contest" href="http://contest.openntf.org"></xe:basicLeafNode>
+					<xe:basicLeafNode label="XSnippets"
+						href="http://xsnippets.openntf.org">
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="OpenNTF"
+						href="http://openntf.org">
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="XPages.info"
+						href="http://xpages.info">
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="Development Contest"
+						href="http://contest.openntf.org">
+					</xe:basicLeafNode>
 				</xe:this.bannerApplicationLinks>
 				<xe:this.bannerUtilityLinks>
 					<xe:userTreeNode></xe:userTreeNode>
-					
+
 					<xe:basicLeafNode label="Login">
 						<xe:this.href><![CDATA[#{javascript:url=context.getUrl();
 url2=new XSPUrl(url.toString());
@@ -86,48 +97,54 @@ url2.toString()}]]></xe:this.href>
 				</xe:this.bannerUtilityLinks>
 				<xe:this.titleBarTabs></xe:this.titleBarTabs>
 				<xe:this.searchBar rendered="false">
-					<xe:appSearchBar pageName="search" inactiveText="Enter Keywords" loaded="true"></xe:appSearchBar>
+					<xe:appSearchBar pageName="search"
+						inactiveText="Enter Keywords" loaded="true">
+					</xe:appSearchBar>
 				</xe:this.searchBar>
 				<xe:this.placeBarName><![CDATA[#{javascript:compositeData.title}]]></xe:this.placeBarName>
 				<xe:this.footerLinks>
 					<xe:basicContainerNode label="">
 						<xe:this.children>
-							<xe:basicLeafNode label="Hosted by OpenNTF" href="http://www.openntf.org"></xe:basicLeafNode>
-							<xe:basicLeafNode label="Terms of use" href="http://openntf.org/legal/terms"></xe:basicLeafNode>
-							<xe:basicLeafNode href="http://openntf.org/legal/privacypolicy" label="Privacy Policy"></xe:basicLeafNode>
-							<xe:basicLeafNode href="http://openntf.org/Internal/home.nsf/dx/Contact_OpenNTF" label="Contact">
+							<xe:basicLeafNode label="Hosted by OpenNTF"
+								href="http://www.openntf.org">
 							</xe:basicLeafNode>
-							<xe:basicLeafNode href="http://openntf.org/Internal/home.nsf/dx/Follow_OpenNTF" label="Follow OpenNTF">
+							<xe:basicLeafNode label="Terms of use"
+								href="http://openntf.org/legal/terms">
+							</xe:basicLeafNode>
+							<xe:basicLeafNode
+								href="http://openntf.org/legal/privacypolicy"
+								label="Privacy Policy">
+							</xe:basicLeafNode>
+							<xe:basicLeafNode
+								href="http://openntf.org/Internal/home.nsf/dx/Contact_OpenNTF"
+								label="Contact">
+							</xe:basicLeafNode>
+							<xe:basicLeafNode
+								href="http://openntf.org/Internal/home.nsf/dx/Follow_OpenNTF"
+								label="Follow OpenNTF">
+							</xe:basicLeafNode>
+
+							<xe:basicLeafNode label="Reload"
+								submitValue="reloadConfig">
+								<xe:this.loaded><![CDATA[${javascript:@IsMember("[Admin]", context.getUser().getRoles())}]]></xe:this.loaded>
+								<xe:this.title><![CDATA[#{javascript:"Last Loaded: "+configUtil.getDateLoaded()}]]></xe:this.title>
 							</xe:basicLeafNode>
 						</xe:this.children>
 					</xe:basicContainerNode>
+
 				</xe:this.footerLinks>
 			</xe:applicationConfiguration>
 		</xe:this.configuration>
 		<xp:callback id="OneUIMainAreaCallback"></xp:callback>
-	</xe:applicationLayout>
-	<xp:text escape="false" id="statsHTML">
-		<xp:this.value><![CDATA[#{javascript:
-var out="<!-- Start of StatCounter Code -->\r";
-out+="<script type=\"text/javascript\" language=\"javascript\">\r";
-out+="<!-- \r";
-out+="var sc_project=962495; \r";
-out+="var sc_invisible=1; \r";
-out+="var sc_partition=7; \r";
-out+="var sc_security=\"99cdeed0\"; \r";
-out+="//-->\r";
-out+="</script>\r";
-
-out+="<script type=\"text/javascript\" language=\"javascript\" src=\"http://www.statcounter.com/counter/counter.js\"></script><noscript><a href=\"http://www.statcounter.com/\" target=\"_blank\"><img src=\"http://c8.statcounter.com/counter.php?sc_project=962495&java=0&security=99cdeed0&invisible=1\" alt=\"free web stats\" border=\"0\"></a> </noscript>\r";
-
-var enableAnalytics = getConfig(config, 'enableAnalytics');
-if (enableAnalytics) {
-	if (enableAnalytics == "true") {
-		return out;
-	}
-}
-return "";
-}
-		]]></xp:this.value>
+		<xp:eventHandler event="onItemClick" submit="true"
+			refreshMode="complete">
+			<xe:this.action><![CDATA[#{javascript:if(context.getSubmittedValue().equals("reloadConfig")) {
+	configUtil.reload();
+	context.reloadPage();
+}}]]></xe:this.action>
+		</xp:eventHandler></xe:applicationLayout>
+	<xp:text escape="false" id="statsHTML"
+		loaded="${configUtil['enableAnalytics'] eq '1'}"
+		value="${configUtil['analyticsCode']}">
 	</xp:text>
 </xp:view>

@@ -1,129 +1,16 @@
-function getConfig(config, keyName) {
 
-	var keys = config.getKeys();
-	var hasKey = false;
-	for (keys ; keys.hasMoreElements() ;) {
-		var key = keys.nextElement();
-		if (key == keyName) hasKey = true;
-	}
-	
-	if (hasKey) {
-		var value = config[keyName];
-		if (value) {
-			if (value != "") {
-				return value;
-			}
-		}
-	}
-	return null;
+function getBrushFile(codeLanguage) {
+	return configUtil.getSnippetLanguage(codeLanguage).getBrushFile();
 }
 
-// Should be moved to some kind of parametrization...
-function getCodeLanguages() {
-
-// **** Caching is disabled for development...
-//	if(applicationScope.containsKey("CodeLanguages")) {
-//		return applicationScope.get("CodeLanguages");
-//	}
-// ********************************************
-	
-	result=[	"XPages",
-	        	"JavaScript (Server)", 
-	        	"JavaScript (Client)", 
-	        	"JavaScript",
-	        	"Java",
-	        	"XML",
-	        	"LotusScript",
-	        	"Cascaded Style Sheets", 
-	        	"Themes" 
-	];
-	
-	return result;
-
-// **** Caching is disabled for development...
-//	applicationScope.put("CodeLanguages", result);
-//	return applicationScope.get("CodeLanguages");
-// ********************************************
+function getBrushAlias(codeLanguage) {
+	return configUtil.getSnippetLanguage(codeLanguage).getBrushAlias();
 }
 
-//Should be moved to some kind of parametrization...
-function getBrushInfo(codeLanguage) {
-	result={BrushFile:"", BrushAlias:"", ShowAs:"" };
-
-	switch(codeLanguage) {
-
-	case "Cascaded Style Sheets": 
-		result.BrushFile="shBrushCss_custom.js";
-		result.BrushAlias="css";
-		result.ShowAs="CSS";
-		break;
-
-	case "JavaScript (Server)": 
-		result.BrushFile="shBrushJScript_custom.js";
-		result.BrushAlias="js";
-		result.ShowAs="SSJS";
-		break;
-
-	case "JavaScript (Client)":
-		result.BrushFile="shBrushJScript_custom.js";
-		result.BrushAlias="js";
-		result.ShowAs="CSJS";
-		break;
-
-	case "JavaScript":
-		result.BrushFile="shBrushJScript_custom.js";
-		result.BrushAlias="js";
-		result.ShowAs="JS";
-		break;
-
-	case "XPages":
-		result.BrushFile="shBrushXsp.js";
-		result.BrushAlias="xsp";
-		result.ShowAs="XSP";
-		break;
-	
-	case "Java":
-		result.BrushFile="shBrushJava_custom.js";
-		result.BrushAlias="java";
-		result.ShowAs="JAVA";
-		break;
-
-	case "XML":
-		result.BrushFile="shBrushXml.js";
-		result.BrushAlias="xml";
-		result.ShowAs="XML";
-		break;
-
-	case "LotusScript":
-		result.BrushFile="shBrushLscript.js";
-		result.BrushAlias="lscript";
-		result.ShowAs="LSS";
-		break;
-		
-	  case "Themes": 
-        result.BrushFile="shBrushXml.js"; 
-        result.BrushAlias="xml"; 
-        result.ShowAs="Themes"; 
-        break; 
-	}
-	
-	return result;
+function getShowAs(codeLanguage) {
+	return configUtil.getSnippetLanguage(codeLanguage).toString();
 }
 
-function getBrushFile(CodeLanguage) {
-	result=getBrushInfo(CodeLanguage);
-	return result.BrushFile;
-}
-
-function getBrushAlias(CodeLanguage) {
-	result=getBrushInfo(CodeLanguage);
-	return result.BrushAlias;
-}
-
-function getShowAs(CodeLanguage) {
-	result=getBrushInfo(CodeLanguage);
-	return result.ShowAs;
-}
 
 // TODO: Redirection to invalid id should be implemented!
 function getSnippetUNID(id) {
@@ -151,11 +38,11 @@ function getDownloadsById(id) {
 
 function getPersonDisplay(name) {
 	var output = "";
-	var profileUrl = getConfig(config, "profileUrl");
-	if (profileUrl) {
-		output = '<a href="' + profileUrl + name + '" class="profileLink" target="_blank">' + name + '</a>';	
-	} else {
+	var profileUrl = configUtil["profileUrl"];
+	if ("".equals(profileUrl)) {
 		output = name;
+	} else {
+		output = '<a href="' + profileUrl + name + '" class="profileLink" target="_blank">' + name + '</a>';	
 	}
 	return output;
 }
@@ -213,8 +100,6 @@ function generateUniqueId(name) {
 function isContributor() {
 	user=@UserName();
 
-	//return true; // For testing purposes...
-	
 	if(user=="Anonymous") {
 		return false;
 	}
@@ -231,21 +116,15 @@ function isContributor() {
 }
 
 function sendReport(snippetNoteId, reportReason, reportDetail) {
-	var sendTo=@Explode(getConfig(config, "reportRecipients"),";");
+	var sendTo=@Explode(configUtil["reportRecipients"],";");
 	var bodyStr="";
 	var userName=session.createName(session.getEffectiveUserName()).getCommon();	
-	
-	var baseUrl = context.getUrl().toString();
-	baseUrl = baseUrl.substring(0, baseUrl.indexOf(".nsf") + 4) + "/snippet.xsp?id=";
 
-	var shortUrl = getConfig(config, "shortWidgetUrl");
-	if (shortUrl) {
-		baseUrl = shortUrl;
-	} 
-	
 	var db:NotesDatabase=sessionAsSigner.getCurrentDatabase();
 	var mailDoc:NotesDocument=db.createDocument();
 	var snippetDoc:NotesDocument=db.getDocumentByID(snippetNoteId);
+	
+	var url=configUtil.getSnippetUrl(snippetDoc.getItemValueString("ID"));
 	
 	mailDoc.replaceItemValue("Form", "Memo");
 	mailDoc.replaceItemValue("SendTo", sendTo);
@@ -255,7 +134,7 @@ function sendReport(snippetNoteId, reportReason, reportDetail) {
 	bodyStr+="\n\nThe Reason:\n\n"+reportReason
 	bodyStr+="\n\n\nDetails:\n\n"+reportDetail
 	bodyStr+="\n\n\nThis notification has been sent on "+@Now()+" by "+facesContext.getExternalContext().getRequest().getRemoteAddr();
-	bodyStr+="\n\nURL for the XSnippet:\n\n"+baseUrl+snippetDoc.getItemValueString("ID");
+	bodyStr+="\n\nURL for the XSnippet:\n\n"+url;
 
 	mailDoc.replaceItemValue("Body", bodyStr);
 	mailDoc.send(false);

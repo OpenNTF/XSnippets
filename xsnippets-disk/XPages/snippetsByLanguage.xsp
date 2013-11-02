@@ -49,13 +49,8 @@ if(param.cat!=null && @IsMember(param.cat, sessionScope.languageCategories)){
 			<xp:this.data>
 				<xp:dominoView var="view1" viewName="SnippetsByLanguage" categoryFilter="#{sessionScope.languageCategory}"></xp:dominoView>
 			</xp:this.data>
-			<xp:viewColumn columnName="Name" id="viewColumn2" displayAs="link">
-				<xp:this.pageUrl><![CDATA[#{javascript:var shortURL = getConfig(config, 'shortWidgetUrl');
-if(shortURL==null){
-	return "snippet.xsp?id=" + viewItem.getColumnValue("Id");
-}else{
-	return shortURL + viewItem.getColumnValue("Id");
-}}]]></xp:this.pageUrl>
+			<xp:viewColumn columnName="Name" id="viewColumn2" displayAs="link"
+			pageUrl="#{javascript:configUtil.getSnippetUrl(viewItem.getColumnValue('Id'))}">
 				<xp:viewColumnHeader value="Name" id="viewColumnHeader2"></xp:viewColumnHeader>
 			</xp:viewColumn>
 			<xp:viewColumn columnName="DisplayNotes" id="viewColumn6">

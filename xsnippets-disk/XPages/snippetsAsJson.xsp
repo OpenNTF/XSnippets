@@ -16,8 +16,8 @@ response.setContentType("application/json");
 var baseUrl = context.getUrl().toString();
 baseUrl = baseUrl.substring(0, baseUrl.indexOf(".nsf") + 4) + "/snippet.xsp?id=";
 
-var shortUrl = getConfig(config, "shortWidgetUrl");
-if (shortUrl) {
+var shortUrl = configUtil["shortWidgetUrl"];
+if (! "".equals(shortUrl)) {
 	baseUrl = shortUrl;
 } 
 

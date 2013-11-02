@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xc="http://www.ibm.com/xsp/custom">
-
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xc:ccOneUILayout title="#{javascript:database.getTitle()}">
 		<xp:this.facets>
 			<xp:panel xp:key="LeftColumn" id="panel4">
 				<xc:ccOneUILeft></xc:ccOneUILeft>
 			</xp:panel>
 		</xp:this.facets>
+		<xp:div id="content" styleClass="contentContainer">
+			<xp:panel styleClass="errorPageContent">
+				<xp:panel>
+					<xp:this.rendered><![CDATA[#{javascript:@UserName()=="Anonymous"}]]></xp:this.rendered>
+					<xp:label value="Please log in first."></xp:label>
+				</xp:panel>
 
-	
-	<xp:div id="content" styleClass="contentContainer">
-		<xp:panel styleClass="errorPageContent">
-			<xc:openNTFNoApprovedContributor></xc:openNTFNoApprovedContributor>
-		</xp:panel>
-	</xp:div>
-
+				<xp:panel>
+					<xp:this.rendered><![CDATA[#{javascript:@UserName()!="Anonymous"}]]></xp:this.rendered>
+					<xp:text value="${configUtil['contributorError']}" escape="false"
+						contentType="html">
+					</xp:text>
+				</xp:panel>
+			</xp:panel>
+		</xp:div>
 	</xc:ccOneUILayout>
 </xp:view>

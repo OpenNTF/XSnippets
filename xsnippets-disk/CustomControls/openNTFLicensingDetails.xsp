@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
-	<xp:text escape="false" id="computedField1" style="color:gray">
-		<xp:this.value><![CDATA[#{javascript:"All code submitted to OpenNTF XSnippets, whether submitted as a \"Snippet\" or in the body of a Comment, is provided under the <a href=\"http://www.apache.org/licenses/\" target=\"_blank\">Apache License Version 2.0</a>.  See <a href=\"http://openntf.org/legal/terms\" target=\"_blank\">Terms of Use</a> for full details." 
-}]]></xp:this.value>
-	</xp:text>
-</xp:view>

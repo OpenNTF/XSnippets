@@ -577,7 +577,7 @@ var invTools={
 			
 			if(userKey!="") {
 				result=@DbLookup(["",interactionDB], "FavoritesByUserKey", userKey, 3, "[FailSilent]");
-				if(typeof(result)=="string") { result=[result]; }
+				if(typeof(result)=="string" && result!="") { result=[result]; }
 			}
 			
 			for(i=0; i<result.length; i++) {

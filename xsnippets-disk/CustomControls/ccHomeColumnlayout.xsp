@@ -22,13 +22,9 @@
 				value="#{view1}" var="dataList" indexVar="dataIndex">
 				<xp:div id="div5" styleClass="entry">
 					<xp:link escape="true" text="" id="link2"
-						styleClass="entryLink">
-						<xp:this.value><![CDATA[#{javascript:var shortURL = getConfig(config, 'shortWidgetUrl');
-if(shortURL==null){
-	return viewScope.baseUrl+"snippet.xsp?id=" + dataList.getDocument().getItemValueString("Id");
-}else{
-	return shortURL + dataList.getDocument().getItemValueString("Id");
-}}]]></xp:this.value><xp:text escape="true" id="computedField1"
+						styleClass="entryLink"
+						value="#{javascript:configUtil.getSnippetUrl(dataList.getDocument().getItemValueString('Id'))}">
+						<xp:text escape="true" id="computedField1"
 							tagName="h3" disableTheme="true" value="#{dataList.Name}">
 						</xp:text>
 					</xp:link>
@@ -76,14 +72,9 @@ if(shortURL==null){
 				value="#{view2}" var="dataList" indexVar="dataIndex">
 				<xp:div id="div1" styleClass="entry">
 					<xp:link escape="true" text="" id="link1"
-						styleClass="entryLink">
-						<xp:this.value><![CDATA[#{javascript:var shortURL = getConfig(config, 'shortWidgetUrl');
-if(shortURL==null){
-	return viewScope.baseUrl+"snippet.xsp?id=" + dataList.getDocument().getItemValueString("Id");
-}else{
-	return shortURL + dataList.getDocument().getItemValueString("Id");
-}
-}]]></xp:this.value><xp:text escape="true" id="computedField5"
+						styleClass="entryLink"
+						value="#{javascript:configUtil.getSnippetUrl(dataList.getDocument().getItemValueString('Id'))}">
+						<xp:text escape="true" id="computedField5"
 							tagName="h3" disableTheme="true" value="#{dataList.Name}">
 						</xp:text>
 					</xp:link>

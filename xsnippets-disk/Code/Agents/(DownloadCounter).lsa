@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='16a' unid='8B258F22CEEF6E1785257927002B1B68' sequence='36'>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C2257B5D004C1B27'>
+<noteinfo noteid='16a' unid='8B258F22CEEF6E1785257927002B1B68' sequence='37'>
 <created><datetime dst='true'>20111012T035050,64-04</datetime></created>
-<modified><datetime dst='true'>20130430T165117,31+03</datetime></modified>
-<revised><datetime dst='true'>20120516T044022,33-05</datetime></revised>
-<lastaccessed><datetime dst='true'>20130430T165117,31+03</datetime></lastaccessed>
+<modified><datetime dst='true'>20130430T195503,15+03</datetime></modified>
+<revised><datetime dst='true'>20130430T195503,14+03</datetime></revised>
+<lastaccessed><datetime dst='true'>20130430T195503,15+03</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130430T165117,31+03</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
+<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name='$TITLE' sign='true'><text>(DownloadCounter)</text></item>
 <item name='$AssistType' sign='true'><number>65413</number></item>
 <item name='$AssistLastRun' sign='true'>
@@ -201,5 +202,5 @@ AwQAgAZNm6UaYQA6HgAaYgBdyANJ2AOTWAMEAFgDCABYAwQAqQZNm6UaYwAaZQAdAgAAABEAGAAA
 AAAA//8BAAMADwAAABMAOAAVAAADUwAKAAAA
 </rawitemdata></item>
 <item name='$POID'><datetime>20120214T095833,67+01</datetime></item>
-<item name='$AssistVersion'><datetime dst='true'>20120516T114021,43+02</datetime></item></note>
+<item name='$AssistVersion'><datetime dst='true'>20130430T195503,02+03</datetime></item></note>
 

@@ -73,7 +73,7 @@ if(document1.getItemValueString("Name")!=viewScope.get("NameCache")){
 					</xp:this.validators>
 					<xp:selectItem itemLabel="Select a Language" itemValue=""></xp:selectItem>
 					<xp:selectItems>
-						<xp:this.value><![CDATA[${javascript:getCodeLanguages()}]]></xp:this.value>
+						<xp:this.value><![CDATA[${javascript:configUtil.getCodeLanguages()}]]></xp:this.value>
 					</xp:selectItems>
 				</xp:comboBox>
 			</xe:formRow>
@@ -83,7 +83,7 @@ if(document1.getItemValueString("Name")!=viewScope.get("NameCache")){
 				</xp:inputTextarea>
 			</xe:formRow>
 			<xe:formRow id="formRow5" label="">
-				<xc:openNTFLicensingDetails></xc:openNTFLicensingDetails>
+				<xc:ccLicensingDetails></xc:ccLicensingDetails>
 			</xe:formRow>			
 		</xe:formTable>
 	</xp:panel>

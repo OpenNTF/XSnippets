@@ -5,9 +5,9 @@
     <default-prefix>xc</default-prefix>
   </faces-config-extension>
   <composite-component>
-    <component-type>openNTFLicensingDetails</component-type>
-    <composite-name>openNTFLicensingDetails</composite-name>
-    <composite-file>/openNTFLicensingDetails.xsp</composite-file>
+    <component-type>ccFacebook</component-type>
+    <composite-name>ccFacebook</composite-name>
+    <composite-file>/ccFacebook.xsp</composite-file>
     <composite-extension>
       <designer-extension>
         <in-palette>true</in-palette>

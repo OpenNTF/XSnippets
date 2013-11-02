@@ -15,31 +15,6 @@ function selectText(obj){
     window.scrollTo(0,0);
 }
 
-//Not used...
-function copyCode(codeValue) {
-    var content="";
-	dojo.require("dijit.Dialog");
-	
-	myDlg = new dijit.Dialog({
-        title: "Copy Snippet",
-        style: "width: 500px; height:300px;"
-    });
-	
-	content='Use "Ctrl-C" to copy the snippet code. You may close this dialog with "ESC"...<br/>';
-	content+='<textarea id="codeEdit" class="copyContent"';  
-	
-	//to be embedded into CSS
-	content+='style="width:100%; height:200px; border:0px; font-size:0.8em; color:gray;"'; //temporary  
-	//****
-	
-	content+='>'+codeValue+'</textarea>';
-	
-	myDlg.attr("content", content)
-	myDlg.show();
-	
-	dojo.byId("codeEdit").select();
-}
-
 function searchBoxIn(panelId, inputId, w) {
 	if(dojo.byId(inputId).value=="Search snippets...") {
 		dojo.byId(inputId).value="";

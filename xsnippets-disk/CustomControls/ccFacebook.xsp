@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:div styleClass="faceBookComments">
+		<xp:br/>
+<!-- Temporarily disabled -->
+
+<!--	<xe:facebookClient id="facebookClient1" rendered="true"></xe:facebookClient>-->
+<!--	<xe:facebookComments id="facebookComments1" width="600"-->
+<!--		rendered="true" href="${javascript:configUtil.getSnippetUrl(param.id)}">-->
+<!--	</xe:facebookComments>-->
+	</xp:div>
+</xp:view>

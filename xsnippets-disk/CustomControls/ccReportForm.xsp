@@ -30,7 +30,7 @@ getComponent("reportDialog").hide();}]]></xp:this.action>
 								<xp:this.value><![CDATA[#{javascript:"Select a reason|"}]]></xp:this.value>
 							</xp:selectItems>
 							<xp:selectItems>
-								<xp:this.value><![CDATA[#{javascript:@Explode(getConfig(config, "reportReasons"), ";")}]]></xp:this.value>
+								<xp:this.value><![CDATA[#{javascript:@Explode(configUtil["reportReasons"], ";")}]]></xp:this.value>
 							</xp:selectItems>
 						</xp:comboBox>
 					</xe:formRow>

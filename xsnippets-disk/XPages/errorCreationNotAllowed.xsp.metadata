@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1ce" sequence="35" unid="2132D9D5F5514A2EC22579F1005B555C">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1ce" sequence="41" unid="2132D9D5F5514A2EC22579F1005B555C">
 <created><datetime dst="true">20120501T193736,28+03</datetime></created>
-<modified><datetime dst="true">20130430T165117,56+03</datetime></modified>
-<revised><datetime dst="true">20120516T043911,87-05</datetime></revised>
-<lastaccessed><datetime dst="true">20130430T165117,56+03</datetime></lastaccessed>
+<modified><datetime dst="true">20130502T103029,64+03</datetime></modified>
+<revised><datetime dst="true">20130502T103029,63+03</datetime></revised>
+<lastaccessed><datetime dst="true">20130502T103029,64+03</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130430T165117,56+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
+<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>errorCreationNotAllowed.xsp</text></item>
 
 
-<item name="$FileNames" sign="true"><text>errorCreationNotAllowed.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5</text></item>
 
+<item name="$FileNames" sign="true"><text>errorCreationNotAllowed.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.1</text></item>
 
 
 

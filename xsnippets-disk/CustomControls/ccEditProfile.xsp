@@ -20,8 +20,8 @@
 			<xp:this.documentId><![CDATA[#{javascript:
 var user = param.user;
 if(user != null && user != ""){
-	var view = database.getView("Profiles");
-	var entry = view.getEntryByKey(user, true);
+	var pview = database.getView("Profiles");
+	var entry = pview.getEntryByKey(user, true);
 	return (entry != null)?entry.getUniversalID():"";
 } else {
 	return "";

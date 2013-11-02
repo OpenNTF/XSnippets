@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='2ce' unid='DAAC98ADEE63A806C22579F1005B55E8' sequence='34'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C2257B5D004C1B27'>
+<noteinfo noteid='2ce' unid='DAAC98ADEE63A806C22579F1005B55E8' sequence='35'>
 <created><datetime dst='true'>20120501T193737,68+03</datetime></created>
-<modified><datetime dst='true'>20130430T165118,20+03</datetime></modified>
-<revised><datetime dst='true'>20120516T043920,78-05</datetime></revised>
-<lastaccessed><datetime dst='true'>20130430T165118,20+03</datetime></lastaccessed>
+<modified><datetime dst='true'>20130430T195510,90+03</datetime></modified>
+<revised><datetime dst='true'>20130430T195510,89+03</datetime></revised>
+<lastaccessed><datetime dst='true'>20130430T195510,90+03</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130430T165118,20+03</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
+>CN=Serdar Basegmez/O=developi</name></updatedby>
+<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$HTMLCode' sign='true'>
 <rawitemdata type='1'>

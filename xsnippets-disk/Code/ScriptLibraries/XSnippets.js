@@ -83,7 +83,7 @@ function load() {
 					}
 				}                    
 				xSnippetsEntriesNode.innerHTML = displayedHTML;  
-				debugger;
+
 				for (var i = xSnippetsEntriesNode.children.length - 1; i >= 0; i--) {
 					var snippet = xSnippetsEntriesNode.children[i];
 					if (height < snippet.offsetTop + snippet.offsetHeight) {

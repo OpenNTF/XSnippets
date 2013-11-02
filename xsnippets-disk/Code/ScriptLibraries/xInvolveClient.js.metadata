@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="19a" sequence="17" unid="BAAEB7E08CCF48C685257953003082C0">
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="19a" sequence="18" unid="BAAEB7E08CCF48C685257953003082C0">
 <created><datetime>20111125T034952,00-05</datetime></created>
-<modified><datetime dst="true">20130430T165117,43+03</datetime></modified>
-<revised><datetime dst="true">20120516T044014,45-05</datetime></revised>
-<lastaccessed><datetime dst="true">20130430T165117,43+03</datetime></lastaccessed>
+<modified><datetime dst="true">20130430T195523,25+03</datetime></modified>
+<revised><datetime dst="true">20130430T195523,24+03</datetime></revised>
+<lastaccessed><datetime dst="true">20130430T195523,25+03</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130430T165117,43+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
+<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name="$TITLE" sign="true"><text>xInvolveClient</text></item>
 <item name="$Flags"><text>h534Q</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>

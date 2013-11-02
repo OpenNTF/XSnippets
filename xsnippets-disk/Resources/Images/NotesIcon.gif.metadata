@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="20e" sequence="6" unid="B44999AC5AF4210BC22579F20048B5D1">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="20e" sequence="7" unid="B44999AC5AF4210BC22579F20048B5D1">
 <created><datetime dst="true">20120502T161411,37+03</datetime></created>
-<modified><datetime dst="true">20130430T165117,72+03</datetime></modified>
-<revised><datetime dst="true">20120516T043922,84-05</datetime></revised>
-<lastaccessed><datetime dst="true">20130430T165117,72+03</datetime></lastaccessed>
+<modified><datetime dst="true">20130430T195511,34+03</datetime></modified>
+<revised><datetime dst="true">20130430T195511,33+03</datetime></revised>
+<lastaccessed><datetime dst="true">20130430T195511,34+03</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130430T165117,72+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Bruce Elgort/O=Sharepoint</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<updatedby><name>CN=Bruce Elgort/O=Sharepoint</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
+<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name="$TITLE"><text>NotesIcon.gif</text></item>
 <item name="$Flags"><text>34CiQ</text></item>
 <item name="$FlagsExt"><text>D</text></item>
