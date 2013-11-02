@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1e6" sequence="51" unid="28104D17970C36BEC22579F1005B5606">
+<noteinfo noteid="1e6" sequence="54" unid="28104D17970C36BEC22579F1005B5606">
 <created><datetime dst="true">20120501T193737,98+03</datetime></created>
-<modified><datetime dst="true">20130502T102854,81+03</datetime></modified>
-<revised><datetime dst="true">20130502T102854,80+03</datetime></revised>
-<lastaccessed><datetime dst="true">20130502T102854,81+03</datetime></lastaccessed>
+<modified><datetime>20131102T105524,91+02</datetime></modified>
+<revised><datetime>20131102T105524,90+02</datetime></revised>
+<lastaccessed><datetime>20131102T105524,91+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130430T165117,62+03</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
 <wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 
 
-<item name="$FileNames" sign="true"><text>openNTFLicensingDetails.xsp</text></item>
-
-
 <item name="$TITLE" sign="true"><text>ccLicensingDetails.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5</text></item>
 
+
+
+<item name="$FileNames" sign="true"><text>ccLicensingDetails.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
 
 
 

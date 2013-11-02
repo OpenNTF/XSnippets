@@ -246,3 +246,17 @@ div.js div.line, div.js code, div.js a {
   color: rgb(63,95,191) !important;
 }
 
+/* Formula Additions */
+div.formula div.line, div.formula code, div.formula a {
+	font-family: sans-serif !important;
+}
+
+.syntaxhighlighter .formula-string, .syntaxhighlighter .formula-string a {
+  color: rgb(255,0,255) !important;
+  font-style:normal !important;
+}
+
+.syntaxhighlighter .formula-keyword {
+  color: rgb(0,0,255) !important;
+  font-weight: normal !important;
+}

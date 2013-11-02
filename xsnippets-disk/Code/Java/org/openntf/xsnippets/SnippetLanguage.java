@@ -9,6 +9,7 @@ public enum SnippetLanguage {
 	XSP("XPages", "shBrushXsp.js", "xsp"),
 	SSJS("JavaScript (Server)", "shBrushJScript_custom.js", "js"),
 	CSJS("JavaScript (Client)", "shBrushJScript_custom.js", "js"),
+	FORMULA("Formula", "shBrushFormula.js", "formula"),
 	JS("JavaScript", "shBrushJScript_custom.js", "js"),
 	JAVA("Java", "shBrushJava_custom.js", "java"),
 	XML("XML", "shBrushXml.js", "xml"),

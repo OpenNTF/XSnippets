@@ -2,44 +2,14 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 	<xp:panel>
 		<xp:this.attrs>
-			<xp:attr name="oncopy" value="return onCopySnippet()"></xp:attr>
+			<xp:attr name="oncopy" value="return onCopySnippet('#{configUtil.downloadCounterUrl}')">
+				<xp:this.loaded><![CDATA[${configUtil['enableDownloadCounter'] eq '1'}]]></xp:this.loaded>
+			</xp:attr>
 		</xp:this.attrs>
 		<xp:text escape="true" id="computedField1" disableTheme="true" value="#{document1.Body}" tagName="pre">
 			<xp:this.styleClass><![CDATA[#{javascript:"brush: " + getBrushAlias(document1.getItemValueString("Language"))}]]></xp:this.styleClass>
 		</xp:text>
 	</xp:panel>
-	<xp:scriptBlock type="text/javascript">
-		<xp:this.rendered><![CDATA[#{javascript:!currentDocument.isEditable()}]]></xp:this.rendered>
-		<xp:this.value>
-			<![CDATA[	
-	  function onCopySnippet () {
-			var enableDownloadCounter = "${configUtil['enableDownloadCounter'] eq '1'}";
-			if (enableDownloadCounter) {
-				if (enableDownloadCounter == "true") {
-					var downloadCounterUrl = "${configUtil['downloadCounterUrl']}";
-					var now = "#{javascript:var now = java.util.Date();var d = now.toString();d}";
-					var projectName = "#{javascript:var projectName = 'Snippet: ' + param.id;projectName}";					
-					
-					if (downloadCounterUrl) {
-						downloadCounterUrl = downloadCounterUrl + "&type=snippet&project=" + projectName + "&release=" + now;						
-					}
-					else {				
-						var baseUrl = "#{javascript:var baseUrl = context.getUrl().toString();baseUrl.substring(0, baseUrl.indexOf(".nsf") + 4)}";					
-						downloadCounterUrl = baseUrl + "/downloadcounter?openagent" + "&type=snippet&project=" + projectName + "&release=" + now;
-					}
-					
-					downloadCounterUrl = encodeURI(downloadCounterUrl);
-						
-					var http_request = new XMLHttpRequest();
-					http_request.open("GET", downloadCounterUrl, true );
-					
-					http_request.send(null);					        
-				}
-			}
-        }		
-			]]>
-		</xp:this.value>
-	</xp:scriptBlock>
 	<xp:scriptBlock id="scriptBlock1">
 		<xp:this.value><![CDATA[SyntaxHighlighter.autoloader(['#{javascript:getBrushAlias(currentDocument.getItemValueString("Language"))}', 'syntaxhighlighter/js/#{javascript:getBrushFile(currentDocument.getItemValueString("Language"))}']); 
 SyntaxHighlighter.defaults['tab-size'] = 2;

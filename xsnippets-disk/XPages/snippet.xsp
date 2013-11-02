@@ -3,13 +3,20 @@
 	xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:this.resources>
 		<xp:linkResource href="syntaxhighlighter/css/shCore.css"
-			rel="stylesheet" type="text/css"></xp:linkResource>
-		<xp:linkResource href="syntaxhighlighter/css/shThemeXSnippets.css"
-			rel="stylesheet" type="text/css"></xp:linkResource>
-		<xp:script src="syntaxhighlighter/js/shCore.js" clientSide="true"></xp:script>
+			rel="stylesheet" type="text/css">
+		</xp:linkResource>
+		<xp:linkResource
+			href="syntaxhighlighter/css/shThemeXSnippets.css" rel="stylesheet"
+			type="text/css">
+		</xp:linkResource>
+		<xp:script src="syntaxhighlighter/js/shCore.js"
+			clientSide="true">
+		</xp:script>
 		<xp:script src="syntaxhighlighter/js/shAutoloader.js"
-			clientSide="true"></xp:script>
+			clientSide="true">
+		</xp:script>
 		<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
+		<xp:styleSheet href="/XSnippets.css"></xp:styleSheet>
 	</xp:this.resources>
 	<xp:this.data>
 		<xp:dominoDocument var="document1" formName="Snippet"
@@ -33,8 +40,10 @@ if(vw.getEntryByKey(key, true)==null) {
 		</xp:this.facets>
 		<xp:div id="content" styleClass="contentContainer">
 			<xp:panel id="formpanel" styleClass="formSnippet">
-				<xp:label value="#{document1.Name}" id="label3" style="font-size:18pt"></xp:label>
-				<xp:div style="float:right;">
+				<xp:text escape="true" id="computedField1"
+					value="#{document1.Name}" tagName="h1" styleClass="snippetHeader">
+				</xp:text>
+				<xp:div styleClass="favoriteIconContainer">
 					<xc:xiAddToFavorites hideError="false" ccId="fav1"
 						hintValue="#{document1.Name}" iId="#{document1.Id}"
 						img_AddToFavorites="/graystar32.png" img_RemoveFromFavorites="/yellowstar32.png"
@@ -62,67 +71,96 @@ if(code[0]) selectText(code[0]);
 				<br></br>
 				<br></br>
 				<br></br>
-				<xp:table>
-					<xp:tr rendered="#{javascript:document1.getItemValueString('Notes')!=''}">
-						<xp:td colspan="2">
-							<xp:label value="Notes" id="label6" for="notes"></xp:label>
-							<xp:br></xp:br>
-							<xp:br></xp:br>
-							<xp:inputTextarea id="notes" value="#{document1.Notes}"></xp:inputTextarea>
-						</xp:td>
-					</xp:tr>
-				</xp:table>
+				<xp:div rendered="#{! empty document1.Notes}" style="margin-left:3px">
+					<xp:label value="Notes" id="label6" for="notes"></xp:label>
+					<xp:br></xp:br>
+					<xp:br></xp:br>
+					<xp:inputTextarea id="notes" value="#{document1.Notes}"></xp:inputTextarea>
+				</xp:div>
 				<xp:br></xp:br>
-				<xp:table>
-					<xp:tr>
-						<xp:td style="width:90px">
-							<xp:label value="Language" id="label2" for="language"></xp:label>
-						</xp:td>
-						<xp:td>
-							<xp:text escape="true" id="computedField2" value="#{document1.Language}"></xp:text>
-						</xp:td>
-					</xp:tr>
-					<xp:tr>
-						<xp:td>
-							<xp:label value="Author" id="label1" for="author"></xp:label>
-						</xp:td>
-						<xp:td>
-							<xc:ccPersonWithProfiles editProfilePage="editProfile.xsp">
-								<xc:this.personName><![CDATA[#{javascript:document1.getItemValueString("Author")}]]></xc:this.personName>
-							</xc:ccPersonWithProfiles>
-						</xp:td>
-					</xp:tr>
-					<xp:tr>
-						<xp:td>
-							<xp:label value="Rating" id="label7"></xp:label>
-						</xp:td>
-						<xp:td>
-							<xp:span style="float:left;">
-								<xc:xiRating hideError="false" ratesDisplayOnly="false"
-									anonymousRating="true" starCount="5" iId="#{document1.Id}"
-									ccId="sr" interactionDB="#{javascript:database.getFilePath()}"
-									ratingTargetDocumentId="#{javascript:document1.getDocument().getUniversalID()}"
-									ratingTargetFieldName="Rating" ratingResultTarget="#{id:ratingInfoContainer}">
-								</xc:xiRating>
-							</xp:span>
-							<xp:span id="ratingInfoContainer" style="float:right;"
-								styleClass="ratingInfo"></xp:span>
-						</xp:td>
-					</xp:tr>
-					<xp:tr>
-						<xp:td>
-							<xp:label value="Downloads" id="label4" for="description"></xp:label>
-						</xp:td>
-						<xp:td>
-							<xp:label id="label5" style="font:normal;"
-								value="#{javascript:getDownloadsById(param.id)}">
-								<xp:this.converter>
-									<xp:convertNumber maxFractionDigits="0"></xp:convertNumber>
-								</xp:this.converter>
-							</xp:label>
-						</xp:td>
-					</xp:tr>
-				</xp:table>
+				<xp:div>
+					<xp:table>
+						<xp:tr>
+							<xp:td style="width:90px">
+								<xp:label value="Language" id="label2"
+									for="language">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:text escape="true" id="language"
+									value="#{document1.Language}">
+								</xp:text>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Author" id="label1"
+									for="author">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xc:ccPersonWithProfiles
+									editProfilePage="editProfile.xsp">
+									<xc:this.personName><![CDATA[#{javascript:document1.getItemValueString("Author")}]]></xc:this.personName>
+								</xc:ccPersonWithProfiles>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Submitted on" id="label3"
+									for="submittedOn">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:text escape="true" id="submittedOn"
+									value="#{document1.DateCreated}">
+									<xp:this.converter>
+										<xp:convertDateTime type="both"
+											dateStyle="long" timeStyle="short">
+										</xp:convertDateTime>
+									</xp:this.converter>
+								</xp:text>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Rating" id="label7"></xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:span style="float:left;">
+									<xc:xiRating hideError="false"
+										ratesDisplayOnly="false" anonymousRating="true" starCount="5"
+										iId="#{document1.Id}" ccId="sr"
+										interactionDB="#{javascript:database.getFilePath()}"
+										ratingTargetDocumentId="#{javascript:document1.getDocument().getUniversalID()}"
+										ratingTargetFieldName="Rating"
+										ratingResultTarget="#{id:ratingInfoContainer}">
+									</xc:xiRating>
+								</xp:span>
+								<xp:span id="ratingInfoContainer"
+									style="float:right;" styleClass="ratingInfo">
+								</xp:span>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Downloads" id="label4"
+									for="description">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:label id="label5" style="font:normal;"
+									value="#{javascript:getDownloadsById(param.id)}">
+									<xp:this.converter>
+										<xp:convertNumber
+											maxFractionDigits="0">
+										</xp:convertNumber>
+									</xp:this.converter>
+								</xp:label>
+							</xp:td>
+						</xp:tr>
+					</xp:table>
+				</xp:div>
 				<xp:br />
 				<xc:ccLicensingDetails></xc:ccLicensingDetails>
 				<xp:br />

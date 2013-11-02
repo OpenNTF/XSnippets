@@ -110,6 +110,7 @@ public class ConfigBean implements Serializable, DataObject {
 
 	public Object getValue(Object arg0) {
 		String result=fields.get(arg0);
+//		System.out.println(arg0.toString()+" >> "+result);
 		return (null==result)?"":result;
 	}
 

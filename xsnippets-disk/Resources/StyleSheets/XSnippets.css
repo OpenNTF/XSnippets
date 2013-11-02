@@ -29,3 +29,15 @@
 }
 
 
+.licensing {
+	color:gray
+}
+
+.snippetHeader {
+	display:inline-block;
+	min-height: 32px; /* To protect favorite icon */
+}
+
+.favoriteIconContainer {
+	float:right
+}
