@@ -1,18 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
 	<xp:panel>
 		<xp:this.attrs>
-			<xp:attr name="oncopy" value="return onCopySnippet('#{configUtil.downloadCounterUrl}')">
+			<xp:attr name="oncopy" value="return onCopySnippet()">
 				<xp:this.loaded><![CDATA[${configUtil['enableDownloadCounter'] eq '1'}]]></xp:this.loaded>
 			</xp:attr>
 		</xp:this.attrs>
-		<xp:text escape="true" id="computedField1" disableTheme="true" value="#{document1.Body}" tagName="pre">
+		<xp:text escape="true" id="computedField1" disableTheme="true"
+			value="#{document1.Body}" tagName="pre">
 			<xp:this.styleClass><![CDATA[#{javascript:"brush: " + getBrushAlias(document1.getItemValueString("Language"))}]]></xp:this.styleClass>
 		</xp:text>
 	</xp:panel>
+	
+	<xe:jsonRpcService id="downloadLogger" serviceName="downloadLogger"
+		state="true">
+		<xp:this.loaded><![CDATA[${configUtil['enableDownloadCounter'] eq '1'}]]></xp:this.loaded>
+		<xe:this.methods>
+			<xe:remoteMethod name="log">
+				<xe:this.arguments>
+					<xe:remoteMethodArg name="id" type="string"></xe:remoteMethodArg>
+				</xe:this.arguments>
+				<xe:this.script><![CDATA[
+				try {
+					return configUtil.snippetCopied("Snippet: "+id);
+				} catch(e) {
+					print(e);
+					return false;
+				}
+				]]></xe:this.script>
+			</xe:remoteMethod>
+		</xe:this.methods>
+	</xe:jsonRpcService>
+
 	<xp:scriptBlock id="scriptBlock1">
-		<xp:this.value><![CDATA[SyntaxHighlighter.autoloader(['#{javascript:getBrushAlias(currentDocument.getItemValueString("Language"))}', 'syntaxhighlighter/js/#{javascript:getBrushFile(currentDocument.getItemValueString("Language"))}']); 
-SyntaxHighlighter.defaults['tab-size'] = 2;
-SyntaxHighlighter.all()]]></xp:this.value>
+		<xp:this.value><![CDATA[
+		
+		function onCopySnippet() {
+			downloadLogger.log('#{param.id}').addCallback(function(result) { 
+															console.log('Download'+(result?'':' not')+' logged!');
+														});
+			return true;
+		}
+		
+		SyntaxHighlighter.autoloader(['#{javascript:getBrushAlias(currentDocument.getItemValueString("Language"))}', 'syntaxhighlighter/js/#{javascript:getBrushFile(currentDocument.getItemValueString("Language"))}']); 
+		SyntaxHighlighter.defaults['tab-size'] = 2;
+		SyntaxHighlighter.all()
+		]]></xp:this.value>
 	</xp:scriptBlock>
 </xp:view>

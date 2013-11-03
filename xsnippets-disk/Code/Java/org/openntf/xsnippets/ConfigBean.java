@@ -3,12 +3,22 @@ package org.openntf.xsnippets;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import lotus.domino.Database;
+import lotus.domino.DateTime;
 import lotus.domino.Document;
 import lotus.domino.Item;
+import lotus.domino.Name;
+import lotus.domino.NotesException;
+import lotus.domino.Session;
 import lotus.domino.View;
 
 import com.ibm.commons.util.StringUtil;
@@ -23,6 +33,9 @@ public class ConfigBean implements Serializable, DataObject {
 	
 	private static final long serialVersionUID = -3732463043439724416L;
 
+	private static final String LOGDB_FILENAME=""; // Current database if empty 
+	private static final String VS_VAR_TO_REMEMBER="DownloadLogged"; // To remember download logging, we use a scoped variable.
+	
 	private boolean loaded=false;
 	private Calendar dateLoaded;
 
@@ -34,9 +47,9 @@ public class ConfigBean implements Serializable, DataObject {
 		}
 	}
 
-//	private Session getSession() {
-//		return ExtLibUtil.getCurrentSession();
-//	}
+	private Session getSession() {
+		return ExtLibUtil.getCurrentSession();
+	}
 	
 	private Database getCurrentDatabase() {
 		return ExtLibUtil.getCurrentDatabase();
@@ -138,5 +151,85 @@ public class ConfigBean implements Serializable, DataObject {
 
 		return url+snippetId;
 	}
+
+	public boolean snippetCopied(String projectName) {
+
+		Map<String, Object> viewScope=ExtLibUtil.getViewScope();
+
+		if(viewScope.containsKey(VS_VAR_TO_REMEMBER)) { // if download logged at the same view life-cycle,
+			// We don't need to do it again!
+			return false;
+		}
+		
+		ExternalContext ec=FacesContext.getCurrentInstance().getExternalContext();
+		HttpServletRequest request=(HttpServletRequest) ec.getRequest();
+
+		String rUser=request.getRemoteUser();
+		if("127.0.0.1".equals(rUser)) rUser=request.getHeader("HTTP_X_FORWARDED_FOR");
+				
+		Session session=getSession();
+		Database currentDb=getCurrentDatabase();
+		
+		Database logDb=null;
+		DateTime now=null;
+		Document logDoc=null;
+		Name userName=null;
+		
+		try {
+			if("".equals(LOGDB_FILENAME)) {
+				logDb=currentDb;
+			} else {
+				logDb=session.getDatabase("", LOGDB_FILENAME, false);
+			}
+			
+			now=session.createDateTime(new Date());
+			userName=session.createName(rUser);
+			
+			if("Anonymous".equals("Anonymous")) {
+				rUser="";
+			} else {
+				rUser=userName.getCommon();
+			}
+			
+			logDoc=logDb.createDocument();
+
+			logDoc.replaceItemValue("Form", "Log");
+			logDoc.replaceItemValue("Type", "fileDownload");
+			logDoc.replaceItemValue("Date", now);
+			logDoc.replaceItemValue("FileName", ""); // no attachment
+			logDoc.replaceItemValue("UserAddress", request.getRemoteAddr());
+			logDoc.replaceItemValue("User", rUser);
+			logDoc.replaceItemValue("DBasePath", currentDb.getFileName());
+			logDoc.replaceItemValue("Project", projectName);
+			logDoc.replaceItemValue("Release", (new Date()).toString());
+			logDoc.replaceItemValue("DownloadType", "snippet");
+			logDoc.replaceItemValue("ServerAddress", request.getServerName());
+			
+			if(logDoc.computeWithForm(false, false)) {
+				if(! logDoc.save()) {
+					System.out.println("Error saving Download Log record for XSnippets");
+					return false;
+				}
+			} else {
+				System.out.println("Error computing Download Log record for XSnippets");
+				return false;
+			}
+
+			viewScope.put(VS_VAR_TO_REMEMBER, "1");
+			
+			return true;
+			
+		} catch (NotesException ne) {
+			ne.printStackTrace();
+		} finally {
+			Utils.recycleObjects(logDoc, now);
+			if("".equals(LOGDB_FILENAME)) {
+				Utils.recycleObjects(logDb);
+			}
+		}
+		
+		return false;				
+	}
+
 	
 }

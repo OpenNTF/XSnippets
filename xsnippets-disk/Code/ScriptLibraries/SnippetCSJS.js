@@ -49,23 +49,3 @@ function installSearch(xmlFile) {
 	}
 }
 
-// FIXME: Convert to CSJS
-function onCopySnippet(downloadCounterUrl) {
-	var now = "#{javascript:var now = java.util.Date();var d = now.toString();d}";
-	var projectName = "#{javascript:var projectName = 'Snippet: ' + param.id;projectName}";					
-	
-	if (downloadCounterUrl) {
-		downloadCounterUrl = downloadCounterUrl + "&type=snippet&project=" + projectName + "&release=" + now;						
-	}
-	else {				
-		var baseUrl = "#{javascript:var baseUrl = context.getUrl().toString();baseUrl.substring(0, baseUrl.indexOf(\".nsf\") + 4)}";
-		downloadCounterUrl = baseUrl + "/downloadcounter?openagent" + "&type=snippet&project=" + projectName + "&release=" + now;
-	}
-	
-	downloadCounterUrl = encodeURI(downloadCounterUrl);
-		
-	var http_request = new XMLHttpRequest();
-	http_request.open("GET", downloadCounterUrl, true );
-	
-	http_request.send(null);					        
-}		

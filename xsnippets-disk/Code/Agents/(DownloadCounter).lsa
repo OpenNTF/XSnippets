@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
  replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='16a' unid='8B258F22CEEF6E1785257927002B1B68' sequence='37'>
+<noteinfo noteid='16a' unid='8B258F22CEEF6E1785257927002B1B68' sequence='40'>
 <created><datetime dst='true'>20111012T035050,64-04</datetime></created>
-<modified><datetime dst='true'>20130430T195503,15+03</datetime></modified>
-<revised><datetime dst='true'>20130430T195503,14+03</datetime></revised>
-<lastaccessed><datetime dst='true'>20130430T195503,15+03</datetime></lastaccessed>
+<modified><datetime>20131103T151001,88+02</datetime></modified>
+<revised><datetime>20131103T151001,87+02</datetime></revised>
+<lastaccessed><datetime>20131103T151001,88+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130430T165117,31+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
 <wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name='$TITLE' sign='true'><text>(DownloadCounter)</text></item>
 <item name='$AssistType' sign='true'><number>65413</number></item>
@@ -19,7 +18,7 @@ AAAAAAAAAAA=
 <item name='$AssistDocCount' sign='true'><number>0</number></item>
 <item name='$FlagsExt' sign='true'><text/></item>
 <item name='$AssistFlags' sign='true'><text>EHu</text></item>
-<item name='$AssistTrigger'><text>4</text></item>
+<item name='$AssistTrigger' sign='true'><text>4</text></item>
 <item name='$AssistInfo' sign='true'>
 <rawitemdata type='11'>
 AQAEAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -30,8 +29,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 gQYAAAAA
 </rawitemdata></item>
 <item name='$Restricted' sign='true'><number>1</number></item>
-<item name='$Flags'><text>fL3u</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
 <item name='$AssistRunInfo' summary='true'>
 <rawitemdata type='3'>
 BgAAAgAACABmAQAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAAlgAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -202,5 +199,8 @@ AwQAgAZNm6UaYQA6HgAaYgBdyANJ2AOTWAMEAFgDCABYAwQAqQZNm6UaYwAaZQAdAgAAABEAGAAA
 AAAA//8BAAMADwAAABMAOAAVAAADUwAKAAAA
 </rawitemdata></item>
 <item name='$POID'><datetime>20120214T095833,67+01</datetime></item>
-<item name='$AssistVersion'><datetime dst='true'>20130430T195503,02+03</datetime></item></note>
+<item name='$Flags'><text>fL3uw</text></item>
+<item name='$Comment' sign='true'><text>hidden-not used now</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
+<item name='$AssistVersion'><datetime>20131103T151001,77+02</datetime></item></note>
 
