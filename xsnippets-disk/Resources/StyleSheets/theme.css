@@ -86,17 +86,21 @@ body.tundra {
 .entryList .entry {
 	position: relative;
 	float: left;
-	width: 100%;
+	width: 95%;
 	margin-bottom: 10px;
 }
 
 .entryList .entry .entryLink {
 	position: relative;
-	float: left;
+	/* float: left; */
 	color: #000;
 	width: 100%;
 	text-decoration: none;
 	margin-bottom: 5px;
+}
+
+.entryList .entry .entryLink .vwImgFeatured {
+	margin-left:10px;
 }
 
 .entryList .entry .entryLink:hover {
@@ -159,6 +163,12 @@ body.tundra {
 	float: right;
 }
 
+.specialFlagContainer {
+    float: left;
+    margin-right: 10px;
+    margin-top: -5px;
+}
+    
 /*view styling*/
 .container .contentContainer .viewPanel {
 	position: relative;
@@ -304,3 +314,4 @@ div.stBubble {
     border-style: hidden;
     border-width: 0 0 0 !important;
 }
+

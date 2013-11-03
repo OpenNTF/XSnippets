@@ -23,10 +23,11 @@
 				<xp:div id="div5" styleClass="entry">
 					<xp:link escape="true" text="" id="link2"
 						styleClass="entryLink"
-						value="#{javascript:configUtil.getSnippetUrl(dataList.getDocument().getItemValueString('Id'))}">
+						value="#{javascript:configUtil.getSnippetUrl(dataList.getColumnValue('id'))}">
 						<xp:text escape="true" id="computedField1"
 							tagName="h3" disableTheme="true" value="#{dataList.Name}">
 						</xp:text>
+						<xp:image rendered="#{dataList.featured eq '1'}" styleClass="vwImgFeatured" url="/flagFeatured16.png"></xp:image>
 					</xp:link>
 					<xp:div id="div6" styleClass="entryBody">
 						<xp:link escape="true" text="" id="link3"
@@ -73,7 +74,7 @@
 				<xp:div id="div1" styleClass="entry">
 					<xp:link escape="true" text="" id="link1"
 						styleClass="entryLink"
-						value="#{javascript:configUtil.getSnippetUrl(dataList.getDocument().getItemValueString('Id'))}">
+						value="#{javascript:configUtil.getSnippetUrl(dataList.getColumnValue('id'))}">
 						<xp:text escape="true" id="computedField5"
 							tagName="h3" disableTheme="true" value="#{dataList.Name}">
 						</xp:text>

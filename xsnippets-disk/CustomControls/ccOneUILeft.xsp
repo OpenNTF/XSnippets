@@ -5,6 +5,9 @@
 			<xe:pageTreeNode label="XSnippets Home" page="/home.xsp"
 				selected="/Home">
 			</xe:pageTreeNode>
+			<xe:pageTreeNode label="Featured Snippets"
+				page="/snippetsFeatured.xsp" selected="/View/Featured">
+			</xe:pageTreeNode>
 			<xe:pageTreeNode label="My Favorites"
 				page="/snippetsFavorites.xsp" selected="/View/Favorites">
 			</xe:pageTreeNode>

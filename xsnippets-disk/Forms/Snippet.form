@@ -1,15 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
  replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='42e' unid='60D93E74A9D947F2C22579F1005B55DF' sequence='40'>
+<noteinfo noteid='42e' unid='60D93E74A9D947F2C22579F1005B55DF' sequence='42'>
 <created><datetime dst='true'>20120501T193737,59+03</datetime></created>
-<modified><datetime dst='true'>20130430T195513,02+03</datetime></modified>
-<revised><datetime dst='true'>20130430T195513,01+03</datetime></revised>
-<lastaccessed><datetime dst='true'>20130430T195513,02+03</datetime></lastaccessed>
+<modified><datetime>20131104T001843,16+02</datetime></modified>
+<revised><datetime>20131104T001843,15+02</datetime></revised>
+<lastaccessed><datetime>20131104T001843,16+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130430T165119,08+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Serdar Basegmez/O=developi</name></updatedby>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
 <wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$HTMLCode' sign='true'>
@@ -49,9 +47,12 @@ AAAAAAAAAAA=
 <item name='Notes' placeholder='true'>
 <rawitemdata type='0'>
 </rawitemdata></item>
-<item name='$Fields'><textlist><text>Notes</text><text>Tags</text><text>Language</text><text
->Body</text><text>Author</text><text>Id</text><text>DateCreated</text><text
->Name</text></textlist></item>
+<item name='SpecialFlags' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='$Fields'><textlist><text>SpecialFlags</text><text>Notes</text><text
+>Tags</text><text>Language</text><text>Body</text><text>Author</text><text
+>Id</text><text>DateCreated</text><text>Name</text></textlist></item>
 <item name='$Body' sign='true'>
 <rawitemdata type='1'>
 gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -82,6 +83,9 @@ AAoAAAAAAAAAAAQAAAAAAFRhZ3NiDgEAhAAAAAAAAAAAAN4GAACK/4X/CAABAAAKgQKDBAEAhf8I
 AAEAAAqBAoMEAQCF/w8AAQAACk5vdGVzOiAA3QYAAIr//v9QAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAeAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACK
 /yoAigAABQAAAgAAAAAAAAIBAAAKAAAAAAAAAAAFAAAAAABOb3RlcwBiDgEAhAAAAAAAAAAAAN4G
-AACK/4X/CAABAAAK
+AACK/4X/CAABAAAKgQKDBAEAhf8IAAEAAAqBAoMEAQCF/xYAAQAAClNwZWNpYWxGbGFnczog3QYA
+AIr//v9QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAB4AAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACK/zwAisIBBQYwAgAAAAAAAAIBAAAKAAAAAAAAAAAM
+AAAADABTcGVjaWFsRmxhZ3MBAAgAZmVhdHVyZWTeBgAAiv+F/wgAAQAACg==
 </rawitemdata></item></note>
 

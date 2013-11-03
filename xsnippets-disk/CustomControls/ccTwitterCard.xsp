@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.resources>
+		<xp:metaData name="twitter:card" content="summary"></xp:metaData>
+		<xp:metaData name="twitter:site" content="@XSnippets"></xp:metaData>
+		<xp:metaData name="twitter:title" content="#{document1.Name}"></xp:metaData>
+		<xp:metaData name="twitter:description" content="#{document1.notes}"></xp:metaData>
+		<xp:metaData name="twitter:creator" content="@XSnippets"></xp:metaData>
+		<xp:metaData name="twitter:image:src" content="#{javascript:getFullBaseUrl()+'/OpenNTFLogo.png'}"></xp:metaData>
+		<xp:metaData name="twitter:domain" content="openntf.org"></xp:metaData>
+		<xp:metaData name="twitter:url" content="#{javascript:configUtil.getSnippetUrl(document1.getItemValueString('id'))}"></xp:metaData>
+	</xp:this.resources>
+</xp:view>

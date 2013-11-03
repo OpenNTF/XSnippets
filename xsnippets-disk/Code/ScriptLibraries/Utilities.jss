@@ -147,6 +147,12 @@ function getBaseUrl() {
 	return url.getPath().replace(view.getPageName(), "");
 }
 
+function getFullBaseUrl() {
+	url=context.getUrl();
+	url.removeAllParameters();
+	return url.toString().replace(view.getPageName(), "");
+}
+
 function getSearchTerms(text) {
 	
 	if(null==text || "".equals(text)) return "";
