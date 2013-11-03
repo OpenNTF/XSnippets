@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
 	<xp:panel id="searchInputPanel" style="display:inline-block; width:200px;">
+		<input type="hidden" id="baseUrl" value="#{javascript:getBaseUrl()}" />
 		<xp:table style="width:100%">
 			<xp:tr>
 				<xp:td>
@@ -11,8 +12,11 @@
 							valueMarkup="true" var="searchTerm">
 							<xp:this.valueList><![CDATA[#{javascript:try { 
 			result=[];
+
+			if(null==searchTerm) return;
+
 			searchView=database.getView("SnippetsAll");
-			ftQuery="*"+searchTerm+"*";
+			ftQuery=getSearchTerms(searchTerm.trim().replace(" ", "* ")+"*");
 			count=searchView.FTSearch(ftQuery, 10);
 			
 			if(count>0) {
@@ -65,25 +69,33 @@
 			</xp:tr>
 		</xp:table>
 	</xp:panel>
+	
 	<xp:eventHandler event="onClientLoad" submit="false">
-		<xp:this.script><![CDATA[if(#{javascript:view.getPageName().search(/loginToConnections.xsp|byAuthor|snippet.xsp|newSnippet|editSnippet/ig)==-1}) {
-	dojo.connect(document, "onkeydown", function (event) { 
-	        var keyCode = event.keyCode ? event.keyCode : event.charCode;
+		<xp:this.script>
+			<xp:scriptGroup>
+				<xp:executeClientScript>
+					<xp:this.script><![CDATA[
+						dojo.connect(dojo.byId("#{id:searchInput}"), "onkeypress", function (event) { 
+        					var keyCode = event.keyCode ? event.keyCode : event.charCode;
+ 					        if(keyCode==13) {
+        						searchSubmit("#{id:searchInput}");
+        					}
+						});
+					]]></xp:this.script>
+				</xp:executeClientScript>
+				<xp:executeClientScript loaded="${javascript:keyPressSearchEnabled()}">
+					<xp:this.script><![CDATA[
+						dojo.connect(document, "onkeydown", function (event) { 
+	        				var keyCode = event.keyCode ? event.keyCode : event.charCode;
 	        
-	        // Only char inputs...
-	        if(keyCode>=65 && keyCode<=90) {
-	        	dojo.byId("#{id:searchInput}").focus();
-	        }
-	});
-}
-
-dojo.connect(dojo.byId("#{id:searchInput}"), "onkeypress", function (event) { 
-        var keyCode = event.keyCode ? event.keyCode : event.charCode;
- 
-        if(keyCode==13) {
-        	searchSubmit("#{id:searchInput}");
-        }
-}); 
-]]></xp:this.script>
+					        // Only char inputs...
+	        				if(keyCode>=65 && keyCode<=90) {
+	        					dojo.byId("#{id:searchInput}").focus();
+	        				}
+							});
+					]]></xp:this.script>
+				</xp:executeClientScript>
+			</xp:scriptGroup>
+		</xp:this.script>
 	</xp:eventHandler>
 </xp:view>

@@ -25,6 +25,9 @@ if(v!=null){
 	sessionScope.authorCategory = "";
 }
 }]]></xp:this.beforePageLoad>
+	<xp:this.properties>
+		<xp:parameter name="disableKeyboardSearch" value="1"></xp:parameter>
+	</xp:this.properties>
 	<xc:ccOneUILayout id="cconeuilayout"
 		title="#{javascript:database.getTitle()}"
 		defaultNavigationPath="/Home" navigationPath="/View/Author">

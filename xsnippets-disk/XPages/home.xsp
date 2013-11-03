@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:xe="http://www.ibm.com/xsp/coreex">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
 	<xp:this.resources>
-		<xp:linkResource href="opensearch.xml" title="XSnippets" rel="search" type="application/opensearchdescription+xml"></xp:linkResource>
+		<xp:linkResource href="opensearch.xml" title="XSnippets"
+			rel="search" type="application/opensearchdescription+xml">
+		</xp:linkResource>
 	</xp:this.resources>
 	<xp:this.afterPageLoad><![CDATA[#{javascript:if(sessionScope.containsKey("ErrorMessage")) {
 	view.postScript("alert('"+sessionScope.get("ErrorMessage")+"')");
 	sessionScope.remove("ErrorMessage");
 }}]]></xp:this.afterPageLoad>
-	<xc:ccOneUILayout id="cconeuilayout" navigationPath="/Home" defaultNavigationPath="/Home">
+	<xc:ccOneUILayout id="cconeuilayout" navigationPath="/Home"
+		defaultNavigationPath="/Home">
 		<xp:this.facets>
 			<xp:panel xp:key="LeftColumn" id="panel4">
 				<xc:ccOneUILeft id="ccLeftOneUI"></xc:ccOneUILeft>

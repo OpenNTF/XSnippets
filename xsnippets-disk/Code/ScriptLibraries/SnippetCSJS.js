@@ -33,8 +33,10 @@ function searchBoxOut(panelId, inputId) {
 
 function searchSubmit(id) {
 	var val=XSP.getFieldValue(XSP.getElementById(id));
+	var baseUrl=XSP.getFieldValue(XSP.getElementById("baseUrl"));
+	
 	if(val && val!="Search snippets..."){
-		var loc='/XSnippets.nsf/search.xsp?search='+encodeURIComponent(val);
+		var loc=baseUrl+'/search.xsp?search='+encodeURIComponent(val);
 		window.location.href=loc;
 	}
 }

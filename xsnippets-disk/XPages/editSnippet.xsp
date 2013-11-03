@@ -9,7 +9,9 @@
 			</xp:this.entries>
 		</xp:acl>
 	</xp:this.acl>
-	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
+	<xp:this.properties>
+		<xp:parameter name="disableKeyboardSearch" value="1"></xp:parameter>
+	</xp:this.properties>
 	<xc:ccOneUILayout title="#{javascript:database.getTitle()}">
 		<xp:this.facets>
 			<xp:panel xp:key="LeftColumn" id="panel4">

@@ -1,3 +1,7 @@
+/**
+ * Javascript library for Widgets
+ */
+
 dojo.require("dojo.io.script");
 
 function load() {

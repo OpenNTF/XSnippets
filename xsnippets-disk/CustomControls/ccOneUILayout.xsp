@@ -16,8 +16,10 @@
 
 	<xe:applicationLayout id="oneUILayout1">
 		<xe:this.facets>
-			<xc:ccSearch xp:key="SearchBar"></xc:ccSearch>
-			
+			<xc:ccSearch xp:key="SearchBar"
+				loaded="${javascript:database.isFTIndexed()}">
+			</xc:ccSearch>
+
 			<xp:callback xp:key="LeftColumn" facetName="LeftColumn"
 				id="callback1">
 			</xp:callback>
@@ -61,7 +63,7 @@ url2.toString()}]]></xe:this.href>
 				<xe:this.titleBarTabs></xe:this.titleBarTabs>
 				<xe:this.searchBar rendered="false">
 					<xe:appSearchBar pageName="search"
-						inactiveText="Enter Keywords" loaded="true">
+						inactiveText="Enter Keywords" loaded="true" rendered="${javascript:database.isFTIndexed()}">
 					</xe:appSearchBar>
 				</xe:this.searchBar>
 				<xe:this.placeBarName><![CDATA[#{javascript:compositeData.title}]]></xe:this.placeBarName>

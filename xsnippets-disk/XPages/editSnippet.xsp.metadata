@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1f2" sequence="18" unid="F70F8C02DD55FE8AC22579F1005B555F">
+<noteinfo noteid="1f2" sequence="23" unid="F70F8C02DD55FE8AC22579F1005B555F">
 <created><datetime dst="true">20120501T193736,31+03</datetime></created>
-<modified><datetime dst="true">20130430T201214,07+03</datetime></modified>
-<revised><datetime dst="true">20130430T201214,06+03</datetime></revised>
-<lastaccessed><datetime dst="true">20130430T201214,07+03</datetime></lastaccessed>
+<modified><datetime>20131103T220840,44+02</datetime></modified>
+<revised><datetime>20131103T220840,43+02</datetime></revised>
+<lastaccessed><datetime>20131103T220840,44+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130430T165117,65+03</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
 <wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
@@ -11,10 +11,10 @@
 <item name="$TITLE" sign="true"><text>editSnippet.xsp</text></item>
 
 
+
 <item name="$FileNames" sign="true"><text>editSnippet.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.1</text></item>
 
 
-
-<item name="$DesignerVersion"><text>8.5</text></item>
 
 </note>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xc:ccOneUILayout title="#{javascript:database.getTitle()}">
+		<xp:this.facets>
+			<xp:panel xp:key="LeftColumn" id="panel4">
+				<xc:ccOneUILeft></xc:ccOneUILeft>
+			</xp:panel>
+		</xp:this.facets>
+		<xp:div id="content" styleClass="contentContainer">
+			<xp:panel styleClass="errorPageContent">
+				<xp:text value="Oops! We cannot find what you are looking for..." tagName="h2"></xp:text>
+				
+				<ul style="font-size:1.05em; color:darkred;">
+					<xp:text value= "It might be deleted for some reason," tagName="li"></xp:text>	
+					<xp:text value= "It might be renamed, you might use search on the top," tagName="li"></xp:text>	
+					<xp:text value= "Something very fantastic could be the problem, who knows..." tagName="li"></xp:text>	
+				</ul>
+				
+				<xp:br/>
+				
+				<xp:link escape="true"
+					text="Click here to return home page..." id="link1"
+					value="/home.xsp" style="margin-left:40px; font-size:1.1em;">
+				</xp:link>
+			</xp:panel>
+		</xp:div>
+	</xc:ccOneUILayout>
+</xp:view>

@@ -294,3 +294,13 @@ div.stBubble {
 .faceBookComments {
 	margin: 20px 0px;
 }
+
+/* Edit Profile */
+.lotusFormTable .lotusFormFooter {
+    background-color: white;
+}
+.lotusForm2 .lotusFormFooter, .lotusForm td.lotusFormFooter, .lotusFormTable td.lotusFormFooter {
+    border-color: white;
+    border-style: hidden;
+    border-width: 0 0 0 !important;
+}

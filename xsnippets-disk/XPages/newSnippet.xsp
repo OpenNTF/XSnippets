@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:xe="http://www.ibm.com/xsp/coreex">
-
-	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
+	<xp:this.properties>
+		<xp:parameter name="disableKeyboardSearch" value="1"></xp:parameter>
+	</xp:this.properties>
 	<xc:ccOneUILayout title="#{javascript:database.getTitle()}">
 		<xp:this.facets>
 			<xp:panel xp:key="LeftColumn" id="panel4">

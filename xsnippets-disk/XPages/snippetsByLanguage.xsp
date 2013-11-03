@@ -21,6 +21,9 @@ if(param.cat!=null && @IsMember(param.cat, sessionScope.languageCategories)){
 	sessionScope.languageCategory = param.cat;
 }
 }]]></xp:this.beforePageLoad>
+	<xp:this.properties>
+		<xp:parameter name="disableKeyboardSearch" value="1"></xp:parameter>
+	</xp:this.properties>
 	<xc:ccOneUILayout id="cconeuilayout"
 		defaultNavigationPath="/Home" navigationPath="/View/Language">
 		<xp:this.facets>

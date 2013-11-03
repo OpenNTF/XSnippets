@@ -12,15 +12,16 @@ function getShowAs(codeLanguage) {
 }
 
 
-// TODO: Redirection to invalid id should be implemented!
-function getSnippetUNID(id) {
+function getSnippetUNID(id, throwError) {
 	if(id!=null && id!=""){
 		var view1 = database.getView("SnippetsAll");
 		var entry = view1.getEntryByKey(id, true);
-		return (entry != null)?entry.getUniversalID():"";
-	} else {
-		return "";
+		
+		if(entry!=null) return entry.getUniversalID();
 	}
+	
+	if(throwError) context.redirectToPage("errorSnippetNotFound");
+	return "";
 }
 
 function getDownloadsById(id) {
@@ -138,4 +139,28 @@ function sendReport(snippetNoteId, reportReason, reportDetail) {
 
 	mailDoc.replaceItemValue("Body", bodyStr);
 	mailDoc.send(false);
+}
+
+function getBaseUrl() {
+	url=context.getUrl();
+	url.removeAllParameters();
+	return url.getPath().replace(view.getPageName(), "");
+}
+
+function getSearchTerms(text) {
+	
+	if(null==text || "".equals(text)) return "";
+	
+	var searchFields=["Name","Author","Body","Tags","Notes"];
+	var query="";
+
+	for(i=0; i<searchFields.length; i++) {
+		query+=(query==""?"":" OR ")+"(["+searchFields[i]+"] CONTAINS \""+text+"\")";
+	}
+
+	return query;
+}
+
+function keyPressSearchEnabled() {
+	return (null==view.getViewProperty("disableKeyboardSearch"))
 }
