@@ -2,11 +2,13 @@ package org.openntf.xsnippets;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -39,8 +41,12 @@ public class ConfigBean implements Serializable, DataObject {
 	private boolean loaded=false;
 	private Calendar dateLoaded;
 
-	private HashMap<String, String> fields;
+	private Map<String, String> fields;
 	
+	private List<Link> headerLinks;
+	private List<Link> leftMenuLinks;
+	private List<Link> bottomLinks;
+		
 	public ConfigBean() {
 		if(!loadConfig()) {
 			System.out.println("Error loading XSnippets Configuration!");
@@ -55,6 +61,7 @@ public class ConfigBean implements Serializable, DataObject {
 		return ExtLibUtil.getCurrentDatabase();
 	}
 
+	@SuppressWarnings("unchecked")
 	private boolean loadConfig() {
 		
 		fields=new HashMap<String, String>();
@@ -65,7 +72,7 @@ public class ConfigBean implements Serializable, DataObject {
 		Document configDoc=null;
 		
 		try {
-			configView = db.getView("(Configuration)");
+			configView = db.getView("Configuration");
 			configDoc = configView.getDocumentByKey("Configuration", true);
 			
 			if(configDoc==null) {
@@ -84,6 +91,10 @@ public class ConfigBean implements Serializable, DataObject {
 					Utils.recycleObjects(item);
 				}
 			}
+			
+			headerLinks=getLinks(configDoc.getItemValue("headerLinks"));
+			leftMenuLinks=getLinks(configDoc.getItemValue("leftMenuLinks"));
+			bottomLinks=getLinks(configDoc.getItemValue("bottomLinks"));
 			
 			setLoaded(true);
 
@@ -121,9 +132,15 @@ public class ConfigBean implements Serializable, DataObject {
 		return ConfigBean.class;
 	}
 
-	public Object getValue(Object arg0) {
-		String result=fields.get(arg0);
-//		System.out.println(arg0.toString()+" >> "+result);
+	public Object getValue(Object key) {
+		if(key==null) return "";
+
+		if("headerLinks".equals(key)) return getHeaderLinks();
+		if("leftMenuLinks".equals(key)) return getLeftMenuLinks();
+		if("bottomLinks".equals(key)) return getBottomLinks();
+		if("codeLanguages".equals(key)) return getCodeLanguages();
+		
+		String result=fields.get(key);
 		return (null==result)?"":result;
 	}
 
@@ -152,6 +169,34 @@ public class ConfigBean implements Serializable, DataObject {
 		return url+snippetId;
 	}
 
+	public List<Link> getHeaderLinks() {
+		return headerLinks;
+	}
+
+	public List<Link> getLeftMenuLinks() {
+		return leftMenuLinks;
+	}
+
+	public List<Link> getBottomLinks() {
+		return bottomLinks;
+	}
+
+
+	// Extracts "Title|Link|Class" formatted list of links from a vector of fields
+	private static List<Link> getLinks(Vector<Object> listOfLinks) {
+		List<Link> result=new ArrayList<Link>();
+		
+		for(Object o: listOfLinks) {
+			if(StringUtil.isNotEmpty(o.toString())) {
+				String[] a=StringUtil.splitString(o.toString()+"||", '|'); // to make sure we will have at least 3 elements.
+		
+				result.add(new Link(a[0], a[1],	a[2]));
+			}			
+		}
+		
+		return result;
+	}
+	
 	public boolean snippetCopied(String projectName) {
 
 		Map<String, Object> viewScope=ExtLibUtil.getViewScope();
@@ -231,5 +276,28 @@ public class ConfigBean implements Serializable, DataObject {
 		return false;				
 	}
 
-	
+	public static class Link implements Serializable {
+		
+		private static final long serialVersionUID = 1L;
+
+		private String title="";
+		private String href="";
+		private String className="";
+		
+		public Link(String title, String href, String className) {
+			this.title=title;
+			this.href=href;
+			this.className=className;
+		}
+		
+		public String getTitle() {
+			return title;
+		}
+		public String getHref() {
+			return href;
+		}
+		public String getClassName() {
+			return className;
+		}
+	}
 }

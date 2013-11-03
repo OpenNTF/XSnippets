@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
-	<xp:this.resources>
-		<xp:script src="/SnippetCSJS.js" clientSide="true"></xp:script>
-	</xp:this.resources>
-	<panel id="searchInputPanel" style="display:inline-block; width:200px;">
-			<xp:table style="width:100%">
-				<xp:tr>
-					<xp:td>
-						<xp:inputText id="searchInput" style="font-size:14px; height:20px; width:100%;" defaultValue="Search snippets..."
-							styleClass="lotusInactive">
-							<xp:typeAhead mode="partial" minChars="2" ignoreCase="true" valueMarkup="true" var="searchTerm">
-								<xp:this.valueList><![CDATA[#{javascript:try { 
+	<xp:panel id="searchInputPanel" style="display:inline-block; width:200px;">
+		<xp:table style="width:100%">
+			<xp:tr>
+				<xp:td>
+					<xp:inputText id="searchInput"
+						style="font-size:14px; height:20px; width:100%;" defaultValue="Search snippets..."
+						styleClass="lotusInactive">
+						<xp:typeAhead mode="partial" minChars="2" ignoreCase="true"
+							valueMarkup="true" var="searchTerm">
+							<xp:this.valueList><![CDATA[#{javascript:try { 
 			result=[];
 			searchView=database.getView("SnippetsAll");
 			ftQuery="*"+searchTerm+"*";
@@ -43,26 +42,29 @@
 			} catch(e) {
 				print(e);
 			}}]]></xp:this.valueList>
-							</xp:typeAhead>
-							<xp:eventHandler event="onfocus" submit="false">
-								<xp:this.script><![CDATA[searchBoxIn('#{id:searchInputPanel}', '#{id:searchInput}', 400);]]></xp:this.script>
-							</xp:eventHandler>
-							<xp:eventHandler event="onblur" submit="false">
-								<xp:this.script><![CDATA[searchBoxOut('#{id:searchInputPanel}', '#{id:searchInput}');]]></xp:this.script>
-							</xp:eventHandler>
-						</xp:inputText>
-					</xp:td>
-					<xp:td>
-						<xp:link escape="true" id="searchLink" outerStyleClass="lotusBtnImg" styleClass="lotusSearchButton">
-							<xp:image id="image1" url="/.ibmxspres/domino/oneuiv2/images/blank.gif" alt="Submit search"></xp:image>
-							<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
-								<xp:this.script><![CDATA[searchSubmit('#{id:searchInput}');]]></xp:this.script>
-							</xp:eventHandler>
-						</xp:link>
-					</xp:td>
-				</xp:tr>
-			</xp:table>
-	</panel>
+						</xp:typeAhead>
+						<xp:eventHandler event="onfocus" submit="false">
+							<xp:this.script><![CDATA[searchBoxIn('#{id:searchInputPanel}', '#{id:searchInput}', 400);]]></xp:this.script>
+						</xp:eventHandler>
+						<xp:eventHandler event="onblur" submit="false">
+							<xp:this.script><![CDATA[searchBoxOut('#{id:searchInputPanel}', '#{id:searchInput}');]]></xp:this.script>
+						</xp:eventHandler>
+					</xp:inputText>
+				</xp:td>
+				<xp:td>
+					<xp:link escape="true" id="searchLink" outerStyleClass="lotusBtnImg"
+						styleClass="lotusSearchButton">
+						<xp:image id="image1"
+							url="/.ibmxspres/domino/oneuiv2/images/blank.gif" alt="Submit search"></xp:image>
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete">
+							<xp:this.script><![CDATA[searchSubmit('#{id:searchInput}');]]></xp:this.script>
+						</xp:eventHandler>
+					</xp:link>
+				</xp:td>
+			</xp:tr>
+		</xp:table>
+	</xp:panel>
 	<xp:eventHandler event="onClientLoad" submit="false">
 		<xp:this.script><![CDATA[if(#{javascript:view.getPageName().search(/loginToConnections.xsp|byAuthor|snippet.xsp|newSnippet|editSnippet/ig)==-1}) {
 	dojo.connect(document, "onkeydown", function (event) { 
@@ -83,4 +85,5 @@ dojo.connect(dojo.byId("#{id:searchInput}"), "onkeypress", function (event) {
         }
 }); 
 ]]></xp:this.script>
-	</xp:eventHandler></xp:view>
+	</xp:eventHandler>
+</xp:view>

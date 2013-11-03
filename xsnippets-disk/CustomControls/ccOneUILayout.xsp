@@ -34,18 +34,13 @@
 				productLogoStyle="float: left; vertical-align: middle; margin-right: 5px;margin-top:5px;"
 				titleBar="true" titleBarName="Share your Code with others">
 				<xe:this.bannerApplicationLinks>
-					<xe:basicLeafNode label="XSnippets"
-						href="http://xsnippets.openntf.org">
-					</xe:basicLeafNode>
-					<xe:basicLeafNode label="OpenNTF"
-						href="http://openntf.org">
-					</xe:basicLeafNode>
-					<xe:basicLeafNode label="XPages.info"
-						href="http://xpages.info">
-					</xe:basicLeafNode>
-					<xe:basicLeafNode label="Development Contest"
-						href="http://contest.openntf.org">
-					</xe:basicLeafNode>
+					<xe:repeatTreeNode value="#{configUtil.headerLinks}"
+						var="link">
+					<xe:this.children>
+						<xe:basicLeafNode href="#{link.href}"
+							label="#{link.title}" styleClass="#{link.className}">
+						</xe:basicLeafNode>
+					</xe:this.children></xe:repeatTreeNode>
 				</xe:this.bannerApplicationLinks>
 				<xe:this.bannerUtilityLinks>
 					<xe:userTreeNode></xe:userTreeNode>
@@ -73,25 +68,13 @@ url2.toString()}]]></xe:this.href>
 				<xe:this.footerLinks>
 					<xe:basicContainerNode label="">
 						<xe:this.children>
-							<xe:basicLeafNode label="Hosted by OpenNTF"
-								href="http://www.openntf.org">
-							</xe:basicLeafNode>
-							<xe:basicLeafNode label="Terms of use"
-								href="http://openntf.org/legal/terms">
-							</xe:basicLeafNode>
-							<xe:basicLeafNode
-								href="http://openntf.org/legal/privacypolicy"
-								label="Privacy Policy">
-							</xe:basicLeafNode>
-							<xe:basicLeafNode
-								href="http://openntf.org/Internal/home.nsf/dx/Contact_OpenNTF"
-								label="Contact">
-							</xe:basicLeafNode>
-							<xe:basicLeafNode
-								href="http://openntf.org/Internal/home.nsf/dx/Follow_OpenNTF"
-								label="Follow OpenNTF">
-							</xe:basicLeafNode>
-
+							<xe:repeatTreeNode value="#{configUtil.bottomLinks}"
+								var="link">
+							<xe:this.children>
+								<xe:basicLeafNode href="#{link.href}"
+									label="#{link.title}" styleClass="#{link.className}">
+								</xe:basicLeafNode>
+							</xe:this.children></xe:repeatTreeNode>
 							<xe:basicLeafNode label="Reload"
 								submitValue="reloadConfig">
 								<xe:this.loaded><![CDATA[${javascript:@IsMember("[Admin]", context.getUser().getRoles())}]]></xe:this.loaded>
