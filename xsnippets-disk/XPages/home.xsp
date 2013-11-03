@@ -3,7 +3,6 @@
 	<xp:this.resources>
 		<xp:linkResource href="opensearch.xml" title="XSnippets" rel="search" type="application/opensearchdescription+xml"></xp:linkResource>
 	</xp:this.resources>
-	<xc:ccCodeResources></xc:ccCodeResources>
 	<xp:this.afterPageLoad><![CDATA[#{javascript:if(sessionScope.containsKey("ErrorMessage")) {
 	view.postScript("alert('"+sessionScope.get("ErrorMessage")+"')");
 	sessionScope.remove("ErrorMessage");

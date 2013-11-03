@@ -28,12 +28,6 @@ if(document1.getItemValueString("Name")!=viewScope.get("NameCache")){
 }}]]></xp:this.postOpenDocument>
 		</xp:dominoDocument>
 	</xp:this.data>
-	<xp:this.resources>
-		<xp:linkResource href="syntaxhighlighter/css/shCore.css" rel="stylesheet" type="text/css"></xp:linkResource>
-		<xp:linkResource href="syntaxhighlighter/css/shThemeXSnippets.css" rel="stylesheet" type="text/css"></xp:linkResource>
-		<xp:script src="syntaxhighlighter/js/shCore.js" clientSide="true"></xp:script>
-		<xp:script src="syntaxhighlighter/js/shAutoloader.js" clientSide="true"></xp:script>
-	</xp:this.resources>
 	<xp:panel id="formpanel" styleClass="formSnippet">
 		<xc:ccCode rendered="#{javascript:compositeData.mode!='edit'}"></xc:ccCode>
 		<xe:formTable id="formTable1" xp:key="form" formDescription="" labelWidth="85px" labelPosition="left" fieldHelp="false"

@@ -10,41 +10,10 @@
 		<xp:metaData name="robots" content="OpenNTF XSnippets - Code Snippets for IBM XPages Development"></xp:metaData>
 		<xp:metaData name="keywords" content="OpenNTF XSnippets Code Snippets IBM XPages Development Open Source"></xp:metaData>
 	</xp:this.resources>
+	<xp:this.beforePageLoad><![CDATA[#{javascript:viewStateBean.restoreState = true}]]></xp:this.beforePageLoad>
 		
 	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
-	<style>
-	.lotusTitleBar h2.lotusEllipsis {
-    width: 250px;
-}
-		.lotusui .lotusAccess { width: auto; } .lotusTitleBar {
-		border-bottom: none; }
 
-		.syntaxhighlighter .toolbar { z-index: 0 !important; }
-
-		.xspDataTableViewPanelHeaderStart { border-left: medium none;
-		background-color: white; border-bottom: medium none; border-top:
-		medium none; }
-
-		.xspDataTableViewPanelHeaderMiddle { border-left: medium none;
-		background-color: white; border-bottom: medium none; border-top:
-		medium none; }
-
-		.xspDataTableViewPanelHeaderEnd { border-right: medium none;
-		background-color: white; border-bottom: medium none; border-top:
-		medium none; }
-
-		.xspDataTableViewPanelFooterStart { border-left: medium none;
-		background-color: white; border-bottom: medium none; border-top:
-		medium none; }
-
-		.xspDataTableViewPanelFooterEnd { border-left: medium none;
-		background-color: white; border-bottom: medium none; border-top:
-		medium none; }
-
-		.xspDataTableViewPanelFooterMiddle { border-right: medium none;
-		background-color: white; border-bottom: medium none; border-top:
-		medium none; }
-	</style>
 	<xe:applicationLayout id="oneUILayout1">
 		<xe:this.facets>
 			<xc:ccSearch xp:key="SearchBar"></xc:ccSearch>

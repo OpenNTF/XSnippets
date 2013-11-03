@@ -1,110 +1,178 @@
-body.tundra{
-
+.lotusTitleBar h2.lotusEllipsis {
+	width: 250px;
 }
-.logo{
-	margin:5px 0px 0px 0px;
-	}
-.lotusContent .contentContainer{
-	position:relative;
-	float:left;
-	width:100%;
+
+.lotusui .lotusAccess {
+	width: auto;
+}
+
+.lotusTitleBar {
+	border-bottom: none;
+}
+
+.syntaxhighlighter .toolbar {
+	z-index: 0 !important;
+}
+
+.xspDataTableViewPanelHeaderStart {
+	border-left: medium none;
+	background-color: white;
+	border-bottom: medium none;
+	border-top: medium none;
+}
+
+.xspDataTableViewPanelHeaderMiddle {
+	border-left: medium none;
+	background-color: white;
+	border-bottom: medium none;
+	border-top: medium none;
+}
+
+.xspDataTableViewPanelHeaderEnd {
+	border-right: medium none;
+	background-color: white;
+	border-bottom: medium none;
+	border-top: medium none;
+}
+
+.xspDataTableViewPanelFooterStart {
+	border-left: medium none;
+	background-color: white;
+	border-bottom: medium none;
+	border-top: medium none;
+}
+
+.xspDataTableViewPanelFooterEnd {
+	border-left: medium none;
+	background-color: white;
+	border-bottom: medium none;
+	border-top: medium none;
+}
+
+.xspDataTableViewPanelFooterMiddle {
+	border-right: medium none;
+	background-color: white;
+	border-bottom: medium none;
+	border-top: medium none;
+}
+
+body.tundra {
+	
+}
+
+.logo {
+	margin: 5px 0px 0px 0px;
+}
+
+.lotusContent .contentContainer {
+	position: relative;
+	float: left;
+	width: 100%;
 	/*margin-top:20px;*/
-	}
-	
-.lotusContent .contentContainer .column{
-	position:relative;
-	float:left;
-	width:49%;
-	}
+}
 
-.lotusContent .contentContainer .column .entryList{
-	position:relative;
-	float:left;
-	margin:10px 0px 0px 0px;
-	}
-	
-.entryList .entry{
-	position:relative;
-	float:left;
-	width:100%;
-	margin-bottom:10px;
-	}	
-	
-.entryList .entry .entryLink{
-	position:relative;
-	float:left;
-	color:#000;
-	width:100%;
-	text-decoration:none;
-	margin-bottom:5px;
-	}
+.lotusContent .contentContainer .column {
+	position: relative;
+	float: left;
+	width: 49%;
+}
 
-.entryList .entry .entryLink:hover{
-	text-decoration:none;
-	}
-	
-.entryList .entry .entryLink h3{
-	position:relative;
-	float:left;
-	font-size:14px;
-	}
-	
-.entryList .entry .entryBody{
-	position:relative;
-	float:left;
-	width:100%;
-	height:auto;
-	}
-	
-.entryList .entry .entryBody .entryLanguage{
-	position:relative;
-	float:left;
+.lotusContent .contentContainer .column .entryList {
+	position: relative;
+	float: left;
+	margin: 10px 0px 0px 0px;
+}
+
+.entryList .entry {
+	position: relative;
+	float: left;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.entryList .entry .entryLink {
+	position: relative;
+	float: left;
+	color: #000;
+	width: 100%;
+	text-decoration: none;
+	margin-bottom: 5px;
+}
+
+.entryList .entry .entryLink:hover {
+	text-decoration: none;
+}
+
+.entryList .entry .entryLink h3 {
+	position: relative;
+	float: left;
+	font-size: 14px;
+}
+
+.entryList .entry .entryBody {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: auto;
+}
+
+.entryList .entry .entryBody .entryLanguage {
+	position: relative;
+	float: left;
 	/*width:50px;
 	height:20px;*/
-	padding:2px 4px 2px 4px;
-	text-align:center;
-	background-color:#649DE1;
-	color:#fff;
-	border:1px solid #aaa;
-	cursor:pointer;
-	}
-	
-.entryList .entry .entryBody .entryLanguage:hover{
-	text-decoration:none;
-	}
-	
-.entryList .entry .entryBody .entryText{
-	position:relative;
-	float:left;
-	margin-left:10px;
-	/*width:240px;*/
-	min-height:30px;
-	height:30px;
-	height:auto;
-	}
-	
-.entryList .entry .entryAuthor{
-	position:relative;
-	float:left;
-	width:100%;
-	}
-	
-/*snippet form styling*/
-
-/*view styling*/
-.container .contentContainer .viewPanel{
-	position:relative;
-	float:left;
-	width:100%;
-	margin-top:10px;
+	padding: 2px 4px 2px 4px;
+	text-align: center;
+	background-color: #649DE1;
+	color: #fff;
+	border: 1px solid #aaa;
+	cursor: pointer;
 }
 
-.xspFooterContainer{
-	position:relative;
-	float:left;
-	width:100%;
-	margin:5px;
-	text-align:center;
+.entryList .entry .entryBody .entryLanguage:hover {
+	text-decoration: none;
+}
+
+.entryList .entry .entryBody .entryText {
+	position: relative;
+	float: left;
+	margin-left: 10px;
+	/*width:240px;*/
+	min-height: 30px;
+	height: 30px;
+	height: auto;
+}
+
+.entryList .entry .entryAuthor {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+/*snippet form styling*/
+.snippetHeader {
+	display: inline-block;
+	min-height: 32px; /* To protect favorite icon */
+}
+
+.favoriteIconContainer {
+	float: right;
+}
+
+/*view styling*/
+.container .contentContainer .viewPanel {
+	position: relative;
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.xspFooterContainer {
+	position: relative;
+	float: left;
+	width: 100%;
+	margin: 5px;
+	text-align: center;
 }
 
 .xspFooterContainer ul {
@@ -115,129 +183,114 @@ body.tundra{
 }
 
 .xspFooterContainer ul li {
-	 display: inline; 
-	}
+	display: inline;
+}
 
-.xspFooterContainer ul li a, .xspFooterContainer ul li a:hover, .xspFooterContainer ul li a:visited{
-	color:#666;
+.xspFooterContainer ul li a,.xspFooterContainer ul li a:hover,.xspFooterContainer ul li a:visited
+	{
+	color: #666;
 	padding: .2em 1em;
-	}
+}
+
+.xspDataTableViewPanel {
+	width: 100%;
+}
+
+.xspPanelViewColumnHeader {
+	font-weight: bold;
+}
+
+td.xspColumnViewStart {
+	width: 200px;
+}
+
+td.xspColumnViewStartDate {
+	width: 100px;
+}
+
+td.xspColumnView100 {
+	width: 100px;
+}
+
+td.xspColumnView150 {
+	width: 150px;
+}
+
+td.xspColumnViewStart200 {
+	width: 200px;
+}
+
+td.xspColumnViewMiddle {
+	width: 300px;
+}
+
+.profileLink {
 	
-.xspDataTableViewPanel{
-	width:100%;
-	
 }
-.xspPanelViewColumnHeader{
-	font-weight:bold;
+
+.licensing {
+	color: gray;
 }
-td.xspColumnViewStart{
-	width:200px;
-}
-td.xspColumnViewStartDate{
-	width:100px;
-	}
-
-td.xspColumnView100{
-	width:100px;
-	}
-
-td.xspColumnView150{
-	width:150px;
-	}
-td.xspColumnViewStart200{
-	width:200px;
-	}
-td.xspColumnViewMiddle{
-	width:300px;
-	}
-
-.profileLink {}
 
 /* Form CSS, should be revised...*/
-
 .lotusForm {
-background-color: white;
+	background-color: white;
 }
-.lotusForm tr.lotusFormFieldRow td, .lotusForm td.lotusFormFieldRow {
-	text-align: left; padding-bottom:3px;
+
+.lotusForm tr.lotusFormFieldRow td,.lotusForm td.lotusFormFieldRow {
+	text-align: left;
+	padding-bottom: 3px;
 }
+
 .lotusForm td.lotusFormLabel {
-	padding-right:3px;
+	padding-right: 3px;
 }
-.lotusFormTable, .lotusFormTable td {
-background-color: white;
+
+.lotusFormTable,.lotusFormTable td {
+	background-color: white;
 }
+
 .lotusFormError {
-padding-top: 10px;
+	padding-top: 10px;
 }
 
 .lotusForm tr.lotusFormFieldRow td .syntaxhighlighter {
-height:240px;
-overflow:scroll;
-
+	height: 240px;
+	overflow: scroll;
 }
 
 .lotusForm .xspInputFieldEditBox {
-	margin:0;
+	margin: 0;
 }
 
 .errorPageContent {
-
+	
 }
+
 .ratingInfo {
-	font-size:10px;
+	font-size: 10px;
 	color: gray;
 	margin-left: 20px;
-	padding-top:3px;
+	padding-top: 3px;
 }
 
-/*TWITTER STYLING*/
-div.tweets{
-	position:relative;
-	float:left;
-	width:100%;
-	height:auto;
-	text-align:left;
-	}
-	
-div.tweets div.tweet{
-	position:relative;
-	float:left;
-	width:100%;
-	min-height:20px;
-	height:auto;
-	padding:5px;
-	border-bottom:1px solid #cccccc;
-	}
-	
-div.tweets div.tweet div.tweet_avatar{
-	position:relative;
-	float:left;
-	width:73px;
-	height:73px;
+div.stBubble {
+	height: 10px;
+	width: 10px;
 }
 
-div.tweets div.tweet div.tweet_status{
-	position:relative;
-	float:right;
-	min-height:70px;
-	height:auto;
-	width:250px;
+.snippetButtons {
+	margin: 0px 0px 40px 0px;
 }
 
-div.tweets div.tweet div.tweet_meta{
-	position:relative;
-	float:left;
-	width:100%;
+.socialShare {
+	margin: 20px 0px;
 }
 
-div.stBubble{
-	height:10px;
-	width:10px;
+.involveErrorPanel,.commentsMain {
+	margin: 20px 0px;
 }
 
-.snippetButtons {margin: 0px 0px 40px 0px; }
-.socialShare {margin: 20px 0px; }
-.involveErrorPanel , .commentsMain  {margin: 20px 0px; }
-.faceBookComments {margin: 20px 0px; }
-
+.faceBookComments {
+	margin: 20px 0px;
+}

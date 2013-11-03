@@ -2,7 +2,6 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core"
 	xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:xe="http://www.ibm.com/xsp/coreex">
-	<xc:ccCodeResources></xc:ccCodeResources>
 	<xp:this.data>
 		<xp:dominoView var="view3" viewName="SnippetsAll"></xp:dominoView>
 	</xp:this.data>

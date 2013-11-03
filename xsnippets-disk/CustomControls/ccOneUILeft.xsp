@@ -15,6 +15,6 @@
 			<xe:pageTreeNode page="/follow.xsp" selected="/Follow" label="Follow XSnippets"></xe:pageTreeNode>
 		</xe:this.treeNodes>
 	</xe:navigator>
-	<xc:ccCustomLinks></xc:ccCustomLinks>
+	
 	<xc:ccFavorites></xc:ccFavorites>
 </xp:view>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="3da" sequence="105" unid="88E3E6BA2567C782C22579F1005B5535">
+<noteinfo noteid="3da" sequence="110" unid="88E3E6BA2567C782C22579F1005B5535">
 <created><datetime dst="true">20120501T193735,89+03</datetime></created>
-<modified><datetime dst="true">20130430T201219,41+03</datetime></modified>
-<revised><datetime dst="true">20130430T201219,40+03</datetime></revised>
-<lastaccessed><datetime dst="true">20130430T201219,41+03</datetime></lastaccessed>
+<modified><datetime>20131103T163219,09+02</datetime></modified>
+<revised><datetime>20131103T163219,08+02</datetime></revised>
+<lastaccessed><datetime>20131103T163219,09+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130430T165118,87+03</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
 <wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
@@ -11,10 +11,10 @@
 <item name="$TITLE" sign="true"><text>widget.xsp</text></item>
 
 
+
 <item name="$FileNames" sign="true"><text>widget.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
 
 
-
-<item name="$DesignerVersion"><text>8.5.1</text></item>
 
 </note>

@@ -8,7 +8,6 @@ if(entries.getCount()==1) {
 	var entry:NotesViewEntry=entries.getFirstEntry();
 	context.redirectToPage("snippet.xsp?id="+entry.getColumnValues()[1]);
 }}]]></xp:this.beforePageLoad>
-	<xc:ccCodeResources></xc:ccCodeResources>
 	<xc:ccOneUILayout id="cconeuilayout"
 		navigationPath="/Home"
 		defaultNavigationPath="/Home">

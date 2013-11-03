@@ -5,15 +5,11 @@ html, body, form {
     background: white;
 }	
 	</style>
-	<xp:this.resources>
-		<xp:linkResource href="syntaxhighlighter/css/shCore.css" rel="stylesheet" type="text/css"></xp:linkResource>
-		<xp:linkResource href="syntaxhighlighter/css/shThemeXSnippets.css" rel="stylesheet" type="text/css"></xp:linkResource>
-		<xp:script src="syntaxhighlighter/js/shCore.js" clientSide="true"></xp:script>
-		<xp:script src="syntaxhighlighter/js/shAutoloader.js" clientSide="true"></xp:script>		
-	</xp:this.resources>
-	<style>.syntaxhighlighter .toolbar { z-index: 0 !important; }</style>
-	<xc:ccCodeResources></xc:ccCodeResources>
-	
+		<xp:this.resources>
+			<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
+		</xp:this.resources>
+		<style>.syntaxhighlighter .toolbar { z-index: 0 !important; }</style>
+		
 	<xp:this.data>
 		<xp:dominoDocument var="document1" formName="Snippet" action="openDocument">
 			<xp:this.documentId><![CDATA[#{javascript:id=param.id;

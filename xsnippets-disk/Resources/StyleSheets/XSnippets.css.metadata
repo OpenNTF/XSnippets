@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="23e" sequence="33" unid="E566F83E953CA3C3C22579F1005B55BB">
-<created><datetime dst="true">20120501T193737,23+03</datetime></created>
-<modified><datetime dst="true">20130502T105314,65+03</datetime></modified>
-<revised><datetime dst="true">20130502T105314,64+03</datetime></revised>
-<lastaccessed><datetime dst="true">20130502T105314,65+03</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130430T165117,84+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
+<noteinfo noteid="5fe" sequence="6" unid="FC5AEF415BCD19D9C2257C18004BD8D1">
+<created><datetime>20131103T154827,05+02</datetime></created>
+<modified><datetime>20131103T155204,61+02</datetime></modified>
+<revised><datetime>20131103T155204,60+02</datetime></revised>
+<lastaccessed><datetime>20131103T155204,61+02</datetime></lastaccessed>
+<addedtofile><datetime>20131103T154827,06+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
 <wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name="$TITLE"><text>XSnippets.css</text></item>
 <item name="$MimeType"><text>text/css</text></item>

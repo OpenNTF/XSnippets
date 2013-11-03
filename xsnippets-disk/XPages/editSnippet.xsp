@@ -9,7 +9,6 @@
 			</xp:this.entries>
 		</xp:acl>
 	</xp:this.acl>
-	<xc:ccCodeResources></xc:ccCodeResources>
 	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
 	<xc:ccOneUILayout title="#{javascript:database.getTitle()}">
 		<xp:this.facets>

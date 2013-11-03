@@ -1,37 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
 	xmlns:xc="http://www.ibm.com/xsp/custom">
-	<xp:this.resources>
-		<xp:linkResource href="syntaxhighlighter/css/shCore.css"
-			rel="stylesheet" type="text/css">
-		</xp:linkResource>
-		<xp:linkResource
-			href="syntaxhighlighter/css/shThemeXSnippets.css" rel="stylesheet"
-			type="text/css">
-		</xp:linkResource>
-		<xp:script src="syntaxhighlighter/js/shCore.js"
-			clientSide="true">
-		</xp:script>
-		<xp:script src="syntaxhighlighter/js/shAutoloader.js"
-			clientSide="true">
-		</xp:script>
-		<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
-		<xp:styleSheet href="/XSnippets.css"></xp:styleSheet>
-	</xp:this.resources>
 	<xp:this.data>
 		<xp:dominoDocument var="document1" formName="Snippet"
 			action="openDocument" documentId="#{javascript:getSnippetUNID(param.id)}"></xp:dominoDocument>
 	</xp:this.data>
-	<xp:this.resources>
-		<xp:script src="/SnippetCSJS.js" clientSide="true"></xp:script>
-	</xp:this.resources>
 	<xp:this.pageTitle><![CDATA[#{javascript:"OpenNTF XSnippet: "+document1.getItemValueString("Name");}]]></xp:this.pageTitle>
 	<xp:this.beforePageLoad><![CDATA[#{javascript:var vw:NotesView=database.getView("snippetsAll");
 var key=param.id || "";
 if(vw.getEntryByKey(key, true)==null) {
 	context.redirectToPage("home.xsp");
 }}]]></xp:this.beforePageLoad>
-	<xc:ccCodeResources></xc:ccCodeResources>
 	<xc:ccOneUILayout>
 		<xp:this.facets>
 			<xp:panel xp:key="LeftColumn" id="panel4">

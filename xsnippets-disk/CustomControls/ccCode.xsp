@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core"
 	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.resources>
+		<xp:linkResource href="syntaxhighlighter/css/shCore.css" rel="stylesheet" type="text/css"></xp:linkResource>
+		<xp:linkResource href="syntaxhighlighter/css/shThemeXSnippets.css" rel="stylesheet"	type="text/css"></xp:linkResource>
+		<xp:script src="syntaxhighlighter/js/shCore.js"	clientSide="true"></xp:script>
+		<xp:script src="syntaxhighlighter/js/shAutoloader.js" clientSide="true"></xp:script>
+	</xp:this.resources>
 	<xp:panel>
 		<xp:this.attrs>
 			<xp:attr name="oncopy" value="return onCopySnippet()">

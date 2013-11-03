@@ -2,7 +2,6 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core"
 	xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:xe="http://www.ibm.com/xsp/coreex">
-	<xc:ccCodeResources></xc:ccCodeResources>
 	<xp:this.beforePageLoad><![CDATA[#{javascript:if(sessionScope.languageCategories==null) {
 	v = @Unique(@DbColumn(@DbName(),"SnippetsCategories", 1)) || "";
 	if(typeof v == "string"){
