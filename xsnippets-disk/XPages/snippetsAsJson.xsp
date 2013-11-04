@@ -9,7 +9,7 @@ var externalContext = facesContext.getExternalContext();
 var writer = facesContext.getResponseWriter();
 var response = externalContext.getResponse();
 
-response.setContentType("application/json"); 
+response.setContentType("text/javascript"); 
  
 var baseUrl = context.getUrl().toString();
 baseUrl = baseUrl.substring(0, baseUrl.indexOf(".nsf") + 4) + "/snippet.xsp?id=";
@@ -23,6 +23,7 @@ snippetsAsJson.setSnippetsBaseUrl(baseUrl);
 snippetsAsJson.setCount(param.count);
 snippetsAsJson.setView(param.view);
 snippetsAsJson.setAuthor(param.author);
+snippetsAsJson.setCallback(param.json);
 
 writer.write(snippetsAsJson.getJson()); 
  

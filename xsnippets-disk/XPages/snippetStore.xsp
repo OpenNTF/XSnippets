@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
+
+	<xp:this.dataContexts>
+		<xp:dataContext
+			value="#{javascript:new org.openntf.xsnippets.JsonStore();}"
+			var="jsonStore">
+		</xp:dataContext>
+	</xp:this.dataContexts>
+	
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:
+try{
+var externalContext = facesContext.getExternalContext();
+var writer = facesContext.getResponseWriter();
+var response = externalContext.getResponse();
+
+response.setContentType("application/json"); 
+
+userKey=param.userKey || "";
+userName=param.userName || "";
+
+if(!userKey.equals("")) {
+	writer.write(jsonStore.getFavoriteSnippetsByUserKey(userKey));
+} else if(! userName.equals("")) {
+	writer.write(jsonStore.getFavoriteSnippetsByUserName(userName));
+} else {
+	response.sendError(500, "No parameters!");
+}
+ 
+writer.endDocument();
+
+} catch(e) {
+	print(e);
+}
+
+}]]>
+	</xp:this.afterRenderResponse>
+</xp:view>

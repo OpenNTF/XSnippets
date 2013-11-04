@@ -35,6 +35,7 @@ public class SnippetsAsJson {
 	private String _view;
 	private String _author;
 	private String _snippetsBaseUrl;
+	private String _callback;
 	
 	private final String VIEW_RECENT = "recent";
 	private final String VIEW_POPULAR = "popular";
@@ -48,6 +49,7 @@ public class SnippetsAsJson {
 	private final String PROPERTY_DEVELOPER = "developer";	
 	
 	private final String DEFAULT_COUNT = "10";
+	private final String DEFAULT_CALLBACK = "dojo.io.script.jsonp_dojoIoScript1._jsonpCallback";
 	
 	public void setCount(String count) {
 		_count = count;
@@ -95,8 +97,20 @@ public class SnippetsAsJson {
 		return _snippetsBaseUrl;
 	}
 	
-	public String getJson() {		
-		String output = "dojo.io.script.jsonp_dojoIoScript1._jsonpCallback({'responseData': {'results': [";
+	public void setCallback(String _callback) {
+		this._callback = _callback;
+	}
+
+	public String getCallback() {
+		if(null==_callback || "".equals(_callback)) {
+			_callback=DEFAULT_CALLBACK;
+		}
+		return _callback;
+	}
+
+	public String getJson() {
+		
+		String output = getCallback()+"({'responseData': {'results': [";
 		
 		try {			
 			String entriesAsJson = "";
@@ -114,7 +128,7 @@ public class SnippetsAsJson {
 		}
 		catch (NotesException ne) {
 			ne.printStackTrace();
-			return "dojo.io.script.jsonp_dojoIoScript1._jsonpCallback({'responseData': {'results': [], }, 'responseDetails': null,'responseStatus': 500})";
+			return getCallback()+"({'responseData': {'results': [], }, 'responseDetails': null,'responseStatus': 500})";
 		}
 		
 		return output;
