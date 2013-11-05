@@ -19,6 +19,8 @@ if (! "".equals(shortUrl)) {
 	baseUrl = shortUrl;
 } 
 
+snippetsAsJson=new org.openntf.xsnippets.SnippetsAsJson();
+
 snippetsAsJson.setSnippetsBaseUrl(baseUrl);
 snippetsAsJson.setCount(param.count);
 snippetsAsJson.setView(param.view);
