@@ -83,79 +83,9 @@ body.tundra {
 	margin: 10px 0px 0px 0px;
 }
 
-.entryList .entry {
-	position: relative;
-	float: left;
-	width: 95%;
-	margin-bottom: 10px;
-}
-
-.entryList .entry .entryLink {
-	position: relative;
-	/* float: left; */
-	color: #000;
-	width: 100%;
-	text-decoration: none;
-	margin-bottom: 5px;
-}
-
-.entryList .entry .entryLink .vwImgFeatured {
-	margin-left:10px;
-}
-
-.entryList .entry .entryLink:hover {
-	text-decoration: none;
-}
-
-.entryList .entry .entryLink h3 {
-	position: relative;
-	float: left;
-	font-size: 14px;
-}
-
-.entryList .entry .entryBody {
-	position: relative;
-	float: left;
-	width: 100%;
-	height: auto;
-}
-
-.entryList .entry .entryBody .entryLanguage {
-	position: relative;
-	float: left;
-	/*width:50px;
-	height:20px;*/
-	padding: 2px 4px 2px 4px;
-	text-align: center;
-	background-color: #649DE1;
-	color: #fff;
-	border: 1px solid #aaa;
-	cursor: pointer;
-}
-
-.entryList .entry .entryBody .entryLanguage:hover {
-	text-decoration: none;
-}
-
-.entryList .entry .entryBody .entryText {
-	position: relative;
-	float: left;
-	margin-left: 10px;
-	/*width:240px;*/
-	min-height: 30px;
-	height: 30px;
-	height: auto;
-}
-
-.entryList .entry .entryAuthor {
-	position: relative;
-	float: left;
-	width: 100%;
-}
-
 /*snippet form styling*/
 .snippetHeader {
-	display: inline-block;
+	display: inline;
 	min-height: 32px; /* To protect favorite icon */
 }
 
@@ -163,12 +93,11 @@ body.tundra {
 	float: right;
 }
 
-.specialFlagContainer {
-    float: left;
-    margin-right: 10px;
-    margin-top: -5px;
+.formSnippet img.specialFlag {
+	margin-left: 10px;
+    margin-top: -8px;
 }
-    
+
 /*view styling*/
 .container .contentContainer .viewPanel {
 	position: relative;
@@ -315,3 +244,45 @@ div.stBubble {
     border-width: 0 0 0 !important;
 }
 
+.entry {
+    margin-bottom:10px;
+  	width: 95%;
+}
+
+.entry a,.entry a:visited { color:#000; } 
+.entry a:hover, .entry a:active { text-decoration:none; }
+
+.entry .entryLink {
+    display:block;
+    margin-bottom:2px;
+}
+
+.entry .entryLink h3{
+    display:inline-block;
+    font-size:14px
+}
+
+.entry .entryLink .vwImgFeatured {
+    margin-left:10px;
+    vertical-align:top;
+}
+
+.entry .entryBody {
+    line-height:30px;    
+}
+
+.entry .entryBody .entryLanguage { 
+    display:inline-block;
+    padding:2px 4px;
+   	text-align: center;
+	background-color: #649DE1;
+	color: #fff;
+	border: 1px solid #aaa;
+	cursor: pointer;
+	line-height:18px;
+}
+
+.entry .entryBody .entryText {
+    display:inline-block;
+    margin-left:10px;
+}

@@ -27,7 +27,9 @@
 						<xp:text escape="true" id="computedField1"
 							tagName="h3" disableTheme="true" value="#{dataList.Name}">
 						</xp:text>
-						<xp:image rendered="#{dataList.featured eq '1'}" styleClass="vwImgFeatured" url="/flagFeatured16.png"></xp:image>
+						<xp:image rendered="#{dataList.featured eq '1'}"
+							styleClass="vwImgFeatured" url="/flagFeatured16.png">
+						</xp:image>
 					</xp:link>
 					<xp:div id="div6" styleClass="entryBody">
 						<xp:link escape="true" text="" id="link3"
@@ -40,12 +42,6 @@
 						</xp:link>
 						
 						<xp:div id="div8" styleClass="entryText">
-							<!-- 
-							<xp:text escape="true" id="computedField4"
-								disableTheme="true">
-								<xp:this.value><![CDATA[#{javascript:"Added:" + dataList.getDocument().getCreated();}]]></xp:this.value>
-							</xp:text>
-							<br /> -->
 							<xp:text escape="true" id="computedField9"
 								disableTheme="true">
 								<xp:this.value><![CDATA[#{javascript:dataList.getDocument().getItemValueString("Author");}]]></xp:this.value>
@@ -82,8 +78,6 @@
 					<xp:div id="div2" styleClass="entryBody">
 						<xp:link escape="true" text="" id="link4"
 							styleClass="entryLanguage">
-
-
 							<xp:this.value><![CDATA[#{javascript:var key = dataList.getDocument().getItemValueString("Id");
 if(view3.getEntryByKey(key)!=null){							
 viewScope.baseUrl+"snippetsByLanguage.xsp?cat="+view3.getEntryByKey(key).getColumnValues().elementAt(3);

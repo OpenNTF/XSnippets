@@ -25,21 +25,19 @@
 				<xp:text escape="true" id="computedField1"
 					value="#{document1.Name}" tagName="h1" styleClass="snippetHeader">
 				</xp:text>
+				<xe:multiImage id="multiImage1" rendered="#{! empty document1.specialFlags}"
+					value="#{document1.SpecialFlags}" styleClass="specialFlag">
+				<xe:this.icons>
+					<xe:iconEntry selectedValue="featured"
+						url="/flagFeatured16.png" title="Featured Snippet">
+					</xe:iconEntry>
+				</xe:this.icons></xe:multiImage>
 				<xp:div styleClass="favoriteIconContainer">
 					<xc:xiAddToFavorites hideError="false" ccId="fav1"
 						hintValue="#{document1.Name}" iId="#{document1.Id}"
 						img_AddToFavorites="/graystar32.png" img_RemoveFromFavorites="/yellowstar32.png"
 						listContainerId="#{id:myFavorites}">
 					</xc:xiAddToFavorites>
-				</xp:div>
-				<xp:div styleClass="specialFlagContainer" rendered="#{! empty document1.specialFlags}">
-					<xe:multiImage id="multiImage1"
-						value="#{document1.SpecialFlags}">
-					<xe:this.icons>
-						<xe:iconEntry selectedValue="featured"
-							url="/flagFeatured32.png" title="Featured Snippet">
-						</xe:iconEntry>
-					</xe:this.icons></xe:multiImage>
 				</xp:div>
 				<xc:ccCode></xc:ccCode>
 				<xp:panel>

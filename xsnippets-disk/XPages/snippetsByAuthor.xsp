@@ -4,11 +4,14 @@
 	xmlns:xe="http://www.ibm.com/xsp/coreex">
 	<xp:this.beforePageLoad><![CDATA[#{javascript:v = @Unique(@DbColumn(@DbName(),"SnippetsCategories", 2));
 if(v!=null){
-	
+		
 	viewScope.categories = v;
 	if(typeof v == "string"){
 		sessionScope.authorCategory = v;
 	}else{
+		
+		java.util.Collections.sort(viewScope.categories);
+	
 		var username=@Name("[CN]", session.getEffectiveUserName());
 		
 		if(sessionScope.authorCategory!=null && @IsMember(sessionScope.authorCategory, categories)) {
