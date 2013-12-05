@@ -26,6 +26,7 @@ XSnippets is the next generation codebin for OpenNTF. Self contained application
 - Twitter Card Support (Beta)
 - Featured Snippet Support (Beta)
 - Converted download logging to Java/RPC method
+- One download record for each browser session now
 - Fixed Searching problems
 - A couple of UI fixes
 - Sorted author names in byAuthor view

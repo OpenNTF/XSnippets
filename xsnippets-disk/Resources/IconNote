@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
  maintenanceversion='1.0' replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='11a' unid='72A6D298B0A8C02386257948004AF974' sequence='6'>
+<noteinfo noteid='11a' unid='72A6D298B0A8C02386257948004AF974' sequence='11'>
 <created><datetime>20111114T073855,24-06</datetime></created>
-<modified><datetime>20131205T230835,88+02</datetime></modified>
-<revised><datetime>20131205T230835,87+02</datetime></revised>
-<lastaccessed><datetime>20131205T230835,88+02</datetime></lastaccessed>
+<modified><datetime>20131205T231429,62+02</datetime></modified>
+<revised><datetime>20131205T231429,61+02</datetime></revised>
+<lastaccessed><datetime>20131205T231429,62+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130430T165117,13+03</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=NotesOSS2/O=NotesOSS</name><name
 >CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
@@ -35,5 +35,5 @@ AAAAUEECICABAAD/////+A4DgA==
 <item name='$LaunchXPageRunOnServer'><text>0</text></item>
 <item name='$FlagsNoRefresh'><text/></item>
 <item name='$TITLE'><text>XSnippets Development
-#1XSnippets</text></item></note>
+#1XSnippets130</text></item></note>
 
