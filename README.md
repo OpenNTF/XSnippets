@@ -4,7 +4,7 @@ XSnippets
 XSnippets is the next generation codebin for OpenNTF. Self contained application provides a modern user interface for code snippet submission in different languages.
 
 
-###What's New in 1.3 *(in progress)*
+###What's New in 1.3
 
 ####Objectives for 1.3
 
@@ -27,7 +27,8 @@ XSnippets is the next generation codebin for OpenNTF. Self contained application
 - Featured Snippet Support (Beta)
 - Converted download logging to Java/RPC method
 - Fixed Searching problems
-
+- A couple of UI fixes
+- Sorted author names in byAuthor view
 
 
 
