@@ -1,15 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
  replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='216' unid='E15425F98BFEDDACC22579F1005B55E3' sequence='11'>
+<noteinfo noteid='216' unid='E15425F98BFEDDACC22579F1005B55E3' sequence='12'>
 <created><datetime dst='true'>20120501T193737,63+03</datetime></created>
-<modified><datetime dst='true'>20130430T195512,70+03</datetime></modified>
-<revised><datetime dst='true'>20130430T195512,69+03</datetime></revised>
-<lastaccessed><datetime dst='true'>20130430T195512,70+03</datetime></lastaccessed>
+<modified><datetime>20131206T191346,23+02</datetime></modified>
+<revised><datetime>20131206T191346,22+02</datetime></revised>
+<lastaccessed><datetime>20131206T191346,23+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130430T165117,74+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Serdar Basegmez/O=developi</name></updatedby>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
 <wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$HTMLCode' sign='true'>
@@ -21,7 +19,7 @@ X/8QAAIADwAHAAAAAAAAAA==
 <rawitemdata type='1'>
 hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
 </rawitemdata></item>
-<item name='$Flags'><text/></item>
+<item name='$Flags'><text>CD</text></item>
 <item name='$DesignerVersion'><text>8.5.3</text></item>
 <item name='$$ScriptName' summary='false' sign='true'><text>Profile</text></item>
 <item name='PersonName' placeholder='true'>
