@@ -43,7 +43,8 @@
 				<xp:panel>
 					<xp:button value="Select XSnippet to copy to Clipboard"
 						id="button4" themeId="">
-						<xp:eventHandler event="onclick" submit="false">
+						<xp:eventHandler event="onclick"
+							submit="false">
 							<xp:this.script><![CDATA[var code=dojo.query('.syntaxhighlighter .container');
 if(code[0]) selectText(code[0]);
 ]]></xp:this.script>

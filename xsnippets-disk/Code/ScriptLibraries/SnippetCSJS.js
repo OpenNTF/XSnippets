@@ -7,6 +7,9 @@ function selectText(obj){
         range.select();
     } else {
         selection = window.getSelection();
+        
+        if(selection.rangeCount > 0) selection.removeAllRanges();
+        
         range = document.createRange();
         range.setStartBefore(obj);
         range.setEndAfter(obj) ;
