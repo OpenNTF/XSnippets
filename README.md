@@ -32,6 +32,9 @@ XSnippets is the next generation codebin for OpenNTF. Self contained application
 - Sorted author names in byAuthor view
 
 
+#### Goto related [wikipage](https://github.com/OpenNTF/XSnippets/wiki/XSnippets-1.3.0).
+
+
 
 OPENNTF
 
