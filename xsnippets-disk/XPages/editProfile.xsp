@@ -9,12 +9,6 @@
 	<xc:ccOneUILayout id="cconeuilayout"
 		navigationPath="/EditProfile" 
 		defaultNavigationPath="/EditProfile">
-		<xp:this.facets>
-			<xp:panel xp:key="LeftColumn" id="panel4">
-				<xc:ccOneUILeft id="ccLeftOneUI"></xc:ccOneUILeft>
-			</xp:panel>
-			
-		</xp:this.facets>
 		
 		<xc:ccEditProfile pageAfterSave="Home.xsp"></xc:ccEditProfile>
 	</xc:ccOneUILayout>

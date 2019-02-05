@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1e6" sequence="54" unid="28104D17970C36BEC22579F1005B5606">
-<created><datetime dst="true">20120501T193737,98+03</datetime></created>
-<modified><datetime>20131102T105524,91+02</datetime></modified>
-<revised><datetime>20131102T105524,90+02</datetime></revised>
-<lastaccessed><datetime>20131102T105524,91+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130430T165117,62+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
-<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="802583960058587C" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4e6" sequence="9" unid="FFCF377BD96D3DBD8025839800404791">
+<created><datetime>20190205T114206,25+00</datetime></created>
+<modified><datetime>20190205T114224,94+00</datetime></modified>
+<revised><datetime>20190205T114224,93+00</datetime></revised>
+<lastaccessed><datetime>20190205T114224,93+00</datetime></lastaccessed>
+<addedtofile><datetime>20190205T114206,25+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
-
-
-<item name="$TITLE" sign="true"><text>ccLicensingDetails.xsp</text></item>
-
+<item name="$TITLE"><text>ccLicensingDetails.xsp</text></item>
 
 
 <item name="$FileNames" sign="true"><text>ccLicensingDetails.xsp</text></item>
+
+
 <item name="$DesignerVersion"><text>8.5</text></item>
+
 
 
 

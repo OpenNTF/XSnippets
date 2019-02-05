@@ -34,12 +34,6 @@ if(v!=null){
 	<xc:ccOneUILayout id="cconeuilayout"
 		title="#{javascript:database.getTitle()}"
 		defaultNavigationPath="/Home" navigationPath="/View/Author">
-		<xp:this.facets>
-			<xp:panel xp:key="LeftColumn" id="panel4">
-				<xc:ccOneUILeft></xc:ccOneUILeft>
-			</xp:panel>
-
-		</xp:this.facets>
 
 		<xe:pagerSaveState id="pagerSaveState1" for="viewPanel1"
 			globalRows="true">

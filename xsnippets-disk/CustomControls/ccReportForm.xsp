@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
-	<xp:button value="Report" id="reportButton">
+	<xp:button value="Report" id="reportButton" styleClass="button_danger">
 		<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="reportButton">
 			<xp:this.action><![CDATA[#{javascript:getComponent("reportDialog").show();}]]></xp:this.action>
 		</xp:eventHandler>

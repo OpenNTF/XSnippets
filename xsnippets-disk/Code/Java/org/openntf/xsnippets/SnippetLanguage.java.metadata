@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="52e" sequence="26" unid="1C133B447D92A237C2257B5E0047069C">
-<created><datetime dst="true">20130501T155547,48+03</datetime></created>
-<modified><datetime dst="true">20130501T175744,21+03</datetime></modified>
-<revised><datetime dst="true">20130501T175744,20+03</datetime></revised>
-<lastaccessed><datetime dst="true">20130501T175744,21+03</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130501T155547,49+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
-<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="802583960058587C" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="17e" sequence="5" unid="341EA39A8048A66C802583960058895B">
+<created><datetime>20190203T160703,31+00</datetime></created>
+<modified><datetime>20190203T163503,90+00</datetime></modified>
+<revised><datetime>20190203T163503,89+00</datetime></revised>
+<lastaccessed><datetime>20190203T163503,89+00</datetime></lastaccessed>
+<addedtofile><datetime>20190203T160703,32+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>org/openntf/xsnippets/SnippetLanguage.java</text></item>
-
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 <item name="$FileNames" sign="true"><text>org/openntf/xsnippets/SnippetLanguage.java</text></item>
+
 
 </note>

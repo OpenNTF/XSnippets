@@ -10,11 +10,17 @@ public enum SnippetLanguage {
 	SSJS("JavaScript (Server)", "shBrushJScript_custom.js", "js"),
 	CSJS("JavaScript (Client)", "shBrushJScript_custom.js", "js"),
 	FORMULA("Formula", "shBrushFormula.js", "formula"),
-	JS("JavaScript", "shBrushJScript_custom.js", "js"),
+	JS("JavaScript (Generic)", "shBrushJScript_custom.js", "js"),
 	JAVA("Java", "shBrushJava_custom.js", "java"),
 	XML("XML", "shBrushXml.js", "xml"),
 	LSS("LotusScript","shBrushLscript.js", "lscript"),
+	JS_NODE("JavaScript (Domino Node.js)", "shBrushJScript_custom.js", "js_node"),
+	DQL("DQL", "", "dql"),
 	CSS("Cascaded Style Sheets", "shBrushCss_custom.js", "css"),
+	ADMIN("Admin Scriptes", "", "admin"),
+	JS_ICEC("JavaScript (ICEC)", "shBrushJScript_custom.js", "js_icec"),
+	JS_CUSTOMIZER("JavaScript (Connections Customizer)", "shBrushJScript_custom.js", "js_conn"),
+	CSS_CUSTOMIZER("Cascaded Style Sheets (Connections Customizer)", "shBrushCss_custom.js", "css_conn"),
 	THEMES("Themes", "shBrushXml.js", "xml");
 
 	private String codeLanguage;

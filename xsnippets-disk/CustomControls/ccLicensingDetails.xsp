@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
-	<xp:text escape="false" id="computedField1"
-		value="${configUtil['licenseText']}" styleClass="licensing">
+	<xp:text escape="false" id="computedField1" value="${configUtil['licenseText']}"
+		styleClass="licensing">
 	</xp:text>
 </xp:view>

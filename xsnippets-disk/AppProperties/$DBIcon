@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='10.0' maintenanceversion='1.0'
+ replicaid='802583960058587C'>
+<noteinfo noteid='45e' unid='C888278D5B239B7680258396005D964D' sequence='1'>
+<created><datetime>20190203T170213,25+00</datetime></created>
+<modified><datetime>20190203T170213,26+00</datetime></modified>
+<revised><datetime>20190203T170213,25+00</datetime></revised>
+<lastaccessed><datetime>20190203T170213,25+00</datetime></lastaccessed>
+<addedtofile><datetime>20190203T170213,25+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
+<item name='$TITLE'><text>$DBIcon</text></item>
+<item name='$Flags'><text>34Ci~Q</text></item>
+<item name='$ImagesWide' sign='true'><number>1</number></item>
+<item name='$ImagesHigh' sign='true'><number>1</number></item>
+<item name='$ImagesColorize' sign='true'><number>0</number></item>
+<item name='$FileSize' sign='true'><number>2084</number></item>
+<item name='$ImageData' sign='true'>
+<rawitemdata type='1'>
+mQAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAH0AHAAAAAIAAAAAACQIAAABAAAAAQAAAAAAAAB8
+AC4IAAAkCCQIiVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABJ0AAAS
+dAHeZh94AAAAB3RJTUUH4wIDEQE3iDNiCwAAAAd0RVh0QXV0aG9yAKmuzEgAAAAMdEVYdERlc2Ny
+aXB0aW9uABMJISMAAAAKdEVYdENvcHlyaWdodACsD8w6AAAADnRFWHRDcmVhdGlvbiB0aW1lADX3
+DwkAAAAJdEVYdFNvZnR3YXJlAF1w/zoAAAALdEVYdERpc2NsYWltZXIAt8C0jwAAAAh0RVh0V2Fy
+bmluZwDAG+aHAAAAB3RFWHRTb3VyY2UA9f+D6wAAAAh0RVh0Q29tbWVudAD2zJa/AAAABnRFWHRU
+aXRsZQCo7tInAAAG70lEQVRYhb2Xe3BUVx3HP/fu3c0+ks2TZDEEkvCSwNTSBBTptNrBzlSmtsUZ
+iopaHiJYx3FCbakUH7XMgG11xmlx2k5fDLbFDooiVpBWigVKI5LwSigESEJ2lzz3vXd37z3HP/La
+R4L/MPxm7szOOd/zO9/f7/xeq5it/AKBgoLKrRWJglCkF4kCWG/p1SAAEzR0uO6jb+VPSEmJJkG5
+BQTE2uUkVyzHo6FBKIpx6Bhl3EI/1M/Dv8KG1JBgUVEAqapEvrSIbnc+blPFON9GuP0K1YAzW8Hs
+aloXNlAbijOw/x8YhklV2ra+5E6uhULwyWlqAMukUnrvWED46BEqIjFcjjyGnkJ2INsP4QfMgnw6
+RIRmMYhPpGgRUa5s28hBIDoCB1Jfu4czIsIlkaRZCNraP+KMO58rIxhVpVf4aBa9dJaV4Afin+zh
+rBB0PrCE/YD82aP4xHWS6ZEvFYmFGMWv7cA3pZKSP76K8vgvmVnp4XoaLrzzt1gufIy7pBTbPYuQ
+NfVUrF2eETvKYDf5ipOqjauJ102ns+GLTKcPt1Ujme7J3NRTEMUFtHt7mPzCGxSj4K6tYtLIdnkp
+F9xz4cBhQoEwcw6foFJ2kVh6F1EgNKLUpiG85zj9w5XwwVs4SHICFT9KZpyNR4B4AitgsWrE0RBS
+YoxsGynsJNCsGnLUdRJLSRH9MIZzFSFeepPC5jaM8ikU/3gzHTgwFSUzy3IJmFjsDmruaqBl22Zi
+MkLg/KUhywAGQszs+g/mww9QWF/H4Ue/Satag/Wl3ZQDJaN68pDRGJMf307sud9x/sBRZuAAqzJG
+EkBLt10qCAwGlj2MZ9l6+lLXMVevoW8gQH0azv7gepzH/0aw6RSVWLAc3EXfq+9SnmFIHsHCQkLH
+TzHr+Cnkwtv4LxAajFA6EYFUNEb5jEU47DbsUsHR0UU0pjMjy0eWU61MnTQX/6zZlMfiRFo/RQBF
+IwBD4J5xO7XBEA7ADtDcxtyZ0zG6rlE2EQEpBPbLneSlrbmZQMI6npMtE2KslztHAzcMiGSSovYr
+ucCcGJhfh/70JiJbNqKvfJCBcZSn1q2g/7E19ACGqpJsXI/vC58jkIUT8+fQ8a+9nG47TOsjyzkH
+9ORoSytEcUAuricUvsiAjDL4xDo6GCtAI1+st4kOIdCX3ctFICgMLjzTiDcdN2MqftHL1Z6TeN97
+nYgw8G1/jCOAyQSFCICjJynYuQtLrJ3A9pfH8j9NFH8vFsLob2xHFhXQb17FEYtnerNxLXoqQcHU
+RXDfKixNfyX0vUeo0TR6b/gEAPY8QEUdtiZHHHbU9maanAW4tm4kkUigDzf1UakoZlKoE0VPMhnA
+66WrqAqj0IWejksPwlFJJFCliWSC7liQj/HOX6iJ6XQ/sQWPTCGSqUyyhmTAUY4GBACX00khJolo
+ItPoHA9UVuBbfCcBZwmuuxfSOh6BPBua243ryeeZ3H8Zq1rCNKkg0jG79hJyfgbr688S/ekGLn3l
+Iar//ifiuj7kkQkJfP425Nx6/DEV34ZvE4dMxYDaF+RiOE4XMKXxaXzhMMcGAgTTQfs+oO4Hq0h9
+dzX9z2xHeXc34W/8iEogP0NbdhYASVXFp6p4VZUguVkgVRX/sGvl8LlOdagRZWOTQJ+mERj+Pbo3
+kgUZpVjTCBoGphB4hteSwHVVpVSIsXgRggogBfhVcAqoynbTsFgAq6oONbfxAOlPYK2fx5mAj3N3
+zMMHMHcWXYEBztw+h/6sc6JxFU3hbvq7mjlTVsLZcXQnV3yVS0Y3XboX7yvPclZVuXYjArKljelu
+jWmbvz80Ia3+OqZb8tn2Tsz0Q19ehPe531BhixGeXIun0Ik3W7GnnKtvvYP67yPILT+nZ00j5d+6
+nwRZMZVOwNB1St/fT7BhPlNVFe93HoJDe0kGw5kNpMSNsWULtqe2kcKBLkRuus6exhSsFDf+itqt
+L1JBkP4V948M4xN4ALDt+AO2qjri992Nr9SD6/e7hwac9EN7DlC99QWqNCuFWHKyBABNw6kYWDQN
+BUgiSdpt2OH/DCTvfYg75iO1bzfeeBD9wBEKxrsAQE+QAsy+vkyrACIxemUeKZuGChjk4QqF6eUG
+TzCkNEnx0Y+JUsbS949hxPTcdltaRGzPi3Q/uYEKElR9+E/KlyzmajqmpRXTew7/2ztINu2jAAt5
+216hiKzqO14ptm96HtdHHUT+/Pb4f1ZMgXrNh+3NPeTHd4LLQ3U0TjjLEM+CJfDrp/A1LMC79F5q
+TjQzLcdo2YH89CB+sgrFTfxSwGD2+qZ1+EUPSQ0JdhtKbRWDyMxguxkiQEFiUZWxgUVKZKWHFAaK
+Yp5HAqZiJ3KzL59IFJAyhV2a2P8HZpUbbzSSp4kAAAAASUVORK5CYII=
+</rawitemdata></item>
+<item name='$MimeType' sign='true'><text>image/png</text></item>
+<item name='$FileModDT' sign='true'><datetime>20190203T170155,00+00</datetime></item>
+<item name='$ImageNames' sign='true'><text>C:\PaulTemp\dominoV10.png</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+

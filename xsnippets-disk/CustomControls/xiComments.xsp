@@ -39,7 +39,7 @@
 						</div>
 						<div class="commentNewActionContainer">
 							<xe:djButton label="#{javascript:(compositeData.text_CommentsAdd || invTools.defaults.text_CommentsAdd)}"
-								id="djButton1" styleClass="commentNewAction" onClick="submitComment('#{compositeData.ccId}', '#{id:commentsList}');">
+								id="djButton1" styleClass="commentNewAction button_friendly" onClick="submitComment('#{compositeData.ccId}', '#{id:commentsList}');">
 							</xe:djButton>
 							<xp:link escape="true" id="link1" styleClass="commentNewAction"
 								text="#{javascript:(compositeData.text_CommentsCancel || invTools.defaults.text_CommentsCancel)}"

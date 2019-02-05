@@ -1,3 +1,7 @@
+/*
+On Xsp Properties you need to ensure "Use runtime optimized JavaScript and CSS resources" is unticked. 
+Otherwise button theme colours don't get loaded, probably because of the order of combination of files.
+*/
 .lotusTitleBar h2.lotusEllipsis {
 	width: 250px;
 }
@@ -213,9 +217,22 @@ td.xspColumnViewMiddle {
 	padding-top: 3px;
 }
 
-div.stBubble {
-	height: 10px;
-	width: 10px;
+/* The next two are to ensure the social sharing bubbles are styled consistently */
+.stBubble {
+	height: 19px !important;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+
+.stBubble_count {
+	font-family: Helvetica, Arial, sans-serif !important;
+	font-size: 11px !important;
+	line-height: 19px !important;
+	height: 19px !important;
+	border: 1px solid #8d949e !important;
+	padding-top: 0px !important;
+	font-weight: normal !important;
+	border-radius: 3px !important;
 }
 
 .snippetButtons {
@@ -285,4 +302,154 @@ div.stBubble {
 .entry .entryBody .entryText {
     display:inline-block;
     margin-left:10px;
+}
+
+
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    width: 200px;
+    height: 85px;
+    text-align: center;
+    padding-top: 15px;
+    margin: 10px 25px;
+}
+.dragover {
+    border: 5px dashed blue;
+}
+
+.modal-dialog {
+  width: 900px;
+}
+.md-outer {
+	border-radius: 5px;
+	padding:5px;
+	margin-top:10px;
+	margin-bottom:10px;
+	border:1px solid #333333;
+}
+
+
+.dropdown-menu {
+    width: 300px !important;
+}
+
+.control-label {
+	width: 12%;
+}
+
+.xspFormTableRowData {
+	width: 87%
+}
+
+.applayout-content {
+	padding: 0px;
+}
+
+.searchBar {
+	border-bottom:1px solid;
+	border-bottom-width: 0.8px;
+	border-color: #e7e7e7;
+	padding:5px;
+}
+
+/*
+Button styles, allowing for industry standard colours
+*/
+
+.button_primary {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #197de1;
+    background-image: linear-gradient(to bottom, #1b87e3 2%, #166ed5 98%);
+    border-color: #156ab3 #1362b1 #1156a8;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 #4d98e6 inset, 0 -1px 0 #166bca inset, 0 2px 3px rgba(0, 0, 0, 0.05);
+    color: #ecf2f8;
+    font-weight: bold;
+    height: 37px;
+    min-width: 81px;
+    padding: 0 19px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.button_friendly {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #2c9720;
+    background-image: linear-gradient(to bottom, #2f9f22 2%, #26881b 98%);
+    border-color: #257d1a #227719 #1e6b15;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 #46b33a inset, 0 -1px 0 #26811b inset, 0 2px 3px rgba(0, 0, 0, 0.05);
+    color: #eaf4e9;
+    font-weight: bold;
+    height: 37px;
+    padding: 0 16px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.button_danger {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #ed473b;
+    background-image: linear-gradient(to bottom, #ee4c3f 2%, #e13e33 98%);
+    border-color: #bc3c31 #bb382e #b13028;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 #ef786f inset, 0 -1px 0 #da3c31 inset, 0 2px 3px rgba(0, 0, 0, 0.05);
+    color: #f9f0ef;
+    font-weight: bold;
+    height: 37px;
+    padding: 0 16px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+
+button {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #fafafa;
+    background-image: linear-gradient(to bottom, #fafafa 2%, #efefef 98%);
+    border-color: #c5c5c5 #c5c5c5 #bcbcbc;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 white inset, 0 -1px 0 #e7e7e7 inset, 0 2px 3px rgba(0, 0, 0, 0.05);
+    color: #191919;
+    cursor: pointer;
+    font-weight: 400;
+    height: 37px;
+    outline: medium none;
+    padding: 0 16px;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+}
+
+.button_tiny {
+	border-radius: 4px;
+    font-size: 12px;
+    height: 28px;
+    padding: 0 13px;
+}
+
+.button-disabled {
+	opacity: 0.5;
 }

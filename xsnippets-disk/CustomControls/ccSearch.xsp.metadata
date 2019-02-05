@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="226" sequence="308" unid="FC39336FA01EFE3AC22579F1007A4A40">
-<created><datetime dst="true">20120502T011544,00+03</datetime></created>
-<modified><datetime dst="true">20130430T201213,71+03</datetime></modified>
-<revised><datetime dst="true">20130430T201213,70+03</datetime></revised>
-<lastaccessed><datetime dst="true">20130430T201213,71+03</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130430T165117,78+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
-<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="802583960058587C" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1ca" sequence="13" unid="8B7007BCCCA861438025839600588A1E">
+<created><datetime>20190203T160705,26+00</datetime></created>
+<modified><datetime>20190204T022747,69+00</datetime></modified>
+<revised><datetime>20190204T022747,68+00</datetime></revised>
+<lastaccessed><datetime>20190204T022747,68+00</datetime></lastaccessed>
+<addedtofile><datetime>20190203T160705,28+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$TITLE"><text>ccSearch.xsp</text></item>
 
@@ -15,7 +15,7 @@
 
 
 <item name="$FileNames" sign="true"><text>ccSearch.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 

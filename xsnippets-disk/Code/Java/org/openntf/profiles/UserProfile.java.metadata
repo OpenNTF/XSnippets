@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="4b2" sequence="5" unid="89171D6F96F80900C2257B5D005B4392">
-<created><datetime dst="true">20130430T193650,74+03</datetime></created>
-<modified><datetime dst="true">20130430T195512,24+03</datetime></modified>
-<revised><datetime dst="true">20130430T195512,23+03</datetime></revised>
-<lastaccessed><datetime dst="true">20130430T195512,24+03</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130430T193650,75+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
-<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="802583960058587C" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="172" sequence="5" unid="9860DC5450A96C998025839600588945">
+<created><datetime>20190203T160703,09+00</datetime></created>
+<modified><datetime>20190203T163503,74+00</datetime></modified>
+<revised><datetime>20190203T163503,73+00</datetime></revised>
+<lastaccessed><datetime>20190203T163503,73+00</datetime></lastaccessed>
+<addedtofile><datetime>20190203T160703,10+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>org/openntf/profiles/UserProfile.java</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>

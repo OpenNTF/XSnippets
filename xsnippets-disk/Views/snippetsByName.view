@@ -1,16 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
- replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='3ee' unid='EC192644165F857EC22579F3002FDCB3' sequence='8'>
-<created><datetime dst='true'>20120503T114246,91+03</datetime></created>
-<modified><datetime dst='true'>20130430T195514,47+03</datetime></modified>
-<revised><datetime dst='true'>20130430T195514,46+03</datetime></revised>
-<lastaccessed><datetime dst='true'>20130430T195514,47+03</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20130430T165118,92+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Serdar Basegmez/O=developi</name></updatedby>
-<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='10.0' maintenanceversion='1.0'
+ replicaid='802583960058587C'>
+<noteinfo noteid='2ce' unid='7CDE9D27B155C0A28025839600588B95' sequence='4'>
+<created><datetime>20190203T160709,01+00</datetime></created>
+<modified><datetime>20190205T112014,23+00</datetime></modified>
+<revised><datetime>20190205T112014,22+00</datetime></revised>
+<lastaccessed><datetime>20190205T112014,22+00</datetime></lastaccessed>
+<addedtofile><datetime>20190203T160709,23+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$Index' sign='true'><text/></item>
 <item name='$Formula' summary='true' sign='true'><formula compiled='true'>
@@ -34,8 +32,8 @@ CQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAP//AAAAAAAAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAA
 AAAAAAAAAAAEAAAAAAD//wAAAAAAAAAAAAAAAAAAQgAQAAAAAQD///8ABQD///8AAQAAAAAAAAAA
 AAAAAAABAP///wABAP///wAAAAEAAAAAAAEAAAAAAAEAAAAAAAAACAAAAAAAAQA=
 </rawitemdata></item>
-<item name='$Comment' sign='true'><text/></item>
 <item name='$Flags'><text>Yw</text></item>
 <item name='$TITLE' sign='true'><text>snippetsByName</text></item>
+<item name='$Comment' sign='true'><text>Not Used?</text></item>
 <item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
 

@@ -15,23 +15,17 @@
 	</xp:this.data>
 
 	<xc:ccOneUILayout>
-		<xp:this.facets>
-			<xp:panel xp:key="LeftColumn" id="panel4">
-				<xc:ccOneUILeft></xc:ccOneUILeft>
-			</xp:panel>
-		</xp:this.facets>
-		<xp:div id="content" styleClass="contentContainer">
-			<xp:panel id="formpanel" styleClass="formSnippet">
-				<xp:text escape="true" id="computedField1"
-					value="#{document1.Name}" tagName="h1" styleClass="snippetHeader">
+		<xp:div id="content" styleClass="contentContainer col-xs-12">
+			<xp:panel id="formpanel" styleClass="formSnippet" style="margin-top: 5px;">
+				<xp:button value="Back" id="button1" themeId=""
+					styleClass="button_primary" style="margin:0 10px 15px 0;">
+					<xp:eventHandler event="onclick" submit="true">
+						<xp:this.action><![CDATA[#{javascript:(sessionScope.containsKey("viewPage")) ? context.redirectToPage(sessionScope.get("viewPage")) : context.redirectToHome()}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:text escape="true" id="computedField1" value="#{document1.Name}"
+					tagName="h1" styleClass="snippetHeader">
 				</xp:text>
-				<xe:multiImage id="multiImage1" rendered="#{! empty document1.specialFlags}"
-					value="#{document1.SpecialFlags}" styleClass="specialFlag">
-				<xe:this.icons>
-					<xe:iconEntry selectedValue="featured"
-						url="/flagFeatured16.png" title="Featured Snippet">
-					</xe:iconEntry>
-				</xe:this.icons></xe:multiImage>
 				<xp:div styleClass="favoriteIconContainer">
 					<xc:xiAddToFavorites hideError="false" ccId="fav1"
 						hintValue="#{document1.Name}" iId="#{document1.Id}"
@@ -39,53 +33,21 @@
 						listContainerId="#{id:myFavorites}">
 					</xc:xiAddToFavorites>
 				</xp:div>
-				<xc:ccCode></xc:ccCode>
-				<xp:panel>
-					<xp:button value="Select XSnippet to copy to Clipboard"
-						id="button4" themeId="">
-						<xp:eventHandler event="onclick"
-							submit="false">
-							<xp:this.script><![CDATA[var code=dojo.query('.syntaxhighlighter .container');
-if(code[0]) selectText(code[0]);
-]]></xp:this.script>
-						</xp:eventHandler>
-					</xp:button>
-					<xp:button value="Edit XSnippet" id="buttonEdit">
-						<xp:this.rendered><![CDATA[#{javascript:document1.getItemValueString("Author")==@Name("[CN]", @UserName())}]]></xp:this.rendered>
-						<xp:eventHandler event="onclick" submit="true"
-							refreshMode="complete">
-							<xp:this.action><![CDATA[#{javascript:context.redirectToPage("editSnippet.xsp?id="+document1.getItemValueString("id"))}]]></xp:this.action>
-						</xp:eventHandler>
-					</xp:button>
-				</xp:panel>
-				<br></br>
-				<br></br>
-				<br></br>
-				<xp:div rendered="#{! empty document1.Notes}" style="margin-left:3px">
-					<xp:label value="Notes" id="label6" for="notes"></xp:label>
-					<xp:br></xp:br>
-					<xp:br></xp:br>
-					<xp:inputTextarea id="notes" value="#{document1.Notes}"></xp:inputTextarea>
-				</xp:div>
-				<xp:br></xp:br>
-				<xp:div>
+				<xp:div style="margin-top:10px">
 					<xp:table>
 						<xp:tr>
 							<xp:td style="width:90px">
-								<xp:label value="Language" id="label2"
-									for="language">
+								<xp:label value="Language" id="label2" for="language">
 								</xp:label>
 							</xp:td>
 							<xp:td>
-								<xp:text escape="true" id="language"
-									value="#{document1.Language}">
+								<xp:text escape="true" id="language" value="#{document1.Language}">
 								</xp:text>
 							</xp:td>
 						</xp:tr>
 						<xp:tr>
 							<xp:td>
-								<xp:label value="Author" id="label1"
-									for="author">
+								<xp:label value="Author" id="label1" for="author">
 								</xp:label>
 							</xp:td>
 							<xp:td>
@@ -97,16 +59,14 @@ if(code[0]) selectText(code[0]);
 						</xp:tr>
 						<xp:tr>
 							<xp:td>
-								<xp:label value="Submitted on" id="label3"
-									for="submittedOn">
+								<xp:label value="Submitted on" id="label3" for="submittedOn">
 								</xp:label>
 							</xp:td>
 							<xp:td>
-								<xp:text escape="true" id="submittedOn"
-									value="#{document1.DateCreated}">
+								<xp:text escape="true" id="submittedOn" value="#{document1.DateCreated}">
 									<xp:this.converter>
-										<xp:convertDateTime type="both"
-											dateStyle="long" timeStyle="short">
+										<xp:convertDateTime type="both" dateStyle="long"
+											timeStyle="short">
 										</xp:convertDateTime>
 									</xp:this.converter>
 								</xp:text>
@@ -118,50 +78,66 @@ if(code[0]) selectText(code[0]);
 							</xp:td>
 							<xp:td>
 								<xp:span style="float:left;">
-									<xc:xiRating hideError="false"
-										ratesDisplayOnly="false" anonymousRating="true" starCount="5"
-										iId="#{document1.Id}" ccId="sr"
-										interactionDB="#{javascript:database.getFilePath()}"
+									<xc:xiRating hideError="false" ratesDisplayOnly="false"
+										anonymousRating="true" starCount="5" iId="#{document1.Id}"
+										ccId="sr" interactionDB="#{javascript:database.getFilePath()}"
 										ratingTargetDocumentId="#{javascript:document1.getDocument().getUniversalID()}"
-										ratingTargetFieldName="Rating"
-										ratingResultTarget="#{id:ratingInfoContainer}">
+										ratingTargetFieldName="Rating" ratingResultTarget="#{id:ratingInfoContainer}">
 									</xc:xiRating>
 								</xp:span>
-								<xp:span id="ratingInfoContainer"
-									style="float:right;" styleClass="ratingInfo">
+								<xp:span id="ratingInfoContainer" style="float:right;"
+									styleClass="ratingInfo">
 								</xp:span>
 							</xp:td>
 						</xp:tr>
 						<xp:tr>
 							<xp:td>
-								<xp:label value="Downloads" id="label4"
-									for="description">
+								<xp:label value="Downloads" id="label4" for="label5">
 								</xp:label>
 							</xp:td>
 							<xp:td>
 								<xp:label id="label5" style="font:normal;"
 									value="#{javascript:getDownloadsById(param.id)}">
 									<xp:this.converter>
-										<xp:convertNumber
-											maxFractionDigits="0">
+										<xp:convertNumber maxFractionDigits="0">
 										</xp:convertNumber>
 									</xp:this.converter>
 								</xp:label>
 							</xp:td>
 						</xp:tr>
+						<xp:tr rendered="#{! empty document1.Notes}">
+							<xp:td>
+								<xp:label value="Notes" id="label8" for="notes">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputTextarea id="notes" value="#{document1.Notes}"></xp:inputTextarea>
+							</xp:td>
+						</xp:tr>
 					</xp:table>
 				</xp:div>
-				<xp:br />
-				<xc:ccLicensingDetails></xc:ccLicensingDetails>
-				<xp:br />
-				<xp:br />
-				<xp:panel id="bottomLine" styleClass="snippetButtons">
-					<br></br>
+				<xp:panel id="buttonLine" styleClass="snippetButtons">
+					<xp:button value="Select XSnippet to copy to Clipboard"
+						id="button4" themeId="" styleClass="button_primary">
+						<xp:eventHandler event="onclick" submit="false">
+							<xp:this.script><![CDATA[var code=dojo.query('.syntaxhighlighter .container');
+if(code[0]) selectText(code[0]);
+]]></xp:this.script>
+						</xp:eventHandler>
+					</xp:button>
 					<xp:button value="Embed XSnippet" id="button2"
-						rendered="#{javascript:!viewScope.showWidgetGenerator}">
+						styleClass="button_friendly" rendered="#{javascript:!viewScope.showWidgetGenerator}">
 						<xp:eventHandler event="onclick" submit="true"
-							refreshMode="partial" refreshId="bottomLine">
+							refreshMode="partial" refreshId="buttonLine">
 							<xp:this.action><![CDATA[#{javascript:viewScope.showWidgetGenerator=true}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+					<xp:button value="Edit XSnippet" id="buttonEdit" style="float:right"
+						styleClass="button_friendly">
+						<xp:this.rendered><![CDATA[#{javascript:document1.getItemValueString("Author")==@Name("[CN]", @UserName())}]]></xp:this.rendered>
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete">
+							<xp:this.action><![CDATA[#{javascript:context.redirectToPage("editSnippet.xsp?id="+document1.getItemValueString("id"))}]]></xp:this.action>
 						</xp:eventHandler>
 					</xp:button>
 					<xc:ccReportForm snippetNoteId="#{javascript:document1.getNoteID()}"
@@ -170,6 +146,9 @@ if(code[0]) selectText(code[0]);
 					<xc:ccWidgetGenerator snippetId="#{javascript:param.id}"
 						rendered="#{javascript:viewScope.showWidgetGenerator}"></xc:ccWidgetGenerator>
 				</xp:panel>
+				<xc:ccCode></xc:ccCode>
+
+				<xc:ccLicensingDetails></xc:ccLicensingDetails>
 			</xp:panel>
 			<xc:ccSocialShare loaded="${configUtil['enableSharing'] eq '1'}"></xc:ccSocialShare>
 			<xc:xiComments readOnly="false" hideError="false"
@@ -178,13 +157,14 @@ if(code[0]) selectText(code[0]);
 				text_CommentDisabled="Login first to comment...">
 			</xc:xiComments>
 			<xc:ccFacebook loaded="${configUtil['enableFacebookComments'] eq '1'}"></xc:ccFacebook>
-<!-- Twitter search is dead because of the search API changes... -->
-<!--			<xp:div styleClass="twitterSearch" loaded="${configUtil['enableTweetList'] eq '1'}">-->
-<!--				<xc:ccTwitterSearch include_entities="true"-->
-<!--					result_type="mixed" count="10" widgetID="twitter">-->
-<!--					<xc:this.query><![CDATA[#{javascript:return configUtil["twitterStartText"]+param.id.replace('-','%20');}]]></xc:this.query>-->
-<!--				</xc:ccTwitterSearch>-->
-<!--			</xp:div>-->
+			<!-- Twitter search is dead because of the search API changes... -->
+			<!-- <xp:div styleClass="twitterSearch" loaded="${configUtil['enableTweetList'] 
+				eq '1'}"> -->
+			<!-- <xc:ccTwitterSearch include_entities="true" -->
+			<!-- result_type="mixed" count="10" widgetID="twitter"> -->
+			<!-- <xc:this.query><![CDATA[#{javascript:return configUtil["twitterStartText"]+param.id.replace('-','%20');}]]></xc:this.query> -->
+			<!-- </xc:ccTwitterSearch> -->
+			<!-- </xp:div> -->
 		</xp:div>
 	</xc:ccOneUILayout>
 </xp:view>

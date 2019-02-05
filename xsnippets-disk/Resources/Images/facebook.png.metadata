@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="802583960058587C" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="47a" sequence="1" unid="C83545B330D95FBE8025839700046AC0">
+<created><datetime>20190204T004814,72+00</datetime></created>
+<modified><datetime>20190204T004816,15+00</datetime></modified>
+<revised><datetime>20190204T004816,14+00</datetime></revised>
+<lastaccessed><datetime>20190204T004816,14+00</datetime></lastaccessed>
+<addedtofile><datetime>20190204T004816,14+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Adam Foster/O=Oval</name><name>CN=Jesse Gallagher/O=Frost</name><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
+<item name="$TITLE" sign="true"><text>facebook.png</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$ImageNames" sign="true"><text>facebook.png</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

@@ -1,101 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
-	<xp:panel id="searchInputPanel" style="display:inline-block; width:200px;">
-		<input type="hidden" id="baseUrl" value="#{javascript:getBaseUrl()}" />
-		<xp:table style="width:100%">
-			<xp:tr>
-				<xp:td>
-					<xp:inputText id="searchInput"
-						style="font-size:14px; height:20px; width:100%;" defaultValue="Search snippets..."
-						styleClass="lotusInactive">
-						<xp:typeAhead mode="partial" minChars="2" ignoreCase="true"
-							valueMarkup="true" var="searchTerm">
-							<xp:this.valueList><![CDATA[#{javascript:try { 
-			result=[];
+	<xp:div styleClass="col-sm-12 navbar-default searchBar">
+		<!-- Currentl designed for single entry. Revisit if required. ConfigBean.doSearch 
+			will need revisiting -->
+		<xp:div styleClass="col-sm-12 col-md-4">
+			<xp:label value="Language" id="label1"></xp:label>
+			<xe:djextListTextBox id="djextListTextBox1"
+				value="#{sessionScope.searchLanguage}">
+				<xp:eventHandler event="onChange" submit="true"
+					refreshMode="complete">
+					<xe:this.action><![CDATA[#{javascript:configUtil.doSearch();
+context.redirectToHome();}]]></xe:this.action>
+				</xp:eventHandler>
+			</xe:djextListTextBox>
+			<xe:valuePicker id="valuePicker1" dialogTitle="Select A Language"
+				for="djextListTextBox1">
+				<xe:this.dataProvider>
+					<xe:collectionValuePicker
+						collection="#{javascript:configUtil.getCodeLanguages()}">
+					</xe:collectionValuePicker>
+				</xe:this.dataProvider>
+			</xe:valuePicker>
+		</xp:div>
+		<xp:div styleClass="col-sm-12 col-md-4">
+			<xp:label value="Author" id="label2"></xp:label>
+			<xe:djextListTextBox id="djextListTextBox2"
+				value="#{sessionScope.searchAuthor}">
+				<xp:eventHandler event="onChange" submit="true"
+					refreshMode="complete">
+					<xe:this.action><![CDATA[#{javascript:configUtil.doSearch();
+context.redirectToHome();}]]></xe:this.action>
+				</xp:eventHandler>
+			</xe:djextListTextBox>
+			<xe:valuePicker id="valuePicker2" dialogTitle="Select An Author"
+				for="djextListTextBox2">
+				<xe:this.dataProvider>
+					<xe:collectionValuePicker collection="#{javascript:configUtil.getAuthors()}">
+					</xe:collectionValuePicker>
+				</xe:this.dataProvider>
+			</xe:valuePicker>
+		</xp:div>
+		<xp:div styleClass="col-sm-12 col-md-4">
+			<xp:inputText id="searchBox" value="#{sessionScope.searchString}">
+				<xp:this.attrs>
+					<xp:attr name="placeholder" value="Search..."></xp:attr>
+				</xp:this.attrs>
+			</xp:inputText>
+			<xp:link id="searchLink" styleClass="lotusBtnImg">
+				<xp:image styleClass="lotusSearchButton"
+					url="/.ibmxspres/domino/oneuiv2.1/images/blank.gif">
+				</xp:image>
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete">
+					<xe:this.action><![CDATA[#{javascript:configUtil.doSearch();
+context.redirectToHome();}]]></xe:this.action>
+				</xp:eventHandler>
+			</xp:link>
+		</xp:div>
+	</xp:div>
+	<xp:scriptBlock id="scriptBlock1">
+		<xp:this.value><![CDATA[function Search_Enable() {
+	dojo.connect(dojo.byId('#{id:searchBox}'), 'onkeydown', function(event) {
+		if (event.keyCode == dojo.keys.ENTER) {
+			dojo.byId('#{id:searchLink}').click();
+		}
+	});
+}
 
-			if(null==searchTerm) return;
-
-			searchView=database.getView("SnippetsAll");
-			ftQuery=getSearchTerms(searchTerm.trim().replace(" ", "* ")+"*");
-			count=searchView.FTSearch(ftQuery, 10);
-			
-			if(count>0) {
-				var doc:NotesDocument=searchView.getFirstDocument();
-				
-				while(doc!=null) {
-					values=doc.getColumnValues();
-					item=[
-						'<li>',
-						values[1].replace(new RegExp("("+searchTerm+")", "ig"), "<b>$1</b>"), //name
-						'<br/>',
-						'<span class="informal" style="font-size:0.8em; color: gray;">',
-						values[3] + ' | by ' + values[2] + ' | ' + doc.getFTSearchScore() + '%',
-						'</span></li>'
-					].join('');
-					result.push(item);
-					doc=searchView.getNextDocument(doc);
-				} 
-			} else {
-				result.push(
-					'<li><span class="informal">Nothing found...</span></li>'
-				);
-			}
-
-			return '<ul>'+result.join("\n")+'</ul>';
-			
-			} catch(e) {
-				print(e);
-			}}]]></xp:this.valueList>
-						</xp:typeAhead>
-						<xp:eventHandler event="onfocus" submit="false">
-							<xp:this.script><![CDATA[searchBoxIn('#{id:searchInputPanel}', '#{id:searchInput}', 400);]]></xp:this.script>
-						</xp:eventHandler>
-						<xp:eventHandler event="onblur" submit="false">
-							<xp:this.script><![CDATA[searchBoxOut('#{id:searchInputPanel}', '#{id:searchInput}');]]></xp:this.script>
-						</xp:eventHandler>
-					</xp:inputText>
-				</xp:td>
-				<xp:td>
-					<xp:link escape="true" id="searchLink" outerStyleClass="lotusBtnImg"
-						styleClass="lotusSearchButton">
-						<xp:image id="image1"
-							url="/.ibmxspres/domino/oneuiv2/images/blank.gif" alt="Submit search"></xp:image>
-						<xp:eventHandler event="onclick" submit="true"
-							refreshMode="complete">
-							<xp:this.script><![CDATA[searchSubmit('#{id:searchInput}');]]></xp:this.script>
-						</xp:eventHandler>
-					</xp:link>
-				</xp:td>
-			</xp:tr>
-		</xp:table>
-	</xp:panel>
-	
-	<xp:eventHandler event="onClientLoad" submit="false">
-		<xp:this.script>
-			<xp:scriptGroup>
-				<xp:executeClientScript>
-					<xp:this.script><![CDATA[
-						dojo.connect(dojo.byId("#{id:searchInput}"), "onkeypress", function (event) { 
-        					var keyCode = event.keyCode ? event.keyCode : event.charCode;
- 					        if(keyCode==13) {
-        						searchSubmit("#{id:searchInput}");
-        					}
-						});
-					]]></xp:this.script>
-				</xp:executeClientScript>
-				<xp:executeClientScript loaded="${javascript:keyPressSearchEnabled()}">
-					<xp:this.script><![CDATA[
-						dojo.connect(document, "onkeydown", function (event) { 
-	        				var keyCode = event.keyCode ? event.keyCode : event.charCode;
-	        
-					        // Only char inputs...
-	        				if(keyCode>=65 && keyCode<=90) {
-	        					dojo.byId("#{id:searchInput}").focus();
-	        				}
-							});
-					]]></xp:this.script>
-				</xp:executeClientScript>
-			</xp:scriptGroup>
-		</xp:this.script>
-	</xp:eventHandler>
+dojo.addOnLoad(Search_Enable)]]></xp:this.value>
+	</xp:scriptBlock>
 </xp:view>

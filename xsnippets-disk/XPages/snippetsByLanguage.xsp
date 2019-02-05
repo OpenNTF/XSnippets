@@ -26,12 +26,6 @@ if(param.cat!=null && @IsMember(param.cat, sessionScope.languageCategories)){
 	</xp:this.properties>
 	<xc:ccOneUILayout id="cconeuilayout"
 		defaultNavigationPath="/Home" navigationPath="/View/Language">
-		<xp:this.facets>
-			<xp:panel xp:key="LeftColumn" id="panel4">
-				<xc:ccOneUILeft></xc:ccOneUILeft>
-			</xp:panel>
-		
-		</xp:this.facets>
 		
 		<xe:pagerSaveState id="pagerSaveState1" for="viewPanel1"
 				globalRows="true">

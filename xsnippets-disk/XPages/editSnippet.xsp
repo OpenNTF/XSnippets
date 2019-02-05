@@ -13,11 +13,6 @@
 		<xp:parameter name="disableKeyboardSearch" value="1"></xp:parameter>
 	</xp:this.properties>
 	<xc:ccOneUILayout title="#{javascript:database.getTitle()}">
-		<xp:this.facets>
-			<xp:panel xp:key="LeftColumn" id="panel4">
-				<xc:ccOneUILeft></xc:ccOneUILeft>
-			</xp:panel>
-		</xp:this.facets>
 		<xp:div id="content" styleClass="contentContainer">
 			<xc:ccSnippetForm mode="#{javascript:viewScope.get('previewMode')?'preview':'edit'}">
 				<xc:this.snippetId><![CDATA[#{javascript:param.id}]]></xc:this.snippetId>

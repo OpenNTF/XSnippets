@@ -6,10 +6,11 @@
 
 	1. webstandard 2. oneui 3. notes
 -->
-<theme extends="oneuiv2.1">
+<theme extends="Bootstrap3.2.0_flat">
 	<!-- 
 		Use this pattern to include resources (such as style sheets
 		and JavaScript files that are used by this theme.
+		Bootstrap3_flat has a problem with layout
 	-->
 	<resource target="xsp">
 		<content-type>application/x-javascript</content-type>

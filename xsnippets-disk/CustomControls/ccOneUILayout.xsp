@@ -1,92 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xe="http://www.ibm.com/xsp/coreex"
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
 	xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:this.resources>
 		<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
-		<xp:linkResource href="./feedRecentAll.xsp" type="application/atom+xml" title="Atom feed for all snippets" rel="alternate"></xp:linkResource>
-		<xp:linkResource href="./feedRecentAll.xsp?format=rss" type="application/rss+xml" title="RSS feed for all snippets" rel="alternate"></xp:linkResource>
-		<xp:metaData name="description" content="OpenNTF XSnippets - Code Snippets for IBM XPages Development"></xp:metaData>
-		<xp:metaData name="robots" content="OpenNTF XSnippets - Code Snippets for IBM XPages Development"></xp:metaData>
-		<xp:metaData name="keywords" content="OpenNTF XSnippets Code Snippets IBM XPages Development Open Source"></xp:metaData>
+		<xp:linkResource href="./feedRecentAll.xsp"
+			type="application/atom+xml" title="Atom feed for all snippets"
+			rel="alternate">
+		</xp:linkResource>
+		<xp:linkResource href="./feedRecentAll.xsp?format=rss"
+			type="application/rss+xml" title="RSS feed for all snippets"
+			rel="alternate">
+		</xp:linkResource>
+		<xp:metaData name="description"
+			content="OpenNTF XSnippets - Code Snippets for IBM XPages Development">
+		</xp:metaData>
+		<xp:metaData name="robots"
+			content="OpenNTF XSnippets - Code Snippets for IBM XPages Development">
+		</xp:metaData>
+		<xp:metaData name="keywords"
+			content="OpenNTF XSnippets Code Snippets IBM XPages Development Open Source">
+		</xp:metaData>
+		<xp:script src="/brandcms.login.js" clientSide="true"></xp:script>
 	</xp:this.resources>
 	<xp:this.beforePageLoad><![CDATA[#{javascript:viewStateBean.restoreState = true}]]></xp:this.beforePageLoad>
-		
+
 	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
 
 	<xe:applicationLayout id="oneUILayout1">
-		<xe:this.facets>
-			<xc:ccSearch xp:key="SearchBar"
-				loaded="${javascript:database.isFTIndexed()}">
-			</xc:ccSearch>
-
-			<xp:callback xp:key="LeftColumn" facetName="LeftColumn"
-				id="callback1">
-			</xp:callback>
-			<xp:callback xp:key="RightColumn" facetName="RightColumn"
-				id="callback2">
-			</xp:callback>
-		</xe:this.facets>
 		<xe:this.configuration>
-			<xe:applicationConfiguration productLogo="OpenNTFLogo.png"
-				navigationPath="${javascript:compositeData.navigationPath}"
+			<xe:bootstrapResponsiveConfiguration
+				productLogo="openntf.png" navigationPath="${javascript:compositeData.navigationPath}"
 				defaultNavigationPath="${javascript:compositeData.defaultNavigationPath}"
-				productLogoHeight="20px" productLogoWidth="140px" legalText=""
-				placeBar="false"
-				productLogoStyle="float: left; vertical-align: middle; margin-right: 5px;margin-top:5px;"
-				titleBar="true" titleBarName="Share your Code with others">
+				productLogoHeight="30px" placeBar="false">
 				<xe:this.bannerApplicationLinks>
-					<xe:repeatTreeNode value="#{configUtil.headerLinks}"
-						var="link">
-					<xe:this.children>
-						<xe:basicLeafNode href="#{link.href}"
-							label="#{link.title}" styleClass="#{link.className}">
-						</xe:basicLeafNode>
-					</xe:this.children></xe:repeatTreeNode>
-				</xe:this.bannerApplicationLinks>
-				<xe:this.bannerUtilityLinks>
-					<xe:userTreeNode></xe:userTreeNode>
-
-					<xe:basicLeafNode label="Login">
-						<xe:this.href><![CDATA[#{javascript:url=context.getUrl();
-url2=new XSPUrl(url.toString());
-
-url2.removeAllParameters();
-url2.setPath("/names.nsf");
-url2.setParameter((session.getEffectiveUserName()=="Anonymous")?"login":"logout","");
-url2.setParameter("redirectto", url.getPath()+url.getQueryString())
-
-url2.toString()}]]></xe:this.href>
-						<xe:this.rendered><![CDATA[#{javascript:session.getEffectiveUserName()=="Anonymous"}]]></xe:this.rendered>
+					<xe:basicLeafNode label="OpenNTF Snippets">
+						<xe:this.href><![CDATA[/home.xsp]]></xe:this.href>
 					</xe:basicLeafNode>
-				</xe:this.bannerUtilityLinks>
-				<xe:this.titleBarTabs></xe:this.titleBarTabs>
-				<xe:this.searchBar rendered="false">
-					<xe:appSearchBar pageName="search"
-						inactiveText="Enter Keywords" loaded="true" rendered="${javascript:database.isFTIndexed()}">
-					</xe:appSearchBar>
-				</xe:this.searchBar>
-				<xe:this.placeBarName><![CDATA[#{javascript:compositeData.title}]]></xe:this.placeBarName>
-				<xe:this.footerLinks>
-					<xe:basicContainerNode label="">
+					<xe:basicContainerNode label="Other Sites">
 						<xe:this.children>
-							<xe:repeatTreeNode value="#{configUtil.bottomLinks}"
-								var="link">
-							<xe:this.children>
-								<xe:basicLeafNode href="#{link.href}"
-									label="#{link.title}" styleClass="#{link.className}">
-								</xe:basicLeafNode>
-							</xe:this.children></xe:repeatTreeNode>
-							<xe:basicLeafNode label="Reload"
-								submitValue="reloadConfig">
-								<xe:this.loaded><![CDATA[${javascript:@IsMember("[Admin]", context.getUser().getRoles())}]]></xe:this.loaded>
-								<xe:this.title><![CDATA[#{javascript:"Last Loaded: "+configUtil.getDateLoaded()}]]></xe:this.title>
+							<xe:basicLeafNode label="OpenNTF" href="http://openntf.org">
+							</xe:basicLeafNode>
+							<xe:basicLeafNode label="Collaboration Today"
+								href="https://collaborationtoday.info">
+							</xe:basicLeafNode>
+							<xe:basicLeafNode label="XPages.info" href="http://xpages.info">
 							</xe:basicLeafNode>
 						</xe:this.children>
 					</xe:basicContainerNode>
-
-				</xe:this.footerLinks>
-			</xe:applicationConfiguration>
+				</xe:this.bannerApplicationLinks>
+				<xe:this.bannerUtilityLinks>
+					<xe:basicLeafNode label="Create Snippet" href="newSnippet.xsp">
+						<xe:this.rendered><![CDATA[${javascript:session.getEffectiveUserName()!="Anonymous"}]]></xe:this.rendered>
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="My Favourites" href="snippetsFavorites.xsp">
+						<xe:this.rendered><![CDATA[${javascript:session.getEffectiveUserName()!="Anonymous" && context.getUrl().getAddress().indexOf("Favorites") < 0}]]></xe:this.rendered>
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="Home" href="home.xsp">
+						<xe:this.rendered><![CDATA[${javascript:session.getEffectiveUserName()!="Anonymous" && context.getUrl().getAddress().indexOf("Favorites") > 0}]]></xe:this.rendered>
+					</xe:basicLeafNode>
+					<xe:userTreeNode></xe:userTreeNode>
+					<xe:basicLeafNode title=" Login" label=" Login"
+						styleClass="cm-login-attachpoint">
+						<xe:this.rendered><![CDATA[#{javascript:@UserName() == "Anonymous"}]]></xe:this.rendered>
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="Logout">
+						<xe:this.rendered><![CDATA[#{javascript:@UserName() != "Anonymous"}]]></xe:this.rendered>
+						<xe:this.href><![CDATA[#{javascript:facesContext.getExternalContext().getRequest().getContextPath()+"?logout&redirectTo="+facesContext.getExternalContext().getRequest().getContextPath()}]]></xe:this.href>
+					</xe:basicLeafNode>
+				</xe:this.bannerUtilityLinks>
+			</xe:bootstrapResponsiveConfiguration>
 		</xe:this.configuration>
 		<xp:callback id="OneUIMainAreaCallback"></xp:callback>
 		<xp:eventHandler event="onItemClick" submit="true"
@@ -95,9 +77,56 @@ url2.toString()}]]></xe:this.href>
 	configUtil.reload();
 	context.reloadPage();
 }}]]></xe:this.action>
-		</xp:eventHandler></xe:applicationLayout>
+		</xp:eventHandler>
+	</xe:applicationLayout>
+
+	<xe:navbar id="navbar1" fixed="fixed-bottom">
+		<xe:this.navbarBeforeLinks>
+			<xe:basicLeafNode label="Hosted by OpenNTF" href="">
+			</xe:basicLeafNode>
+			<xe:basicLeafNode href="https://twitter.com/xsnippets"
+				image="/twitter.png" imageAlt="Twitter" imageHeight="20px">
+			</xe:basicLeafNode>
+			<xe:basicLeafNode href="http://www.youtube.com/openntf"
+				image="/youtube.png" imageAlt="YouTube" imageHeight="20px">
+			</xe:basicLeafNode>
+			<xe:basicLeafNode
+				href="http://www.facebook.com/pages/OpenNTF/159464360754911?ref=ts"
+				image="/facebook.png" imageAlt="Facebook" imageHeight="20px">
+			</xe:basicLeafNode>
+			<xe:basicLeafNode label="Terms of Use">
+				<xe:this.href><![CDATA[https://openntf.org/main.nsf/main.nsf/page.xsp?name=Legal&subName=Terms_Of_Use]]></xe:this.href>
+			</xe:basicLeafNode>
+			<xe:basicLeafNode label="Privacy Policy">
+				<xe:this.href><![CDATA[https://openntf.org/main.nsf/main.nsf/page.xsp?name=Legal&subName=Privacy_Policy]]></xe:this.href>
+			</xe:basicLeafNode>
+		</xe:this.navbarBeforeLinks>
+		<xe:this.navbarAfterLinks>
+			<xe:basicLeafNode label="Reload" submitValue="reloadConfig">
+				<xe:this.loaded><![CDATA[${javascript:@IsMember("[Admin]", context.getUser().getRoles())}]]></xe:this.loaded>
+				<xe:this.title><![CDATA[#{javascript:"Last Loaded: "+configUtil.getDateLoaded()}]]></xe:this.title>
+			</xe:basicLeafNode>
+			<xe:basicLeafNode label="Contact OpenNTF"
+				href="https://openntf.org/Internal/home.nsf/dx/Contact_OpenNTF">
+			</xe:basicLeafNode>
+			<xe:basicLeafNode label="Follow OpenNTF"
+				href="https://openntf.org/Internal/home.nsf/dx/Follow_OpenNTF">
+			</xe:basicLeafNode>
+			<xe:basicLeafNode label="Follow Snippets" href="/follow.xsp">
+			</xe:basicLeafNode>
+		</xe:this.navbarAfterLinks>
+	</xe:navbar>
 	<xp:text escape="false" id="statsHTML"
-		loaded="${configUtil['enableAnalytics'] eq '1'}"
-		value="${configUtil['analyticsCode']}">
+		loaded="${configUtil['enableAnalytics'] eq '1'}" value="${configUtil['analyticsCode']}">
 	</xp:text>
+	
+	<xe:restService id="restService1" pathInfo="/checklogin">
+		<xe:this.service>
+			<xe:customRestService contentType="application/json">
+				<xe:this.doGet><![CDATA[#{javascript:var payload = {};
+payload.username = @UserName();
+return payload;}]]></xe:this.doGet>
+			</xe:customRestService>
+		</xe:this.service>
+	</xe:restService>
 </xp:view>

@@ -6,12 +6,6 @@
 	<xc:ccOneUILayout id="cconeuilayout"
 		navigationPath="/Follow" 
 		defaultNavigationPath="/Follow">
-		<xp:this.facets>
-			<xp:panel xp:key="LeftColumn" id="panel4">
-				<xc:ccOneUILeft id="ccLeftOneUI"></xc:ccOneUILeft>
-			</xp:panel>
-			
-		</xp:this.facets>
 		
 		<xp:label
 			value="You can follow XSnippets via feeds and the XSnippets widget.">

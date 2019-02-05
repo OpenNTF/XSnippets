@@ -13,12 +13,6 @@
 	</xp:this.resources>
 	<xc:ccOneUILayout id="cconeuilayout" navigationPath="/Home"
 		defaultNavigationPath="/Home">
-		<xp:this.facets>
-			<xp:panel xp:key="LeftColumn" id="panel4">
-				<xc:ccOneUILeft></xc:ccOneUILeft>
-			</xp:panel>
-
-		</xp:this.facets>
 		<xp:panel>
 			<xp:label value="Search String: " id="label1"></xp:label>
 			<xp:inputText id="inputText1" value="#{param.search}"></xp:inputText>

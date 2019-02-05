@@ -1,120 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xe="http://www.ibm.com/xsp/coreex">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom" dojoTheme="true">
+	<xp:this.resources>
+		<xp:dojoModule name="dijit.Tooltip"></xp:dojoModule>
+	</xp:this.resources>
 	<xp:this.data>
 		<xp:dominoView var="view1" viewName="SnippetsRecentlyAdded"></xp:dominoView>
-		<xp:dominoView var="view2" viewName="DownloadsLastThreeMonthsSnapshot"></xp:dominoView>
-		<xp:dominoView var="view3" viewName="SnippetsAll"></xp:dominoView>
 	</xp:this.data>
-	
+
 	<xp:this.beforePageLoad><![CDATA[#{javascript:viewScope.baseUrl=context.getUrl().getPath().split(view.getPageName())[0]+"/";
-}]]></xp:this.beforePageLoad>
+sessionScope.put("viewPage","home.xsp");}]]></xp:this.beforePageLoad>
+	<xc:ccSearch></xc:ccSearch>
 	<br></br>
 	<xp:div id="content" styleClass="contentContainer">
-		<xp:panel id="leftColumn" styleClass="column">
-			<xp:link escape="true" text="" id="link5" value="#{viewScope.baseUrl}snippetsByDate.xsp">
-				<xp:text escape="true" id="computedField6" tagName="h1"
+
+		<xp:div>
+			<xp:this.loaded><![CDATA[${empty(sessionScope.searchView)}]]></xp:this.loaded>
+			<xp:panel id="panel1" styleClass="col-sm-12 col-md-6">
+				<xp:text escape="true" id="computedField11" tagName="h1"
 					disableTheme="true" value="Recently Added">
 				</xp:text>
-			</xp:link>
 
-			<xp:repeat id="repeat1" rows="100" styleClass="entryList"
-				value="#{view1}" var="dataList" indexVar="dataIndex">
-				<xp:div id="div5" styleClass="entry">
-					<xp:link escape="true" text="" id="link2"
-						styleClass="entryLink"
-						value="#{javascript:configUtil.getSnippetUrl(dataList.getColumnValue('id'))}">
-						<xp:text escape="true" id="computedField1"
-							tagName="h3" disableTheme="true" value="#{dataList.Name}">
-						</xp:text>
-						<xp:image rendered="#{dataList.featured eq '1'}"
-							styleClass="vwImgFeatured" url="/flagFeatured16.png">
-						</xp:image>
-					</xp:link>
-					<xp:div id="div6" styleClass="entryBody">
-						<xp:link escape="true" text="" id="link3"
-							styleClass="entryLanguage">
-							<xp:this.value><![CDATA[#{javascript:viewScope.baseUrl+"snippetsByLanguage.xsp?cat="+dataList.getDocument().getItemValueString("Language")}]]></xp:this.value>
-							<xp:text escape="true" id="computedField4"
-								tagName="h3" disableTheme="true">
-								<xp:this.value><![CDATA[#{javascript:var lang = dataList.getDocument().getItemValueString("Language"); return getShowAs(lang);}]]></xp:this.value>
-							</xp:text>
-						</xp:link>
-						
-						<xp:div id="div8" styleClass="entryText">
-							<xp:text escape="true" id="computedField9"
-								disableTheme="true">
-								<xp:this.value><![CDATA[#{javascript:dataList.getDocument().getItemValueString("Author");}]]></xp:this.value>
-							</xp:text>
-						</xp:div>
-						<xp:div id="div9" styleClass="entryAuthor"
-							rendered="false">
-							<xp:text escape="true" id="computedField3"
-								disableTheme="true" value="#{dataList.Author}">
-							</xp:text>
-						</xp:div>
-					</xp:div>
-				</xp:div>
-			</xp:repeat>
-		</xp:panel>
+				<xp:repeat id="repeat1" rows="15" styleClass="entryList"
+					value="#{javascript:configUtil.getMostRecent()}" var="snippet"
+					indexVar="dataIndex">
+					<xc:ccStandardViewStyle></xc:ccStandardViewStyle>
+				</xp:repeat>
+			</xp:panel>
 
-		
-		<xp:panel id="middleColumn" styleClass="column">
-			<xp:link escape="true" text="" id="link6" value="#{viewScope.baseUrl}popularDownloads.xsp">
-				<xp:text escape="true" id="computedField7" tagName="h1"
-					disableTheme="true" value="Popular">
+			<xp:panel id="panel3" styleClass="col-sm-12 col-md-6">
+				<xp:text escape="true" id="computedField2" tagName="h1"
+					disableTheme="true" value="Most Downloaded (3 months)">
 				</xp:text>
-			</xp:link>
-			<xp:repeat id="repeat2" rows="100" styleClass="entryList"
-				value="#{view2}" var="dataList" indexVar="dataIndex">
-				<xp:div id="div1" styleClass="entry">
-					<xp:link escape="true" text="" id="link1"
-						styleClass="entryLink"
-						value="#{javascript:configUtil.getSnippetUrl(dataList.getColumnValue('id'))}">
-						<xp:text escape="true" id="computedField5"
-							tagName="h3" disableTheme="true" value="#{dataList.Name}">
-						</xp:text>
-					</xp:link>
-					<xp:div id="div2" styleClass="entryBody">
-						<xp:link escape="true" text="" id="link4"
-							styleClass="entryLanguage">
-							<xp:this.value><![CDATA[#{javascript:var key = dataList.getDocument().getItemValueString("Id");
-if(view3.getEntryByKey(key)!=null){							
-viewScope.baseUrl+"snippetsByLanguage.xsp?cat="+view3.getEntryByKey(key).getColumnValues().elementAt(3);
-}else{
-return "geen key"
-}}]]></xp:this.value><xp:text escape="true" id="computedField2"
-								tagName="h3" disableTheme="true">
-								<xp:this.value><![CDATA[#{javascript:var key = dataList.getDocument().getItemValueString("Id");
-var ve = view3.getEntryByKey(key);
-if(ve!=null){	
-var lang = ve.getColumnValues().elementAt(3);
-return getShowAs(lang);
-}}]]></xp:this.value>
-							</xp:text>
-						</xp:link>
 
-						<xp:div id="div4" styleClass="entryText">
-							<!-- 
-							<xp:text escape="true" id="computedField7"
-								disableTheme="true">
-								<xp:this.value><![CDATA[#{javascript:"Added:" + dataList.getDocument().getCreated();}]]></xp:this.value>
-							</xp:text>
-							<br /> -->
-							<xp:text escape="true" id="computedField10"
-								disableTheme="true">
-								<xp:this.value><![CDATA[#{javascript:dataList.getColumnValue("Author");}]]></xp:this.value>
-							</xp:text>
-						</xp:div>
-						<xp:div id="div10" styleClass="entryAuthor"
-							rendered="false">
-							<xp:text escape="true" id="computedField8"
-								disableTheme="true" value="#{dataList.Author}">
-							</xp:text>
-						</xp:div>
+				<xp:repeat id="repeat3" rows="15" styleClass="entryList"
+					value="#{javascript:configUtil.getMostDownloaded()}" var="snippet"
+					indexVar="dataIndex">
+					<xc:ccStandardViewStyle></xc:ccStandardViewStyle>
+				</xp:repeat>
+			</xp:panel>
+		</xp:div>
+
+
+		<xp:panel styleClass="col-sm-12">
+			<xp:this.loaded><![CDATA[${!empty(sessionScope.searchView)}]]></xp:this.loaded>
+			<xp:this.data>
+				<xe:objectData var="searchResults"
+					createObject="#{javascript:configUtil.getSearchResults();}"
+					readonly="true">
+				</xe:objectData>
+			</xp:this.data>
+			<xp:div styleClass="col-xs-8">
+				<xp:text escape="true" id="computedField1" tagName="h1"
+					disableTheme="true" value="Search Results">
+				</xp:text>
+			</xp:div>
+
+			<xp:div styleClass="col-xs-4" rendered="#{sessionScope.hasSearchResults == true}">
+				<xp:button value="Clear Search" id="button1" styleClass="button_primary"
+					style="margin-top:20px;">
+					<xp:this.loaded><![CDATA[${!empty(sessionScope.searchView)}]]></xp:this.loaded>
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:sessionScope.put("searchLanguage","");
+sessionScope.put("searchAuthor","");
+sessionScope.put("searchString","");
+sessionScope.put("fullSearchString","");
+sessionScope.put("searchView","");
+context.redirectToHome();}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:div style="float:right">
+					<xp:pager layout="First Previous Group Next Last"
+						partialRefresh="true" id="pager1" for="repeat2">
+					</xp:pager>
+				</xp:div>
+			</xp:div>
+
+			<xp:div styleClass="col-xs-12" rendered="#{sessionScope.hasSearchResults != true}"
+				style="text-align:center">
+				<xp:text styleClass="h3"
+					value="No snippets were found matching the search criteria">
+				</xp:text>
+			</xp:div>
+
+			<xp:div styleClass="col-xs-12" rendered="#{sessionScope.hasSearchResults == true}">
+				<xp:repeat id="repeat2" rows="10" styleClass="entryList"
+					value="#{searchResults}" var="snippet" indexVar="dataIndex">
+					<xp:panel id="panel2" styleClass="col-sm-12 col-md-6">
+						<xc:ccStandardViewStyle></xc:ccStandardViewStyle>
+					</xp:panel>
+				</xp:repeat>
+				<xp:div styleClass="col-xs-12">
+					<xp:div style="float:right">
+						<xp:pager layout="First Previous Group Next Last"
+							partialRefresh="true" id="pager2" for="repeat2">
+						</xp:pager>
 					</xp:div>
 				</xp:div>
-			</xp:repeat>
+			</xp:div>
 		</xp:panel>
 	</xp:div>
+
 </xp:view>

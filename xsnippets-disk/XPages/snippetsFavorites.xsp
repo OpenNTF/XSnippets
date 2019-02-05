@@ -1,48 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:xe="http://www.ibm.com/xsp/coreex">
-	<xc:ccOneUILayout id="cconeuilayout" defaultNavigationPath="/Home" navigationPath="/View/Favorites">
-		<xp:this.facets>
-			<xp:panel xp:key="LeftColumn" id="panel4">
-				<xc:ccOneUILeft></xc:ccOneUILeft>
-			</xp:panel>
-		</xp:this.facets>
-		<xp:dataTable id="dataTable1" rows="100" var="favItem" indexVar="favIndex">
-			<xp:this.facets>
-				<xp:pager partialRefresh="true" layout="Previous Group Next" xp:key="footerPager" id="pager1"></xp:pager>
-			</xp:this.facets>
-			<xp:this.value><![CDATA[#{javascript:sessionScope.get("xInvolveMyFavorites")||[]}]]></xp:this.value>
-			<xp:column id="column1" styleClass="xspColumnView300">
-				<xp:link escape="true" text="#{javascript:favItem.hint}"
-					id="link1" value="snippet.xsp">
-					<xp:this.parameters>
-						<xp:parameter name="id"
-							value="#{favItem.id}">
-						</xp:parameter>
-					</xp:this.parameters>
-					
-				</xp:link>
-				<xp:this.facets>
-					<xp:label value="Snippet Name" id="label1" xp:key="header"></xp:label>
-				</xp:this.facets>
-			</xp:column>
-			<xp:column id="column2" styleClass="xspColumnView100">
-				<xp:this.facets>
-					<xp:label value="Rating" id="label2" xp:key="header"></xp:label>
-				</xp:this.facets>
-				<div style="float:left">
-					<xc:xiRating hideError="true" ratesDisplayOnly="true" anonymousRating="false" starCount="5" ccId="#{javascript:favIndex}"
-						iId="#{favItem.id}">
-					</xc:xiRating>
-				</div>
-			</xp:column>
-			<xp:column id="column3" styleClass="xspColumnView100" style="text-align:center;">
-				<xp:this.facets>
-					<xp:label value="Favorite" id="label3" xp:key="header"></xp:label>
-				</xp:this.facets>
-				<xc:xiAddToFavorites hideError="false" ccId="#{javascript:favIndex}" hintValue="#{favItem.hint}" iId="#{favItem.id}"
-					img_AddToFavorites="/graystar16.png" img_RemoveFromFavorites="/yellowstar16.png" listContainerId="#{id:myFavorites}">
-				</xc:xiAddToFavorites>
-			</xp:column>
-		</xp:dataTable>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xc:xiMyFavorites hideRepeat="true"></xc:xiMyFavorites>
+	<xp:this.afterPageLoad><![CDATA[#{javascript:if(sessionScope.containsKey("ErrorMessage")) {
+	view.postScript("alert('"+sessionScope.get("ErrorMessage")+"')");
+	sessionScope.remove("ErrorMessage");
+}}]]></xp:this.afterPageLoad>
+	<xc:ccOneUILayout id="cconeuilayout"
+		defaultNavigationPath="/Home" navigationPath="/View/Favorites">
+		<xp:div id="content" styleClass="contentContainer">
+
+			<xp:div styleClass="col-sm-12">
+				<xp:div styleClass="col-xs-8">
+					<xp:text escape="true" id="computedField1" tagName="h1"
+						disableTheme="true" value="My Favourites">
+					</xp:text>
+				</xp:div>
+
+				<xp:div styleClass="col-xs-4">
+					<xp:div style="float:right">
+						<xp:pager layout="First Previous Group Next Last"
+							partialRefresh="true" id="pager1" for="repeat2">
+						</xp:pager>
+					</xp:div>
+				</xp:div>
+				<xp:repeat id="repeat2" rows="30" styleClass="entryList"
+					value="#{javascript:configUtil.getFavorites()}" var="snippet"
+					indexVar="dataIndex">
+					<xp:panel id="panel2" styleClass="col-sm-12 col-md-6">
+						<xc:ccStandardViewStyle></xc:ccStandardViewStyle>
+					</xp:panel>
+				</xp:repeat>
+				<xp:div styleClass="col-xs-12">
+					<xp:div style="float:right">
+						<xp:pager layout="First Previous Group Next Last"
+							partialRefresh="true" id="pager2" for="repeat2">
+						</xp:pager>
+					</xp:div>
+				</xp:div>
+			</xp:div>
+		</xp:div>
 	</xc:ccOneUILayout>
 </xp:view>

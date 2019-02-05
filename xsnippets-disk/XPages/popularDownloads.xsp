@@ -8,11 +8,6 @@
 	<xc:ccOneUILayout id="cconeuilayout"
 		title="#{javascript:database.getTitle()}"
 		defaultNavigationPath="/Home" navigationPath="/View/Popularity">
-		<xp:this.facets>
-			<xp:panel xp:key="LeftColumn" id="panel4">
-				<xc:ccOneUILeft></xc:ccOneUILeft>
-			</xp:panel>	
-		</xp:this.facets>
 		<xp:viewPanel rows="30" id="viewPanel1" var="viewItem">
 			
 			<xp:this.data>

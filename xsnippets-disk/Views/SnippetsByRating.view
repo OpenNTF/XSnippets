@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
- replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='186' unid='368C90B36A23C6748525795300308167' sequence='18'>
-<created><datetime>20111125T034948,55-05</datetime></created>
-<modified><datetime>20131104T004836,04+02</datetime></modified>
-<revised><datetime>20131104T004836,03+02</datetime></revised>
-<lastaccessed><datetime>20131104T004836,04+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20130430T165117,38+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
-<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='10.0' maintenanceversion='1.0'
+ replicaid='802583960058587C'>
+<noteinfo noteid='2b6' unid='E7E9A03BC2176A828025839600588B79' sequence='4'>
+<created><datetime>20190203T160708,73+00</datetime></created>
+<modified><datetime>20190205T112029,38+00</datetime></modified>
+<revised><datetime>20190205T112029,37+00</datetime></revised>
+<lastaccessed><datetime>20190205T112029,37+00</datetime></lastaccessed>
+<addedtofile><datetime>20190203T160708,99+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>SnippetsByRating</text></item>
 <item name='$Index' sign='true'><text/></item>
@@ -40,7 +40,7 @@ AABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAD//wAAAAAAAAAAAAAAAAAAV0MBAQAJAAAA
 AAAAAAAAAAAAAAAAAAAABAAAAAAA//8AAAAAAAAAAAAAAAAAAEIAAAAAAAEA////AAUA////AAEA
 AAAAAAAAAAAAAAAAAQD///8AAQD///8AAAABAAAAAAABAAAAAAABAAAAAAAAAAgAAAAAAAEA
 </rawitemdata></item>
-<item name='$Comment' sign='true'><text/></item>
 <item name='$Flags'><text>Yw</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+<item name='$Comment' sign='true'><text>Not Used? (Rating here is not accurate)</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
 

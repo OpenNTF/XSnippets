@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C2257B5D004C1B27" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2ee" sequence="68" unid="5B7835454C822774C22579F1005B5549">
-<created><datetime dst="true">20120501T193736,09+03</datetime></created>
-<modified><datetime dst="true">20130501T203408,04+03</datetime></modified>
-<revised><datetime dst="true">20130501T203408,03+03</datetime></revised>
-<lastaccessed><datetime dst="true">20130501T203408,04+03</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130430T165118,28+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
-<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="802583960058587C" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2f6" sequence="7" unid="6497840EBD2A75F48025839600588BDC">
+<created><datetime>20190203T160709,72+00</datetime></created>
+<modified><datetime>20190203T163502,14+00</datetime></modified>
+<revised><datetime>20190203T163502,13+00</datetime></revised>
+<lastaccessed><datetime>20190203T163502,13+00</datetime></lastaccessed>
+<addedtofile><datetime>20190203T160709,79+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>popularDownloads.xsp</text></item>
 
 
-
-
-
 <item name="$FileNames" sign="true"><text>popularDownloads.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
 
 </note>

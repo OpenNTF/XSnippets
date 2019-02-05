@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- maintenanceversion='1.0' replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='11a' unid='72A6D298B0A8C02386257948004AF974' sequence='11'>
-<created><datetime>20111114T073855,24-06</datetime></created>
-<modified><datetime>20131205T231429,62+02</datetime></modified>
-<revised><datetime>20131205T231429,61+02</datetime></revised>
-<lastaccessed><datetime>20131205T231429,62+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20130430T165117,13+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=NotesOSS2/O=NotesOSS</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name></updatedby>
+<note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='10.0'
+ maintenanceversion='1.0' replicaid='802583960058587C'>
+<noteinfo noteid='11e' unid='02F163F0353CE30F8025839600585881' sequence='7'>
+<created><datetime>20190203T160458,25+00</datetime></created>
+<modified><datetime>20190204T202439,81+00</datetime></modified>
+<revised><datetime>20190204T202439,80+00</datetime></revised>
+<lastaccessed><datetime>20190204T202439,80+00</datetime></lastaccessed>
+<addedtofile><datetime>20190203T160458,28+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
 <item name='IconBitmap' summary='true' sign='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
@@ -34,6 +34,7 @@ AAAAUEECICABAAD/////+A4DgA==
 <item name='$Flags'><text>J7!</text></item>
 <item name='$LaunchXPageRunOnServer'><text>0</text></item>
 <item name='$FlagsNoRefresh'><text/></item>
+<item name='$LargeSummary'><text>0</text></item>
 <item name='$TITLE'><text>XSnippets Development
-#1XSnippets130</text></item></note>
+#1XSnippets300</text></item></note>
 

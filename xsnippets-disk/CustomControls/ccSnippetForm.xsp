@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:xe="http://www.ibm.com/xsp/coreex">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
 	<xp:this.data>
-		<xp:dominoDocument var="document1" formName="Snippet" ignoreRequestParams="true">
+		<xp:dominoDocument var="document1" formName="Snippet"
+			ignoreRequestParams="true">
 			<xp:this.documentId><![CDATA[#{javascript:getSnippetUNID(compositeData.snippetId)}]]></xp:this.documentId>
 			<xp:this.action><![CDATA[#{javascript:getSnippetUNID(compositeData.snippetId)!=""?"editDocument":"newdocument"}]]></xp:this.action>
 			<xp:this.querySaveDocument><![CDATA[#{javascript:if(!isContributor()) return false;
@@ -28,57 +30,69 @@ if(document1.getItemValueString("Name")!=viewScope.get("NameCache")){
 }}]]></xp:this.postOpenDocument>
 		</xp:dominoDocument>
 	</xp:this.data>
-	<xp:panel id="formpanel" styleClass="formSnippet">
+	<xp:panel id="formpanel" styleClass="formSnippet col-xs-12">
 		<xc:ccCode rendered="#{javascript:compositeData.mode!='edit'}"></xc:ccCode>
-		<xe:formTable id="formTable1" xp:key="form" formDescription="" labelWidth="85px" labelPosition="left" fieldHelp="false"
-			disableRequiredMarks="#{javascript:compositeData.mode!='edit'}" disableErrorSummary="true">
+		<xe:formTable id="formTable1" xp:key="form"
+			formDescription="" labelWidth="12%" labelPosition="left" fieldHelp="false"
+			disableRequiredMarks="#{javascript:compositeData.mode!='edit'}"
+			disableErrorSummary="true">
 			<xp:this.facets>
 				<xp:panel xp:key="footer" id="panel1">
 					<xp:callback facetName="buttons" id="buttonCallback"></xp:callback>
 				</xp:panel>
 			</xp:this.facets>
-			<xe:formRow id="formRow4" label="Code" for="code" rendered="#{javascript:compositeData.mode=='edit'}">
-				<xp:inputTextarea id="code" style="width:100%; height:240px;" value="#{document1.Body}" required="true"
+			<xe:formRow id="formRow1" label="Name" for="name">
+				<xp:inputText id="name" value="#{document1.Name}"
+					required="true" style="width:100%;" readonly="#{javascript:compositeData.mode=='preview'}"
+					disableClientSideValidation="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Please enter the name of your snippet."></xp:validateRequired>
+						<xp:validateLength maximum="100"
+							message="The name should not be more than 100 characters."></xp:validateLength>
+					</xp:this.validators>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow id="formRow3" label="Language">
+				<xp:text value="#{document1.Language}" rendered="#{javascript:compositeData.mode!='edit'}"></xp:text>
+				<xe:djextListTextBox id="djextListTextBox1"
+					value="#{document1.Language}" rendered="#{javascript:compositeData.mode=='edit'}"
+					disableClientSideValidation="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Please select a language for your snippet."></xp:validateRequired>
+					</xp:this.validators>
+				</xe:djextListTextBox>
+				<xe:valuePicker id="valuePicker1" dialogTitle="Select A Language"
+					for="djextListTextBox1">
+					<xe:this.dataProvider>
+						<xe:collectionValuePicker
+							collection="#{javascript:configUtil.getCodeLanguages()}">
+						</xe:collectionValuePicker>
+					</xe:this.dataProvider>
+				</xe:valuePicker>
+			</xe:formRow>
+			<xe:formRow id="formRow4" label="Code" for="code"
+				rendered="#{javascript:compositeData.mode=='edit'}">
+				<xp:inputTextarea id="code" style="width:100%; height:240px;"
+					value="#{document1.Body}" required="true"
 					disableClientSideValidation="true">
 					<xp:this.validators>
 						<xp:validateRequired message="Please paste your code."></xp:validateRequired>
-						<xp:validateLength maximum="32000" message="Code should be less than 32K."></xp:validateLength>
+						<xp:validateLength maximum="32000"
+							message="Code should be less than 32K."></xp:validateLength>
 					</xp:this.validators>
 					<xp:this.attrs>
 						<xp:attr name="spellcheck" value="false"></xp:attr>
 					</xp:this.attrs>
 				</xp:inputTextarea>
 			</xe:formRow>
-			<xe:formRow id="formRow1" label="Name" for="name">
-				<xp:inputText id="name" value="#{document1.Name}" required="true" style="width:100%;"
-					readonly="#{javascript:compositeData.mode=='preview'}" disableClientSideValidation="true">
-					<xp:this.validators>
-						<xp:validateRequired message="Please enter the name of your snippet."></xp:validateRequired>
-						<xp:validateLength maximum="100" message="The name should not be more than 100 characters."></xp:validateLength>
-					</xp:this.validators>
-				</xp:inputText>
-			</xe:formRow>
-			<xe:formRow id="formRow3" label="Language">
-				<xp:text value="#{document1.Language}" rendered="#{javascript:compositeData.mode!='edit'}"></xp:text>
-				<xp:comboBox id="comboBox1" value="#{document1.Language}" rendered="#{javascript:compositeData.mode=='edit'}"
-					disableClientSideValidation="true">
-					<xp:this.validators>
-						<xp:validateRequired message="Please select a language for your snippet."></xp:validateRequired>
-					</xp:this.validators>
-					<xp:selectItem itemLabel="Select a Language" itemValue=""></xp:selectItem>
-					<xp:selectItems>
-						<xp:this.value><![CDATA[${javascript:configUtil.getCodeLanguages()}]]></xp:this.value>
-					</xp:selectItems>
-				</xp:comboBox>
-			</xe:formRow>
 			<xe:formRow id="formRow2" label="Notes" for="notes">
-				<xp:inputTextarea id="notes" style="width:100%;" value="#{document1.Notes}"
-					readonly="#{javascript:compositeData.mode=='preview'}">
+				<xp:inputTextarea id="notes" style="width:100%;"
+					value="#{document1.Notes}" readonly="#{javascript:compositeData.mode=='preview'}">
 				</xp:inputTextarea>
 			</xe:formRow>
 			<xe:formRow id="formRow5" label="">
 				<xc:ccLicensingDetails></xc:ccLicensingDetails>
-			</xe:formRow>			
+			</xe:formRow>
 		</xe:formTable>
 	</xp:panel>
 </xp:view>

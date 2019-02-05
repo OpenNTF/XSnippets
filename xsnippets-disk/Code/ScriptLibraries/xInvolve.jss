@@ -8,7 +8,7 @@ Developer: Serdar Basegmez, Developi Information Systems, http://lotusnotus.com/
 var invTools={
 	
 	defaults: {
-		text_NoRating: "Nobody rated yet",
+		text_NoRating: "No one rated yet",
 		text_RatingResult: "Overall rating is %1 by %2 person(s)", 
 		text_OwnRating: "You have rated %1 star(s)",
 
@@ -23,7 +23,7 @@ var invTools={
 		text_AuthorizeFirst: "You have to login first to use 'My Favorites' feature",
 		text_AddDescription: "Click here to add this to your favorites...",
 		text_RemoveDescription: "Click here to remove from your favorites...",
-		text_NoFavorites: "So far, noone has added to favorites",
+		text_NoFavorites: "So far, no one has added to favorites",
 		text_Favorited: "%1 user(s) has marked as favorite: <br/><br/>%2",
 		
 		err_SetRatingCookie: "An error occured while setting your rating. Check your cookie settings...",

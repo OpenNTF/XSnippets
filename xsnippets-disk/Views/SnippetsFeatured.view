@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
- replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='646' unid='EEE1A79B1BE1B164C2257C18007ACFB5' sequence='6'>
-<created><datetime>20131104T002125,65+02</datetime></created>
-<modified><datetime>20131104T002407,26+02</datetime></modified>
-<revised><datetime>20131104T002407,25+02</datetime></revised>
-<lastaccessed><datetime>20131104T002519,91+02</datetime></lastaccessed>
-<addedtofile><datetime>20131104T002125,65+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
-<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='10.0' maintenanceversion='1.0'
+ replicaid='802583960058587C'>
+<noteinfo noteid='2be' unid='76C14A0E50F63DD28025839600588B81' sequence='4'>
+<created><datetime>20190203T160708,81+00</datetime></created>
+<modified><datetime>20190205T112044,24+00</datetime></modified>
+<revised><datetime>20190205T112044,23+00</datetime></revised>
+<lastaccessed><datetime>20190205T112044,23+00</datetime></lastaccessed>
+<addedtofile><datetime>20190203T160709,07+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>SnippetsFeatured</text></item>
 <item name='$Index' sign='true'><text/></item>
@@ -35,7 +35,7 @@ AQEACQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAP//AAAAAAAAAAAAAAAAAABCABAAAAABAP///wAF
 AP///wABAAAAAAAAAAAAAAAAAAEA////AAEA////AAAAAQAAAAAAAQAAAAAAAQAAAAAAAAAIAAAA
 AAABAA==
 </rawitemdata></item>
-<item name='$Comment' sign='true'><text/></item>
 <item name='$Flags'><text>Yw</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+<item name='$Comment' sign='true'><text>Not Used?</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
 

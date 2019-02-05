@@ -1,15 +1,19 @@
 package org.openntf.xsnippets;
 
+import java.text.SimpleDateFormat;
+
 // @author sbasegmez
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
+import java.util.Date;
 
 import javax.faces.context.FacesContext;
 
 import lotus.domino.ACL;
 import lotus.domino.Database;
+import lotus.domino.DateTime;
 import lotus.domino.NotesException;
 
 import com.ibm.xsp.application.ApplicationEx;

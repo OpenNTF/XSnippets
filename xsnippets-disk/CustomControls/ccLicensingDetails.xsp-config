@@ -11,10 +11,6 @@
     <composite-extension>
       <designer-extension>
         <in-palette>true</in-palette>
-        <render-markup>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xd;
-&lt;xp:view xmlns:xp="http://www.ibm.com/xsp/core"&gt;&#xd;
------- Licensing Text Custom Control ------&#xd;
-&lt;/xp:view&gt;</render-markup>
       </designer-extension>
     </composite-extension>
   </composite-component>

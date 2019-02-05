@@ -8,7 +8,7 @@
 	<xp:this.resources>
 		<xp:script src="/xInvolve.jss" clientSide="false"></xp:script>
 		<xp:script src="/xInvolveClient.js" clientSide="true"></xp:script>
-		<xp:styleSheet href="/xInvolve.css"></xp:styleSheet>
+		<xp:styleSheet href="/xInvolve_custom.css"></xp:styleSheet>
 		<xp:dojoModule name="dijit.Tooltip"></xp:dojoModule>
 	</xp:this.resources>
 	

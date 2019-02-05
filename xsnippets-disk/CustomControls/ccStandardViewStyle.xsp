@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	
+	<!-- Columns are based on SnippetsAll -->
+
+	<xp:div id="div1" styleClass="entry">
+		<xp:link escape="true" text="" id="link1" styleClass="entryLink"
+			value="#{snippet.url}">
+			<xp:text escape="true" id="computedField5" style="line-height: 1em;"
+				tagName="h3" disableTheme="true" value="#{snippet.name}">
+			</xp:text>
+		</xp:link>
+		<xp:div dojoType="dijit.Tooltip" style="display:none">
+			<xp:this.dojoAttributes>
+				<xp:dojoAttribute name="connectId" value="#{id:link1}"></xp:dojoAttribute>
+				<xp:dojoAttribute name="showDelay" value="500"></xp:dojoAttribute>
+			</xp:this.dojoAttributes>
+			<xp:text escape="false" id="computedField3">
+				<xp:this.value><![CDATA[#{snippet.notes}]]></xp:this.value>
+			</xp:text>
+		</xp:div>
+
+		<xp:div id="div2" styleClass="entryBody">
+			<xp:text escape="true" id="computedField2" disableTheme="true"
+				styleClass="entryLanguage">
+				<xp:this.value><![CDATA[#{snippet.language}]]></xp:this.value>
+			</xp:text>
+		</xp:div>
+
+
+		<xp:div id="div4" styleClass="entryText">
+			<xp:text escape="true" id="computedField10" disableTheme="true">
+				<xp:this.value><![CDATA[#{snippet.author}]]></xp:this.value>
+			</xp:text>
+			<div style="float:right">
+				<xc:xiRating hideError="true" ratesDisplayOnly="true"
+					anonymousRating="false" starCount="5"
+					ccId="#{snippet.id}" iId="#{snippet.id}"
+					interactionDB="#{javascript:database.getFilePath()}">
+				</xc:xiRating>
+				<xc:xiAddToFavorites hideError="false"
+					ccId="#{snippet.id}" hintValue="#{snippet.name}"
+					iId="#{snippet.id}" img_AddToFavorites="/graystar16.png"
+					img_RemoveFromFavorites="/yellowstar16.png" listContainerId="#{id:myFavorites}">
+				</xc:xiAddToFavorites>
+			</div>
+
+			<xp:br></xp:br>
+			<xp:text escape="true" id="computedField1" disableTheme="true">
+				<xp:this.value><![CDATA[#{snippet.createdDate}]]></xp:this.value>
+			</xp:text>
+		</xp:div>
+	</xp:div>
+
+</xp:view>

@@ -5,9 +5,9 @@
     <default-prefix>xc</default-prefix>
   </faces-config-extension>
   <composite-component>
-    <component-type>ccOneUILeft</component-type>
-    <composite-name>ccOneUILeft</composite-name>
-    <composite-file>/ccOneUILeft.xsp</composite-file>
+    <component-type>ccStandardViewStyle</component-type>
+    <composite-name>ccStandardViewStyle</composite-name>
+    <composite-file>/ccStandardViewStyle.xsp</composite-file>
     <composite-extension>
       <designer-extension>
         <in-palette>true</in-palette>

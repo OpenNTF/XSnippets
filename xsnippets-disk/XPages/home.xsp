@@ -13,11 +13,6 @@
 }}]]></xp:this.afterPageLoad>
 	<xc:ccOneUILayout id="cconeuilayout" navigationPath="/Home"
 		defaultNavigationPath="/Home">
-		<xp:this.facets>
-			<xp:panel xp:key="LeftColumn" id="panel4">
-				<xc:ccOneUILeft id="ccLeftOneUI"></xc:ccOneUILeft>
-			</xp:panel>
-		</xp:this.facets>
 		<xc:ccHomeColumnlayout></xc:ccHomeColumnlayout>
 	</xc:ccOneUILayout>
 </xp:view>

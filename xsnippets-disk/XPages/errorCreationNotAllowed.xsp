@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xc:ccOneUILayout title="#{javascript:database.getTitle()}">
-		<xp:this.facets>
-			<xp:panel xp:key="LeftColumn" id="panel4">
-				<xc:ccOneUILeft></xc:ccOneUILeft>
-			</xp:panel>
-		</xp:this.facets>
 		<xp:div id="content" styleClass="contentContainer">
 			<xp:panel styleClass="errorPageContent">
 				<xp:panel>
