@@ -11,6 +11,10 @@
 	view.postScript("alert('"+sessionScope.get("ErrorMessage")+"')");
 	sessionScope.remove("ErrorMessage");
 }}]]></xp:this.afterPageLoad>
+	<xp:this.beforePageLoad><![CDATA[#{javascript:if (param.containsKey("search")) {
+	sessionScope.put("searchString", param.get("search"));
+	sessionScope.put("fullSearchString", param.get("search"))
+}}]]></xp:this.beforePageLoad>
 	<xc:ccOneUILayout id="cconeuilayout" navigationPath="/Home"
 		defaultNavigationPath="/Home">
 		<xc:ccHomeColumnlayout></xc:ccHomeColumnlayout>

@@ -15,6 +15,10 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 
+import com.ibm.commons.util.StringUtil;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
+import com.ibm.xsp.model.DataObject;
+
 import lotus.domino.Database;
 import lotus.domino.DateTime;
 import lotus.domino.Document;
@@ -26,10 +30,6 @@ import lotus.domino.View;
 import lotus.domino.ViewEntry;
 import lotus.domino.ViewEntryCollection;
 import lotus.domino.ViewNavigator;
-
-import com.ibm.commons.util.StringUtil;
-import com.ibm.xsp.extlib.util.ExtLibUtil;
-import com.ibm.xsp.model.DataObject;
 
 /**
  * @author sbasegmez
@@ -145,17 +145,22 @@ public class ConfigBean implements Serializable, DataObject {
 	}
 
 	public Object getValue(Object key) {
-		if (key == null)
+		if (key == null) {
 			return "";
+		}
 
-		if ("headerLinks".equals(key))
+		if ("headerLinks".equals(key)) {
 			return getHeaderLinks();
-		if ("leftMenuLinks".equals(key))
+		}
+		if ("leftMenuLinks".equals(key)) {
 			return getLeftMenuLinks();
-		if ("bottomLinks".equals(key))
+		}
+		if ("bottomLinks".equals(key)) {
 			return getBottomLinks();
-		if ("codeLanguages".equals(key))
+		}
+		if ("codeLanguages".equals(key)) {
 			return getCodeLanguages();
+		}
 
 		String result = fields.get(key);
 		return (null == result) ? "" : result;
@@ -228,9 +233,9 @@ public class ConfigBean implements Serializable, DataObject {
 		Map<String, Object> viewScope = ExtLibUtil.getViewScope();
 
 		if (viewScope.containsKey(VS_VAR_TO_REMEMBER)) { // if download logged
-															// at the same view
+																// at the same view
 															// life-cycle,
-			// We don't need to do it again!
+															// We don't need to do it again!
 			return false;
 		}
 
@@ -238,8 +243,9 @@ public class ConfigBean implements Serializable, DataObject {
 		HttpServletRequest request = (HttpServletRequest) ec.getRequest();
 
 		String rUser = request.getRemoteUser();
-		if ("127.0.0.1".equals(rUser))
+		if ("127.0.0.1".equals(rUser)) {
 			rUser = request.getHeader("HTTP_X_FORWARDED_FOR");
+		}
 
 		Session session = getSession();
 		Database currentDb = getCurrentDatabase();
@@ -321,10 +327,13 @@ public class ConfigBean implements Serializable, DataObject {
 				ViewEntry snippet = vwSnippets.getEntryByKey(ent.getColumnValues().get(1), true);
 				if (snippet != null) {
 					snippet.setPreferJavaDates(true);
-					SnippetEntry snippetObj = new SnippetEntry(snippet, offset, getSnippetUrl((String) snippet.getColumnValues().get(0)));
+					SnippetEntry snippetObj = new SnippetEntry(snippet, offset,
+							getSnippetUrl((String) snippet.getColumnValues().get(0)));
 					coll.add(snippetObj);
 				}
-				if (coll.size() == 15) break;
+				if (coll.size() == 15) {
+					break;
+				}
 				ent = nav.getNext();
 			}
 		} catch (NotesException e) {
@@ -346,9 +355,12 @@ public class ConfigBean implements Serializable, DataObject {
 			int offset = 1;
 			while (null != snippet) {
 				snippet.setPreferJavaDates(true);
-				SnippetEntry snippetObj = new SnippetEntry(snippet, offset, getSnippetUrl((String) snippet.getColumnValues().get(0 + offset)));
+				SnippetEntry snippetObj = new SnippetEntry(snippet, offset,
+						getSnippetUrl((String) snippet.getColumnValues().get(0 + offset)));
 				coll.add(snippetObj);
-				if (coll.size() == 15) break;
+				if (coll.size() == 15) {
+					break;
+				}
 				snippet = nav.getNext();
 			}
 		} catch (NotesException e) {
@@ -358,7 +370,7 @@ public class ConfigBean implements Serializable, DataObject {
 		}
 		return coll;
 	}
-	
+
 	public LinkedList<SnippetEntry> getFavorites() {
 		LinkedList<SnippetEntry> coll = new LinkedList<SnippetEntry>();
 		View vwFavourites = null;
@@ -369,23 +381,24 @@ public class ConfigBean implements Serializable, DataObject {
 				System.out.println("No user key");
 				return null;
 			}
-				vwFavourites = getCurrentDatabase().getView("FavoritesByUserKey");
-				vwFavourites.setAutoUpdate(false);
-				vwSnippets = getCurrentDatabase().getView("SnippetsAll");
-				vwSnippets.setAutoUpdate(false);
-				ViewNavigator nav = vwFavourites.createViewNavFromCategory(userKey);
-				ViewEntry ent = nav.getFirst();
-				int offset = 0;
-				while (null != ent) {
-					System.out.println(ent.getColumnValues().get(1));
-					ViewEntry snippet = vwSnippets.getEntryByKey(ent.getColumnValues().get(1), true);
-					if (snippet != null) {
-						snippet.setPreferJavaDates(true);
-						SnippetEntry snippetObj = new SnippetEntry(snippet, offset, getSnippetUrl((String) snippet.getColumnValues().get(0)));
-						coll.add(snippetObj);
-					}
-					ent = nav.getNext();
+			vwFavourites = getCurrentDatabase().getView("FavoritesByUserKey");
+			vwFavourites.setAutoUpdate(false);
+			vwSnippets = getCurrentDatabase().getView("SnippetsAll");
+			vwSnippets.setAutoUpdate(false);
+			ViewNavigator nav = vwFavourites.createViewNavFromCategory(userKey);
+			ViewEntry ent = nav.getFirst();
+			int offset = 0;
+			while (null != ent) {
+				System.out.println(ent.getColumnValues().get(1));
+				ViewEntry snippet = vwSnippets.getEntryByKey(ent.getColumnValues().get(1), true);
+				if (snippet != null) {
+					snippet.setPreferJavaDates(true);
+					SnippetEntry snippetObj = new SnippetEntry(snippet, offset,
+							getSnippetUrl((String) snippet.getColumnValues().get(0)));
+					coll.add(snippetObj);
 				}
+				ent = nav.getNext();
+			}
 		} catch (NotesException e) {
 			e.printStackTrace();
 		} finally {
@@ -393,7 +406,7 @@ public class ConfigBean implements Serializable, DataObject {
 		}
 		return coll;
 	}
-	
+
 	public LinkedList<String> getAuthors() {
 		LinkedList<String> coll = new LinkedList<String>();
 		View vwAuthors = null;
@@ -408,19 +421,19 @@ public class ConfigBean implements Serializable, DataObject {
 				ent.recycle(colVals);
 				ent = nav.getNextSibling();
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return coll;
 	}
-	
+
 	public void doSearch() {
 		try {
 			String language = getSessScopeString("searchLanguage");
 			String author = getSessScopeString("searchAuthor");
 			String searchVariable = getSessScopeString("searchString");
-			
+
 			if ("".equals(language) && "".equals(author) && "".equals(searchVariable)) {
 				ExtLibUtil.getSessionScope().put("searchView", "");
 			} else if (!"".equals(language) && "".equals(author) && "".equals(searchVariable)) {
@@ -430,20 +443,17 @@ public class ConfigBean implements Serializable, DataObject {
 				// Author only, use that view
 				ExtLibUtil.getSessionScope().put("searchView", "SnippetsByAuthor");
 			} else {
-				String searchLang = ("".equals(language)) ? "" : "[Language] = \"" + language + "\"";
-				String searchAuthor = ("".equals(author)) ? "" : "[Author] = \"" + author + "\"";
-				String searchString = ("".equals(searchVariable)) ? "" : "\"" + searchVariable + "\"";
-				String fullSearch = searchLang;
-				if ("".equals(fullSearch)) {
-					fullSearch = searchAuthor;
-				} else {
-					fullSearch = fullSearch + " AND " + searchAuthor;
+				LinkedList<String> searchList = new LinkedList<String>();
+				if (!"".equals(language)) {
+					searchList.add("[Language] = \"" + language + "\"");
 				}
-				if ("".equals(fullSearch)) {
-					fullSearch = searchString;
-				} else {
-					fullSearch = fullSearch + " AND " + searchString;
+				if (!"".equals(author)) {
+					searchList.add("[Author] = \"" + author + "\"");
 				}
+				if (!"".equals(searchVariable)) {
+					searchList.add("\"" + searchVariable + "\"");
+				}
+				String fullSearch = String.join(" AND ", searchList);
 				ExtLibUtil.getSessionScope().put("searchStringFull", fullSearch);
 				ExtLibUtil.getSessionScope().put("searchView", "SnippetsAll");
 			}
@@ -453,8 +463,9 @@ public class ConfigBean implements Serializable, DataObject {
 	}
 
 	/**
-	 * There are 441 snippets currently in OpenNTF Snippets. We'll load all into memory for now and review if performance is bad
-	 * 
+	 * There are 441 snippets currently in OpenNTF Snippets. We'll load all into memory for now and review if
+	 * performance is bad
+	 *
 	 * @return
 	 */
 	public LinkedList<SnippetEntry> getSearchResults() {
@@ -468,10 +479,10 @@ public class ConfigBean implements Serializable, DataObject {
 			}
 			vwSnippets = getCurrentDatabase().getView(viewName);
 			vwSnippets.setAutoUpdate(false);
-			
+
 			String language = getSessScopeString("searchLanguage");
 			String author = getSessScopeString("searchAuthor");
-			
+
 			ViewNavigator nav = null;
 			ViewEntryCollection ec = null;
 			int offset = 0;
@@ -487,7 +498,7 @@ public class ConfigBean implements Serializable, DataObject {
 				int count = vwSnippets.FTSearch(getSessScopeString("searchStringFull"));
 				ec = vwSnippets.getAllEntries();
 			}
-			
+
 			ViewEntry snippet = null;
 			if (null != nav) {
 				snippet = nav.getFirst();
@@ -496,7 +507,8 @@ public class ConfigBean implements Serializable, DataObject {
 			}
 			while (null != snippet) {
 				snippet.setPreferJavaDates(true);
-				SnippetEntry snippetObj = new SnippetEntry(snippet, offset, getSnippetUrl((String) snippet.getColumnValues().get(0 + offset)));
+				SnippetEntry snippetObj = new SnippetEntry(snippet, offset,
+						getSnippetUrl((String) snippet.getColumnValues().get(0 + offset)));
 				coll.add(snippetObj);
 				if (null != nav) {
 					snippet = nav.getNext();
@@ -514,7 +526,7 @@ public class ConfigBean implements Serializable, DataObject {
 		}
 		return coll;
 	}
-	
+
 	public static String getSessScopeString(String key) {
 		if (!ExtLibUtil.getSessionScope().containsKey(key)) {
 			return "";
@@ -562,7 +574,7 @@ public class ConfigBean implements Serializable, DataObject {
 		private String language;
 		private String createdDate;
 		private String notes;
-		
+
 		public SnippetEntry(ViewEntry ent, int offset, String passedUrl) {
 			try {
 				Vector<Object> colVals = ent.getColumnValues();
@@ -578,13 +590,13 @@ public class ConfigBean implements Serializable, DataObject {
 				e.printStackTrace();
 			}
 		}
-		
+
 		private static String convertDate(Date dt) {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-				String text = "Added " + sdf.format(dt);
-				return text;
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd");
+			String text = "Added " + sdf.format(dt);
+			return text;
 		}
-		
+
 		public String getId() {
 			return id;
 		}

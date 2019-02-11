@@ -6,37 +6,36 @@ import java.util.List;
 import java.util.Map;
 
 public enum SnippetLanguage {
-	XSP("XPages", "shBrushXsp.js", "xsp"),
-	SSJS("JavaScript (Server)", "shBrushJScript_custom.js", "js"),
-	CSJS("JavaScript (Client)", "shBrushJScript_custom.js", "js"),
-	FORMULA("Formula", "shBrushFormula.js", "formula"),
-	JS("JavaScript (Generic)", "shBrushJScript_custom.js", "js"),
-	JAVA("Java", "shBrushJava_custom.js", "java"),
-	XML("XML", "shBrushXml.js", "xml"),
-	LSS("LotusScript","shBrushLscript.js", "lscript"),
-	JS_NODE("JavaScript (Domino Node.js)", "shBrushJScript_custom.js", "js_node"),
-	DQL("DQL", "", "dql"),
-	CSS("Cascaded Style Sheets", "shBrushCss_custom.js", "css"),
-	ADMIN("Admin Scriptes", "", "admin"),
-	JS_ICEC("JavaScript (ICEC)", "shBrushJScript_custom.js", "js_icec"),
-	JS_CUSTOMIZER("JavaScript (Connections Customizer)", "shBrushJScript_custom.js", "js_conn"),
-	CSS_CUSTOMIZER("Cascaded Style Sheets (Connections Customizer)", "shBrushCss_custom.js", "css_conn"),
-	THEMES("Themes", "shBrushXml.js", "xml");
+	XSP("XPages", "shBrushXsp.js", "xsp"), SSJS("JavaScript (Server)", "shBrushJScript_custom.js", "js"), CSJS(
+			"JavaScript (Client)", "shBrushJScript_custom.js",
+			"js"), JAVA("Java", "shBrushJava_custom.js", "java"), XML("XML", "shBrushXml.js", "xml"), CSS(
+					"Cascaded Style Sheets", "shBrushCss_custom.js",
+					"css"), THEMES("Themes", "shBrushXml.js", "xml"), FORMULA("Formula", "shBrushFormula.js",
+							"formula"), LSS("LotusScript", "shBrushLscript.js", "lscript"), JS("JavaScript (Generic)",
+									"shBrushJScript_custom.js", "js"), JS_NODE("JavaScript (Domino Node.js)",
+											"shBrushJScript_custom.js", "js_node"), DQL("DQL", "", "dql"), ADMIN(
+													"Admin Scripts", "", "admin"), JS_ICEC("JavaScript (ICEC)",
+															"shBrushJScript_custom.js", "js_icec"), JS_CUSTOMIZER(
+																	"JavaScript (Connections Customizer)",
+																	"shBrushJScript_custom.js",
+																	"js_conn"), CSS_CUSTOMIZER(
+																			"Cascaded Style Sheets (Connections Customizer)",
+																			"shBrushCss_custom.js", "css_conn");
 
 	private String codeLanguage;
 	private String brushFile;
 	private String brushAlias;
-	
+
 	// Keeping two lists. Second list could be extracted from the first one but we care about sorting.
-	private static Map<String,SnippetLanguage> mapping;
+	private static Map<String, SnippetLanguage> mapping;
 	private static List<String> listOfLanguages;
-	
+
 	SnippetLanguage(String codeLanguage, String brushFile, String brushAlias) {
-		this.codeLanguage=codeLanguage;
-		this.brushFile=brushFile;
-		this.brushAlias=brushAlias;
+		this.codeLanguage = codeLanguage;
+		this.brushFile = brushFile;
+		this.brushAlias = brushAlias;
 	}
-	
+
 	public String getCodeLanguage() {
 		return codeLanguage;
 	}
@@ -48,29 +47,29 @@ public enum SnippetLanguage {
 	public String getBrushAlias() {
 		return brushAlias;
 	}
-	
+
 	private static void initLists() {
-		mapping=new HashMap<String, SnippetLanguage>();
-		listOfLanguages=new ArrayList<String>();
-		
-		for(SnippetLanguage lang:values()) {
+		mapping = new HashMap<String, SnippetLanguage>();
+		listOfLanguages = new ArrayList<String>();
+
+		for (SnippetLanguage lang : values()) {
 			mapping.put(lang.getCodeLanguage(), lang);
 			listOfLanguages.add(lang.getCodeLanguage());
 		}
 	}
 
 	public static SnippetLanguage byCodeLanguage(String codeLanguage) {
-		if(null==mapping) {
+		if (null == mapping) {
 			initLists();
 		}
 		return mapping.get(codeLanguage);
 	}
 
 	public static List<String> getLanguages() {
-		if(null==listOfLanguages) {
+		if (null == listOfLanguages) {
 			initLists();
 		}
-		return listOfLanguages;		
+		return listOfLanguages;
 	}
-	
+
 }

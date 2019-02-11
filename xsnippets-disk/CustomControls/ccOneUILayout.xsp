@@ -106,11 +106,11 @@
 				<xe:this.loaded><![CDATA[${javascript:@IsMember("[Admin]", context.getUser().getRoles())}]]></xe:this.loaded>
 				<xe:this.title><![CDATA[#{javascript:"Last Loaded: "+configUtil.getDateLoaded()}]]></xe:this.title>
 			</xe:basicLeafNode>
-			<xe:basicLeafNode label="Contact OpenNTF"
-				href="https://openntf.org/Internal/home.nsf/dx/Contact_OpenNTF">
+			<xe:basicLeafNode label="Contact OpenNTF">
+				<xe:this.href><![CDATA[https://openntf.org/main.nsf/page.xsp?name=Interact_With_Us&subName=Contact_OpenNTF]]></xe:this.href>
 			</xe:basicLeafNode>
-			<xe:basicLeafNode label="Follow OpenNTF"
-				href="https://openntf.org/Internal/home.nsf/dx/Follow_OpenNTF">
+			<xe:basicLeafNode label="Follow OpenNTF">
+				<xe:this.href><![CDATA[https://openntf.org/main.nsf/page.xsp?name=Interact_With_Us&subName=Follow_Us]]></xe:this.href>
 			</xe:basicLeafNode>
 			<xe:basicLeafNode label="Follow Snippets" href="/follow.xsp">
 			</xe:basicLeafNode>
