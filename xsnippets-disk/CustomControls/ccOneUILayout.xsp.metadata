@@ -1,22 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="802583960058587C" version="10.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1ba" sequence="8" unid="555AF5FEFEE8595380258396005889EC">
-<created><datetime>20190203T160704,76+00</datetime></created>
-<modified><datetime>20190203T163500,70+00</datetime></modified>
-<revised><datetime>20190203T163500,69+00</datetime></revised>
-<lastaccessed><datetime>20190203T163500,69+00</datetime></lastaccessed>
-<addedtofile><datetime>20190203T160704,76+00</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
-<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
-<item name="$Flags"><text>gC~4;</text></item>
-<item name="$TITLE" sign="true"><text>ccOneUILayout.xsp</text></item>
-
-
-<item name="$FileNames" sign="true"><text>ccOneUILayout.xsp</text></item>
-
-
-<item name="$DesignerVersion"><text>8.5.1</text></item>
-
-
-
-
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Flags">
+    <text>gC~4;</text>
+  </item>
+  <item name="$TITLE" sign="true">
+    <text>ccOneUILayout.xsp</text>
+  </item>
+  <item name="$FileNames" sign="true">
+    <text>ccOneUILayout.xsp</text>
+  </item>
 </note>

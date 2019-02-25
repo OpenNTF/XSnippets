@@ -3,9 +3,8 @@
 	xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:this.resources>
 		<xp:script src="/Utilities.jss" clientSide="false"></xp:script>
-		<xp:linkResource href="./feedRecentAll.xsp"
-			type="application/atom+xml" title="Atom feed for all snippets"
-			rel="alternate">
+		<xp:linkResource href="./feedRecentAll.xsp" type="application/atom+xml"
+			title="Atom feed for all snippets" rel="alternate">
 		</xp:linkResource>
 		<xp:linkResource href="./feedRecentAll.xsp?format=rss"
 			type="application/rss+xml" title="RSS feed for all snippets"
@@ -21,6 +20,13 @@
 			content="OpenNTF XSnippets Code Snippets IBM XPages Development Open Source">
 		</xp:metaData>
 		<xp:script src="/brandcms.login.js" clientSide="true"></xp:script>
+		<xp:headTag tagName="base">
+			<xp:this.attributes>
+				<xp:parameter name="href"
+					value="${facesContext.externalContext.requestContextPath}/">
+				</xp:parameter>
+			</xp:this.attributes>
+		</xp:headTag>
 	</xp:this.resources>
 	<xp:this.beforePageLoad><![CDATA[#{javascript:viewStateBean.restoreState = true}]]></xp:this.beforePageLoad>
 
@@ -49,13 +55,13 @@
 					</xe:basicContainerNode>
 				</xe:this.bannerApplicationLinks>
 				<xe:this.bannerUtilityLinks>
-					<xe:basicLeafNode label="Create Snippet" href="newSnippet.xsp">
+					<xe:basicLeafNode label="Create Snippet" href="/newSnippet.xsp">
 						<xe:this.rendered><![CDATA[${javascript:session.getEffectiveUserName()!="Anonymous"}]]></xe:this.rendered>
 					</xe:basicLeafNode>
-					<xe:basicLeafNode label="My Favourites" href="snippetsFavorites.xsp">
+					<xe:basicLeafNode label="My Favourites" href="/snippetsFavorites.xsp">
 						<xe:this.rendered><![CDATA[${javascript:session.getEffectiveUserName()!="Anonymous" && context.getUrl().getAddress().indexOf("Favorites") < 0}]]></xe:this.rendered>
 					</xe:basicLeafNode>
-					<xe:basicLeafNode label="Home" href="home.xsp">
+					<xe:basicLeafNode label="Home" href="/home.xsp">
 						<xe:this.rendered><![CDATA[${javascript:session.getEffectiveUserName()!="Anonymous" && context.getUrl().getAddress().indexOf("Favorites") > 0}]]></xe:this.rendered>
 					</xe:basicLeafNode>
 					<xe:userTreeNode></xe:userTreeNode>
