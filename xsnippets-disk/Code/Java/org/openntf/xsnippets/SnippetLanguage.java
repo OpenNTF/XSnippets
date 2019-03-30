@@ -13,14 +13,13 @@ public enum SnippetLanguage {
 					"css"), THEMES("Themes", "shBrushXml.js", "xml"), FORMULA("Formula", "shBrushFormula.js",
 							"formula"), LSS("LotusScript", "shBrushLscript.js", "lscript"), JS("JavaScript (Generic)",
 									"shBrushJScript_custom.js", "js"), JS_NODE("JavaScript (Domino Node.js)",
-											"shBrushJScript_custom.js", "js_node"), DQL("DQL", "", "dql"), ADMIN(
-													"Admin Scripts", "", "admin"), JS_ICEC("JavaScript (ICEC)",
-															"shBrushJScript_custom.js", "js_icec"), JS_CUSTOMIZER(
-																	"JavaScript (Connections Customizer)",
-																	"shBrushJScript_custom.js",
-																	"js_conn"), CSS_CUSTOMIZER(
+											"shBrushJScript_custom.js",
+											"js"), DQL("DQL", "shBrushSql", "sql"), ADMIN("Admin Scripts", "",
+													"admin"), JS_ICEC("JavaScript (ICEC)", "shBrushJScript_custom.js",
+															"js"), JS_CUSTOMIZER("JavaScript (Connections Customizer)",
+																	"shBrushJScript_custom.js", "js"), CSS_CUSTOMIZER(
 																			"Cascaded Style Sheets (Connections Customizer)",
-																			"shBrushCss_custom.js", "css_conn");
+																			"shBrushCss_custom.js", "css");
 
 	private String codeLanguage;
 	private String brushFile;
