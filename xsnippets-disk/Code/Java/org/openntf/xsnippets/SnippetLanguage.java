@@ -14,6 +14,8 @@ public enum SnippetLanguage {
 							"formula"), LSS("LotusScript", "shBrushLscript.js", "lscript"), JS("JavaScript (Generic)",
 									"shBrushJScript_custom.js", "js"), JS_NODE("JavaScript (Domino Node.js)",
 											"shBrushJScript_custom.js",
+											"js"), VOLT("JavaScript (Volt)",
+											"shBrushJScript_custom.js",
 											"js"), DQL("DQL", "shBrushSql", "sql"), ADMIN("Admin Scripts", "",
 													"admin"), JS_ICEC("JavaScript (ICEC)", "shBrushJScript_custom.js",
 															"js"), JS_CUSTOMIZER("JavaScript (Connections Customizer)",
