@@ -46,6 +46,16 @@
 							</xp:td>
 						</xp:tr>
 						<xp:tr>
+							<xp:td style="width:90px">
+								<xp:label value="Tags" id="ltags" for="tags">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:text escape="true" id="tags" value="#{document1.Tags}">
+								</xp:text>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
 							<xp:td>
 								<xp:label value="Author" id="label1" for="author">
 								</xp:label>
