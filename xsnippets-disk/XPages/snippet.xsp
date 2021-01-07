@@ -138,7 +138,7 @@ context.redirectToHome();}]]></xp:this.action>
 								</xp:label>
 							</xp:td>
 							<xp:td>
-								<xp:inputTextarea id="notes" value="#{document1.Notes}"></xp:inputTextarea>
+								<xp:text id="notes" value="#{document1.Notes}"></xp:text>
 							</xp:td>
 						</xp:tr>
 					</xp:table>
