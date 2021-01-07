@@ -70,6 +70,15 @@ if(document1.getItemValueString("Name")!=viewScope.get("NameCache")){
 					</xe:this.dataProvider>
 				</xe:valuePicker>
 			</xe:formRow>
+			<xe:formRow id="formRowTags" label="Tags (Comma separated)" for="tags">
+				<xp:inputText
+					id="tags"
+					style="width:100%;"
+					value="#{document1.Tags}"
+					readonly="#{javascript:compositeData.mode=='preview'}"
+					multipleSeparator=",">
+				</xp:inputText>
+			</xe:formRow>
 			<xe:formRow id="formRow4" label="Code" for="code"
 				rendered="#{javascript:compositeData.mode=='edit'}">
 				<xp:inputTextarea id="code" style="width:100%; height:240px;"
@@ -89,15 +98,6 @@ if(document1.getItemValueString("Name")!=viewScope.get("NameCache")){
 				<xp:inputTextarea id="notes" style="width:100%;"
 					value="#{document1.Notes}" readonly="#{javascript:compositeData.mode=='preview'}">
 				</xp:inputTextarea>
-			</xe:formRow>
-			<xe:formRow id="formRowTags" label="Tags (Comma separated)" for="tags">
-				<xp:inputText
-					id="tags"
-					style="width:100%;"
-					value="#{document1.Tags}"
-					readonly="#{javascript:compositeData.mode=='preview'}"
-					multipleSeparator=",">
-				</xp:inputText>
 			</xe:formRow>
 			<xe:formRow id="formRow5" label="">
 				<xc:ccLicensingDetails></xc:ccLicensingDetails>
