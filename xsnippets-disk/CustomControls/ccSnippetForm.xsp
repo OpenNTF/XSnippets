@@ -90,6 +90,15 @@ if(document1.getItemValueString("Name")!=viewScope.get("NameCache")){
 					value="#{document1.Notes}" readonly="#{javascript:compositeData.mode=='preview'}">
 				</xp:inputTextarea>
 			</xe:formRow>
+			<xe:formRow id="formRowTags" label="Tags (Comma separated)" for="tags">
+				<xp:inputText
+					id="tags"
+					style="width:100%;"
+					value="#{document1.Tags}"
+					readonly="#{javascript:compositeData.mode=='preview'}"
+					multipleSeparator=",">
+				</xp:inputText>
+			</xe:formRow>
 			<xe:formRow id="formRow5" label="">
 				<xc:ccLicensingDetails></xc:ccLicensingDetails>
 			</xe:formRow>

@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
- replicaid='C2257B5D004C1B27'>
-<noteinfo noteid='42e' unid='60D93E74A9D947F2C22579F1005B55DF' sequence='42'>
-<created><datetime dst='true'>20120501T193737,59+03</datetime></created>
-<modified><datetime>20131104T001843,16+02</datetime></modified>
-<revised><datetime>20131104T001843,15+02</datetime></revised>
-<lastaccessed><datetime>20131104T001843,16+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20130430T165119,08+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
-<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.10'
+ replicaid='00258656005D0FCA'>
+<noteinfo noteid='222' unid='2088A1CB4130EB2500258656005D14BE' sequence='3'>
+<created><datetime>20210107T165641,58+00</datetime></created>
+<modified><datetime>20210107T170302,71+00</datetime></modified>
+<revised><datetime>20210107T170302,70+00</datetime></revised>
+<lastaccessed><datetime>20210107T170302,70+00</datetime></lastaccessed>
+<addedtofile><datetime>20210107T165641,60+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$HTMLCode' sign='true'>
 <rawitemdata type='1'>
@@ -78,7 +78,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAIr/LACKAAAFADACAAAAAAAAAgEAAAoAAAAAAAAAAAgAAAAAAExhbmd1
 YWdlYg4BAIQAAAAAAAAAAADeBgAAiv+F/wgAAQAACoECgwQBAIX/CAABAAAKgQKDBAEAhf8OAAEA
 AApUYWdzOgndBgAAiv/+/1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AHgA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIr/KACKAAAFAAACAAAAAAAAAgEA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIr/KACKAAEFBjACAAAAAAAAAgEA
 AAoAAAAAAAAAAAQAAAAAAFRhZ3NiDgEAhAAAAAAAAAAAAN4GAACK/4X/CAABAAAKgQKDBAEAhf8I
 AAEAAAqBAoMEAQCF/w8AAQAACk5vdGVzOiAA3QYAAIr//v9QAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAeAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACK

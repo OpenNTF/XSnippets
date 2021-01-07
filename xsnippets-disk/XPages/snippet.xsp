@@ -46,6 +46,33 @@
 							</xp:td>
 						</xp:tr>
 						<xp:tr>
+							<xp:td style="width:90px">
+								<xp:label value="Tags" id="ltags" for="tags">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:repeat value="#{document1.Tags}" var="tag">
+									<xp:link id="link1">
+										<xp:text
+											styleClass="label label-primary"
+											escape="true"
+											id="tags"
+											value="#{tag}">
+										</xp:text>
+										&#160;
+										<xp:eventHandler
+											event="onclick"
+											submit="true"
+											refreshMode="complete">
+											<xp:this.action><![CDATA[#{javascript:sessionScope.searchString = tag;
+configUtil.doSearch();
+context.redirectToHome();}]]></xp:this.action>
+										</xp:eventHandler>
+									</xp:link>
+								</xp:repeat >
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
 							<xp:td>
 								<xp:label value="Author" id="label1" for="author">
 								</xp:label>
@@ -111,7 +138,7 @@
 								</xp:label>
 							</xp:td>
 							<xp:td>
-								<xp:inputTextarea id="notes" value="#{document1.Notes}"></xp:inputTextarea>
+								<xp:text id="notes" value="#{document1.Notes}"></xp:text>
 							</xp:td>
 						</xp:tr>
 					</xp:table>
