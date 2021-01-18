@@ -138,7 +138,11 @@ context.redirectToHome();}]]></xp:this.action>
 								</xp:label>
 							</xp:td>
 							<xp:td>
-								<xp:text id="notes" value="#{document1.Notes}"></xp:text>
+								<xp:text
+									id="notes"
+									escape="false">
+									<xp:this.value><![CDATA[#{javascript:@ReplaceSubstring(document1.getItemValueString("Notes"), @NewLine(), "<br/>")}]]></xp:this.value>
+								</xp:text>
 							</xp:td>
 						</xp:tr>
 					</xp:table>
