@@ -54,7 +54,7 @@
 			{ regex: /'.*$/gm,										css: 'ls-comment' },			// one line comments
 			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,	css: 'ls-string' },			// strings
 			{ regex: /^\%(Else|ElseIf|End|If|Include).*$/gmi,		css: 'ls-preprocessor' },		// preprocessor tags like #region and #endregion
-			{ regex: /\%REM(.|\n)+\%END REM/g,					css: 'ls-comment' },			// one line comments
+			{ regex: /\%REM(.|\n)+?\%END\s*REM/g,					css: 'ls-comment' },			// one line comments
 			{ regex: new RegExp(this.getKeywords(keywords), 'gmi'),	css: 'ls-keyword' }			// vb keyword
 			];
 
